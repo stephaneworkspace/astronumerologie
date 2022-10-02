@@ -1,0 +1,752 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		552E804A7ACBFFC1E90D83E5 /* ELocalisationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E843833A8BAE2D87AB6BF /* ELocalisationTextField.swift */; };
+		552E809ACA7506CE4C063FA2 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8210F8E408A317D34E42 /* config.swift */; };
+		552E820486700CDF313BCED2 /* ENamesTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8ECBB9B07A00B235A428 /* ENamesTextField.swift */; };
+		552E8522466D8A70C639E63B /* EDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8A7DAE6D0128E2590381 /* EDatePicker.swift */; };
+		552E853188E18A296444B346 /* VInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8E55DDA74932A21F1787 /* VInput.swift */; };
+		552E877BDE64B0729FCB33CF /* langua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E817F683EDEEEEF725F1D /* langua.swift */; };
+		552E879089C4087F4D4B2ED9 /* numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E86AE32F0924F4EE036CC /* numerologie.swift */; };
+		552E879B97B13CCDDF7BF3F9 /* ETitleNumerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E834B80B66BCBE22E4CD9 /* ETitleNumerologie.swift */; };
+		552E8A7B961A4B125977768E /* renderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8E916E7B42CDA5B02658 /* renderImage.swift */; };
+		552E8D96C76F0CCB78FC489E /* ETitleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8F9AE6BCC2ADD733E982 /* ETitleData.swift */; };
+		552E8ED31064F61BA413E19E /* ETitleLocalisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8960177AFBCB4F3E1DD6 /* ETitleLocalisation.swift */; };
+		552E8ED3D208BC59E1AF363A /* VNumerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8A32F70A98B91713FDFF /* VNumerologie.swift */; };
+		F426B43728E8528100FE1469 /* antools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F426B43528E8528100FE1469 /* antools.cpp */; };
+		F426B44028E8544C00FE1469 /* librantools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B43E28E8544B00FE1469 /* librantools.a */; };
+		F426B44128E8544C00FE1469 /* libantools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B43F28E8544B00FE1469 /* libantools.a */; };
+		F426B44328E875D000FE1469 /* libswe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B44228E875D000FE1469 /* libswe.a */; };
+		F426B44528E8B4E200FE1469 /* libSweInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B44428E8B4E200FE1469 /* libSweInterface.a */; };
+		F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437A23428D8A34200A6D196 /* print-numerologie.swift */; };
+		F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A95CAF28E9EA2E0004B22F /* astrologie.swift */; };
+		F4A95CB328EA451B0004B22F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4A95CB228EA451B0004B22F /* .gitignore */; };
+		F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42CFE28C3C67300EA0BC6 /* astronumerologieApp.swift */; };
+		F4C42D0128C3C67300EA0BC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D0028C3C67300EA0BC6 /* ContentView.swift */; };
+		F4C42D0328C3C67500EA0BC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C42D0228C3C67500EA0BC6 /* Assets.xcassets */; };
+		F4C42D0628C3C67500EA0BC6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C42D0528C3C67500EA0BC6 /* Preview Assets.xcassets */; };
+		F4C42D1028C3C67500EA0BC6 /* astronumerologieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D0F28C3C67500EA0BC6 /* astronumerologieTests.swift */; };
+		F4C42D1A28C3C67500EA0BC6 /* astronumerologieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D1928C3C67500EA0BC6 /* astronumerologieUITests.swift */; };
+		F4C42D1C28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F4C42D0C28C3C67500EA0BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4C42CF328C3C67300EA0BC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4C42CFA28C3C67300EA0BC6;
+			remoteInfo = astronumerologie;
+		};
+		F4C42D1628C3C67500EA0BC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F4C42CF328C3C67300EA0BC6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4C42CFA28C3C67300EA0BC6;
+			remoteInfo = astronumerologie;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		552E817F683EDEEEEF725F1D /* langua.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = langua.swift; sourceTree = "<group>"; };
+		552E8210F8E408A317D34E42 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
+		552E834B80B66BCBE22E4CD9 /* ETitleNumerologie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETitleNumerologie.swift; sourceTree = "<group>"; };
+		552E843833A8BAE2D87AB6BF /* ELocalisationTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELocalisationTextField.swift; sourceTree = "<group>"; };
+		552E86AE32F0924F4EE036CC /* numerologie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = numerologie.swift; sourceTree = "<group>"; };
+		552E8960177AFBCB4F3E1DD6 /* ETitleLocalisation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETitleLocalisation.swift; sourceTree = "<group>"; };
+		552E8A32F70A98B91713FDFF /* VNumerologie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNumerologie.swift; sourceTree = "<group>"; };
+		552E8A7DAE6D0128E2590381 /* EDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EDatePicker.swift; sourceTree = "<group>"; };
+		552E8E55DDA74932A21F1787 /* VInput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VInput.swift; sourceTree = "<group>"; };
+		552E8E916E7B42CDA5B02658 /* renderImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = renderImage.swift; sourceTree = "<group>"; };
+		552E8ECBB9B07A00B235A428 /* ENamesTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENamesTextField.swift; sourceTree = "<group>"; };
+		552E8F9AE6BCC2ADD733E982 /* ETitleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETitleData.swift; sourceTree = "<group>"; };
+		F426B43428E8528000FE1469 /* astronumerologie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "astronumerologie-Bridging-Header.h"; sourceTree = "<group>"; };
+		F426B43528E8528100FE1469 /* antools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = antools.cpp; sourceTree = "<group>"; };
+		F426B43628E8528100FE1469 /* antools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = antools.hpp; sourceTree = "<group>"; };
+		F426B43E28E8544B00FE1469 /* librantools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librantools.a; path = astronumerologie/CodeBridge/lib/librantools.a; sourceTree = "<group>"; };
+		F426B43F28E8544B00FE1469 /* libantools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libantools.a; path = astronumerologie/CodeBridge/lib/libantools.a; sourceTree = "<group>"; };
+		F426B44228E875D000FE1469 /* libswe.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswe.a; path = astronumerologie/CodeBridge/lib/libswe.a; sourceTree = "<group>"; };
+		F426B44428E8B4E200FE1469 /* libSweInterface.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSweInterface.a; path = astronumerologie/CodeBridge/lib/libSweInterface.a; sourceTree = "<group>"; };
+		F437A23428D8A34200A6D196 /* print-numerologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "print-numerologie.swift"; sourceTree = "<group>"; };
+		F4A95CAF28E9EA2E0004B22F /* astrologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astrologie.swift; sourceTree = "<group>"; };
+		F4A95CB128EA2B3B0004B22F /* astronumerologie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = astronumerologie.entitlements; sourceTree = "<group>"; };
+		F4A95CB228EA451B0004B22F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		F4C42CFB28C3C67300EA0BC6 /* astronumerologie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = astronumerologie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4C42CFE28C3C67300EA0BC6 /* astronumerologieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieApp.swift; sourceTree = "<group>"; };
+		F4C42D0028C3C67300EA0BC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F4C42D0228C3C67500EA0BC6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F4C42D0528C3C67500EA0BC6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F4C42D0B28C3C67500EA0BC6 /* astronumerologieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = astronumerologieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4C42D0F28C3C67500EA0BC6 /* astronumerologieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieTests.swift; sourceTree = "<group>"; };
+		F4C42D1528C3C67500EA0BC6 /* astronumerologieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = astronumerologieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4C42D1928C3C67500EA0BC6 /* astronumerologieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieUITests.swift; sourceTree = "<group>"; };
+		F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F4C42CF828C3C67300EA0BC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F426B44528E8B4E200FE1469 /* libSweInterface.a in Frameworks */,
+				F426B44328E875D000FE1469 /* libswe.a in Frameworks */,
+				F426B44028E8544C00FE1469 /* librantools.a in Frameworks */,
+				F426B44128E8544C00FE1469 /* libantools.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4C42D0828C3C67500EA0BC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4C42D1228C3C67500EA0BC6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		552E8044A55B4DDCA9E4FEA0 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				552E8A7DAE6D0128E2590381 /* EDatePicker.swift */,
+				552E8F9AE6BCC2ADD733E982 /* ETitleData.swift */,
+				552E8ECBB9B07A00B235A428 /* ENamesTextField.swift */,
+				552E8960177AFBCB4F3E1DD6 /* ETitleLocalisation.swift */,
+				552E843833A8BAE2D87AB6BF /* ELocalisationTextField.swift */,
+				552E834B80B66BCBE22E4CD9 /* ETitleNumerologie.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		552E836197E998B988955775 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				552E8E55DDA74932A21F1787 /* VInput.swift */,
+				552E8A32F70A98B91713FDFF /* VNumerologie.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		552E8A8DCD70359939DE9CFC /* Conf */ = {
+			isa = PBXGroup;
+			children = (
+				552E8210F8E408A317D34E42 /* config.swift */,
+				552E817F683EDEEEEF725F1D /* langua.swift */,
+				552E8E916E7B42CDA5B02658 /* renderImage.swift */,
+			);
+			path = Conf;
+			sourceTree = "<group>";
+		};
+		552E8BA22D54DECD72627BE0 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				552E86AE32F0924F4EE036CC /* numerologie.swift */,
+				F437A23428D8A34200A6D196 /* print-numerologie.swift */,
+				F4A95CAF28E9EA2E0004B22F /* astrologie.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F426B43328E8525600FE1469 /* CodeBridge */ = {
+			isa = PBXGroup;
+			children = (
+				F426B43828E8537000FE1469 /* lib */,
+				F426B43528E8528100FE1469 /* antools.cpp */,
+				F426B43628E8528100FE1469 /* antools.hpp */,
+				F426B43428E8528000FE1469 /* astronumerologie-Bridging-Header.h */,
+				F4A95CB228EA451B0004B22F /* .gitignore */,
+			);
+			path = CodeBridge;
+			sourceTree = "<group>";
+		};
+		F426B43828E8537000FE1469 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		F426B43D28E8544B00FE1469 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F426B44428E8B4E200FE1469 /* libSweInterface.a */,
+				F426B44228E875D000FE1469 /* libswe.a */,
+				F426B43F28E8544B00FE1469 /* libantools.a */,
+				F426B43E28E8544B00FE1469 /* librantools.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F4C42CF228C3C67300EA0BC6 = {
+			isa = PBXGroup;
+			children = (
+				F4C42CFD28C3C67300EA0BC6 /* astronumerologie */,
+				F4C42D0E28C3C67500EA0BC6 /* astronumerologieTests */,
+				F4C42D1828C3C67500EA0BC6 /* astronumerologieUITests */,
+				F4C42CFC28C3C67300EA0BC6 /* Products */,
+				F426B43D28E8544B00FE1469 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F4C42CFC28C3C67300EA0BC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F4C42CFB28C3C67300EA0BC6 /* astronumerologie.app */,
+				F4C42D0B28C3C67500EA0BC6 /* astronumerologieTests.xctest */,
+				F4C42D1528C3C67500EA0BC6 /* astronumerologieUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F4C42CFD28C3C67300EA0BC6 /* astronumerologie */ = {
+			isa = PBXGroup;
+			children = (
+				F4A95CB128EA2B3B0004B22F /* astronumerologie.entitlements */,
+				F426B43328E8525600FE1469 /* CodeBridge */,
+				F4C42CFE28C3C67300EA0BC6 /* astronumerologieApp.swift */,
+				F4C42D0028C3C67300EA0BC6 /* ContentView.swift */,
+				F4C42D0228C3C67500EA0BC6 /* Assets.xcassets */,
+				F4C42D0428C3C67500EA0BC6 /* Preview Content */,
+				552E836197E998B988955775 /* Views */,
+				552E8A8DCD70359939DE9CFC /* Conf */,
+				552E8044A55B4DDCA9E4FEA0 /* Elements */,
+				552E8BA22D54DECD72627BE0 /* Core */,
+			);
+			path = astronumerologie;
+			sourceTree = "<group>";
+		};
+		F4C42D0428C3C67500EA0BC6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F4C42D0528C3C67500EA0BC6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F4C42D0E28C3C67500EA0BC6 /* astronumerologieTests */ = {
+			isa = PBXGroup;
+			children = (
+				F4C42D0F28C3C67500EA0BC6 /* astronumerologieTests.swift */,
+			);
+			path = astronumerologieTests;
+			sourceTree = "<group>";
+		};
+		F4C42D1828C3C67500EA0BC6 /* astronumerologieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F4C42D1928C3C67500EA0BC6 /* astronumerologieUITests.swift */,
+				F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */,
+			);
+			path = astronumerologieUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F4C42CFA28C3C67300EA0BC6 /* astronumerologie */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4C42D1F28C3C67500EA0BC6 /* Build configuration list for PBXNativeTarget "astronumerologie" */;
+			buildPhases = (
+				F4C42CF728C3C67300EA0BC6 /* Sources */,
+				F4C42CF828C3C67300EA0BC6 /* Frameworks */,
+				F4C42CF928C3C67300EA0BC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = astronumerologie;
+			productName = astronumerologie;
+			productReference = F4C42CFB28C3C67300EA0BC6 /* astronumerologie.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4C42D0A28C3C67500EA0BC6 /* astronumerologieTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4C42D2228C3C67500EA0BC6 /* Build configuration list for PBXNativeTarget "astronumerologieTests" */;
+			buildPhases = (
+				F4C42D0728C3C67500EA0BC6 /* Sources */,
+				F4C42D0828C3C67500EA0BC6 /* Frameworks */,
+				F4C42D0928C3C67500EA0BC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4C42D0D28C3C67500EA0BC6 /* PBXTargetDependency */,
+			);
+			name = astronumerologieTests;
+			productName = astronumerologieTests;
+			productReference = F4C42D0B28C3C67500EA0BC6 /* astronumerologieTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F4C42D1428C3C67500EA0BC6 /* astronumerologieUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F4C42D2528C3C67500EA0BC6 /* Build configuration list for PBXNativeTarget "astronumerologieUITests" */;
+			buildPhases = (
+				F4C42D1128C3C67500EA0BC6 /* Sources */,
+				F4C42D1228C3C67500EA0BC6 /* Frameworks */,
+				F4C42D1328C3C67500EA0BC6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F4C42D1728C3C67500EA0BC6 /* PBXTargetDependency */,
+			);
+			name = astronumerologieUITests;
+			productName = astronumerologieUITests;
+			productReference = F4C42D1528C3C67500EA0BC6 /* astronumerologieUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F4C42CF328C3C67300EA0BC6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					F4C42CFA28C3C67300EA0BC6 = {
+						CreatedOnToolsVersion = 14.0;
+						LastSwiftMigration = 1400;
+					};
+					F4C42D0A28C3C67500EA0BC6 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = F4C42CFA28C3C67300EA0BC6;
+					};
+					F4C42D1428C3C67500EA0BC6 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = F4C42CFA28C3C67300EA0BC6;
+					};
+				};
+			};
+			buildConfigurationList = F4C42CF628C3C67300EA0BC6 /* Build configuration list for PBXProject "astronumerologie" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F4C42CF228C3C67300EA0BC6;
+			productRefGroup = F4C42CFC28C3C67300EA0BC6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F4C42CFA28C3C67300EA0BC6 /* astronumerologie */,
+				F4C42D0A28C3C67500EA0BC6 /* astronumerologieTests */,
+				F4C42D1428C3C67500EA0BC6 /* astronumerologieUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F4C42CF928C3C67300EA0BC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4C42D0628C3C67500EA0BC6 /* Preview Assets.xcassets in Resources */,
+				F4A95CB328EA451B0004B22F /* .gitignore in Resources */,
+				F4C42D0328C3C67500EA0BC6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4C42D0928C3C67500EA0BC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4C42D1328C3C67500EA0BC6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F4C42CF728C3C67300EA0BC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */,
+				F4C42D0128C3C67300EA0BC6 /* ContentView.swift in Sources */,
+				F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */,
+				552E853188E18A296444B346 /* VInput.swift in Sources */,
+				F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */,
+				552E809ACA7506CE4C063FA2 /* config.swift in Sources */,
+				552E8522466D8A70C639E63B /* EDatePicker.swift in Sources */,
+				552E877BDE64B0729FCB33CF /* langua.swift in Sources */,
+				552E8D96C76F0CCB78FC489E /* ETitleData.swift in Sources */,
+				552E820486700CDF313BCED2 /* ENamesTextField.swift in Sources */,
+				552E8ED31064F61BA413E19E /* ETitleLocalisation.swift in Sources */,
+				552E804A7ACBFFC1E90D83E5 /* ELocalisationTextField.swift in Sources */,
+				552E879089C4087F4D4B2ED9 /* numerologie.swift in Sources */,
+				F426B43728E8528100FE1469 /* antools.cpp in Sources */,
+				552E8ED3D208BC59E1AF363A /* VNumerologie.swift in Sources */,
+				552E879B97B13CCDDF7BF3F9 /* ETitleNumerologie.swift in Sources */,
+				552E8A7B961A4B125977768E /* renderImage.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4C42D0728C3C67500EA0BC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4C42D1028C3C67500EA0BC6 /* astronumerologieTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4C42D1128C3C67500EA0BC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F4C42D1A28C3C67500EA0BC6 /* astronumerologieUITests.swift in Sources */,
+				F4C42D1C28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F4C42D0D28C3C67500EA0BC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4C42CFA28C3C67300EA0BC6 /* astronumerologie */;
+			targetProxy = F4C42D0C28C3C67500EA0BC6 /* PBXContainerItemProxy */;
+		};
+		F4C42D1728C3C67500EA0BC6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F4C42CFA28C3C67300EA0BC6 /* astronumerologie */;
+			targetProxy = F4C42D1628C3C67500EA0BC6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		F4C42D1D28C3C67500EA0BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F4C42D1E28C3C67500EA0BC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F4C42D2028C3C67500EA0BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = astronumerologie/astronumerologie.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"astronumerologie/Preview Content\"";
+				DEVELOPMENT_TEAM = 4M7L74G8T6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/astronumerologie/CodeBridge/lib",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stephane.bressani.dev.astronumerologie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "astronumerologie/CodeBridge/astronumerologie-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F4C42D2128C3C67500EA0BC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = astronumerologie/astronumerologie.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"astronumerologie/Preview Content\"";
+				DEVELOPMENT_TEAM = 4M7L74G8T6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/astronumerologie/CodeBridge/lib",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stephane.bressani.dev.astronumerologie;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "astronumerologie/CodeBridge/astronumerologie-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F4C42D2328C3C67500EA0BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4M7L74G8T6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stephane.bressani.dev.astronumerologieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/astronumerologie.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/astronumerologie";
+			};
+			name = Debug;
+		};
+		F4C42D2428C3C67500EA0BC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4M7L74G8T6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stephane.bressani.dev.astronumerologieTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/astronumerologie.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/astronumerologie";
+			};
+			name = Release;
+		};
+		F4C42D2628C3C67500EA0BC6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4M7L74G8T6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stephane.bressani.dev.astronumerologieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = astronumerologie;
+			};
+			name = Debug;
+		};
+		F4C42D2728C3C67500EA0BC6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4M7L74G8T6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = stephane.bressani.dev.astronumerologieUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = astronumerologie;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F4C42CF628C3C67300EA0BC6 /* Build configuration list for PBXProject "astronumerologie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4C42D1D28C3C67500EA0BC6 /* Debug */,
+				F4C42D1E28C3C67500EA0BC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4C42D1F28C3C67500EA0BC6 /* Build configuration list for PBXNativeTarget "astronumerologie" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4C42D2028C3C67500EA0BC6 /* Debug */,
+				F4C42D2128C3C67500EA0BC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4C42D2228C3C67500EA0BC6 /* Build configuration list for PBXNativeTarget "astronumerologieTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4C42D2328C3C67500EA0BC6 /* Debug */,
+				F4C42D2428C3C67500EA0BC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F4C42D2528C3C67500EA0BC6 /* Build configuration list for PBXNativeTarget "astronumerologieUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F4C42D2628C3C67500EA0BC6 /* Debug */,
+				F4C42D2728C3C67500EA0BC6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F4C42CF328C3C67300EA0BC6 /* Project object */;
+}
