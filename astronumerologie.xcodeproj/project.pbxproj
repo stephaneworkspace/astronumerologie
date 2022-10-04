@@ -26,7 +26,8 @@
 		F426B44528E8B4E200FE1469 /* libSweInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B44428E8B4E200FE1469 /* libSweInterface.a */; };
 		F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437A23428D8A34200A6D196 /* print-numerologie.swift */; };
 		F484F7B128ECD7AE0096F98D /* libSvg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F484F7B028ECD7AE0096F98D /* libSvg.a */; };
-		F484F7B428ECD87E0096F98D /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = F484F7B328ECD87E0096F98D /* Zip */; };
+		F484F7B728ECDB390096F98D /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = F484F7B628ECDB390096F98D /* Zip */; };
+		F484F7B928ECDBA60096F98D /* ephem.zip in Resources */ = {isa = PBXBuildFile; fileRef = F484F7B828ECDBA60096F98D /* ephem.zip */; };
 		F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A95CAF28E9EA2E0004B22F /* astrologie.swift */; };
 		F4A95CB328EA451B0004B22F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4A95CB228EA451B0004B22F /* .gitignore */; };
 		F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42CFE28C3C67300EA0BC6 /* astronumerologieApp.swift */; };
@@ -77,6 +78,7 @@
 		F426B44428E8B4E200FE1469 /* libSweInterface.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSweInterface.a; path = astronumerologie/CodeBridge/lib/libSweInterface.a; sourceTree = "<group>"; };
 		F437A23428D8A34200A6D196 /* print-numerologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "print-numerologie.swift"; sourceTree = "<group>"; };
 		F484F7B028ECD7AE0096F98D /* libSvg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSvg.a; path = astronumerologie/CodeBridge/lib/libSvg.a; sourceTree = "<group>"; };
+		F484F7B828ECDBA60096F98D /* ephem.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ephem.zip; sourceTree = "<group>"; };
 		F4A95CAF28E9EA2E0004B22F /* astrologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astrologie.swift; sourceTree = "<group>"; };
 		F4A95CB128EA2B3B0004B22F /* astronumerologie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = astronumerologie.entitlements; sourceTree = "<group>"; };
 		F4A95CB228EA451B0004B22F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -97,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F484F7B428ECD87E0096F98D /* Zip in Frameworks */,
+				F484F7B728ECDB390096F98D /* Zip in Frameworks */,
 				F484F7B128ECD7AE0096F98D /* libSvg.a in Frameworks */,
 				F426B44528E8B4E200FE1469 /* libSweInterface.a in Frameworks */,
 				F426B44328E875D000FE1469 /* libswe.a in Frameworks */,
@@ -220,6 +222,7 @@
 		F4C42CFD28C3C67300EA0BC6 /* astronumerologie */ = {
 			isa = PBXGroup;
 			children = (
+				F484F7B828ECDBA60096F98D /* ephem.zip */,
 				F4A95CB128EA2B3B0004B22F /* astronumerologie.entitlements */,
 				F426B43328E8525600FE1469 /* CodeBridge */,
 				F4C42CFE28C3C67300EA0BC6 /* astronumerologieApp.swift */,
@@ -276,7 +279,7 @@
 			);
 			name = astronumerologie;
 			packageProductDependencies = (
-				F484F7B328ECD87E0096F98D /* Zip */,
+				F484F7B628ECDB390096F98D /* Zip */,
 			);
 			productName = astronumerologie;
 			productReference = F4C42CFB28C3C67300EA0BC6 /* astronumerologie.app */;
@@ -352,7 +355,7 @@
 			);
 			mainGroup = F4C42CF228C3C67300EA0BC6;
 			packageReferences = (
-				F484F7B228ECD87E0096F98D /* XCRemoteSwiftPackageReference "Zip" */,
+				F484F7B528ECDB390096F98D /* XCRemoteSwiftPackageReference "Zip" */,
 			);
 			productRefGroup = F4C42CFC28C3C67300EA0BC6 /* Products */;
 			projectDirPath = "";
@@ -371,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C42D0628C3C67500EA0BC6 /* Preview Assets.xcassets in Resources */,
+				F484F7B928ECDBA60096F98D /* ephem.zip in Resources */,
 				F4A95CB328EA451B0004B22F /* .gitignore in Resources */,
 				F4C42D0328C3C67500EA0BC6 /* Assets.xcassets in Resources */,
 			);
@@ -761,7 +765,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		F484F7B228ECD87E0096F98D /* XCRemoteSwiftPackageReference "Zip" */ = {
+		F484F7B528ECDB390096F98D /* XCRemoteSwiftPackageReference "Zip" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
 			requirement = {
@@ -772,9 +776,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F484F7B328ECD87E0096F98D /* Zip */ = {
+		F484F7B628ECDB390096F98D /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F484F7B228ECD87E0096F98D /* XCRemoteSwiftPackageReference "Zip" */;
+			package = F484F7B528ECDB390096F98D /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
 		};
 /* End XCSwiftPackageProductDependency section */
