@@ -53,23 +53,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TabView(selection: $siSelected.onUpdate {
-                 /*
-                if siSelected == 1 {
-                    let groupPath = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.bressani.dev.log")
-                    print(groupPath?.absoluteURL)
-                    let output = groupPath!.absoluteURL.formatted() + "/output.txt"
-                    let error = groupPath!.absoluteURL.formatted() + "/error.txt"
-                    log_app(output, error)
-                    do {
-                        sleep(1)
-                    }
-                    print(output)
-                }*/
                 if siSelected == 3 {
                     sAstro = Astrologie(natal: sdNatal, lat: bdLat, lng: bdLng, tz: biTimeZone)
-                    //do {
-                    //    sleep(2)
-                    //}
                     let url = sAstro.create_png()
                     sInputImageAstro = UIImage(contentsOfFile: url.path)
                     guard let sInputImageAstro = sInputImageAstro else { return }
