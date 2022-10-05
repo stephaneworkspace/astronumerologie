@@ -37,6 +37,7 @@
 		F4C42D1028C3C67500EA0BC6 /* astronumerologieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D0F28C3C67500EA0BC6 /* astronumerologieTests.swift */; };
 		F4C42D1A28C3C67500EA0BC6 /* astronumerologieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D1928C3C67500EA0BC6 /* astronumerologieUITests.swift */; };
 		F4C42D1C28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */; };
+		F4FAD30F28EDA061000349F4 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAD30E28EDA061000349F4 /* Chart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		F4C42D1528C3C67500EA0BC6 /* astronumerologieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = astronumerologieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C42D1928C3C67500EA0BC6 /* astronumerologieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieUITests.swift; sourceTree = "<group>"; };
 		F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F4FAD30E28EDA061000349F4 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				552E86AE32F0924F4EE036CC /* numerologie.swift */,
 				F437A23428D8A34200A6D196 /* print-numerologie.swift */,
 				F4A95CAF28E9EA2E0004B22F /* astrologie.swift */,
+				F4FAD30E28EDA061000349F4 /* Chart.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				552E804A7ACBFFC1E90D83E5 /* ELocalisationTextField.swift in Sources */,
 				552E879089C4087F4D4B2ED9 /* numerologie.swift in Sources */,
 				F426B43728E8528100FE1469 /* antools.cpp in Sources */,
+				F4FAD30F28EDA061000349F4 /* Chart.swift in Sources */,
 				552E8ED3D208BC59E1AF363A /* VNumerologie.swift in Sources */,
 				552E879B97B13CCDDF7BF3F9 /* ETitleNumerologie.swift in Sources */,
 				552E8A7B961A4B125977768E /* renderImage.swift in Sources */,

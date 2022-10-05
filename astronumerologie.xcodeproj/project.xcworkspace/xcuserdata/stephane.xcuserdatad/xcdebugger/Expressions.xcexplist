@@ -19,5 +19,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "ContentView.loadDefaultValue():ContentView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "sdNatal">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

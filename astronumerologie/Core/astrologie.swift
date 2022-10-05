@@ -46,6 +46,10 @@ class Astrologie {
         self.pngPath = ""
     }
     
+    func chart() -> Chart {
+        return Chart.init(nLat: self.astro.lat, nLng: self.astro.lng, nTimeZone: self.astro.tz, nYear: self.astro.y, nMonth: self.astro.m, nDay: self.astro.d, nHour: self.astro.hour, nMin: self.astro.min, tLat: self.astro.lat, tLng: self.astro.lng, tTimeZone: self.astro.tz, tYear: 2022, tMonth: 1, tDay: 1, tHour: 0, tMin: 0)
+    }
+    
     func create_png() -> URL {
         let ta = theme_astral(self.astro.y,
                               self.astro.m,

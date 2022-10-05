@@ -49,12 +49,13 @@ struct ContentView: View {
     @State var sAstro: Astrologie = Astrologie(natal: Date(),lat: 0, lng: 0, tz: 0)
     @State private var sInputImageAstro: UIImage?
     @State var sImageAstro: Image?
-    
+
     var body: some View {
         VStack {
             TabView(selection: $siSelected.onUpdate {
                 if siSelected == 3 {
                     sAstro = Astrologie(natal: sdNatal, lat: bdLat, lng: bdLng, tz: biTimeZone)
+                    saveChart(chart: sAstro.chart())
                     do {
                         sleep (2)
                     }
@@ -137,6 +138,98 @@ struct ContentView: View {
                 }
                 .tag(3)
             }
+        }.onAppear {
+            var decode: Chart = Chart.init(
+                    nLat: 46.12,
+                    nLng: 6.09,
+                    nTimeZone: 2,
+                    nYear: 1984,
+                    nMonth: 1,
+                    nDay: 1,
+                    nHour: 0,
+                    nMin: 0,
+                    tLat: 46.12,
+                    tLng: 6.09,
+                    tTimeZone: 2,
+                    tYear: 2022,
+                    tMonth: 1,
+                    tDay: 24,
+                    tHour: 12,
+                    tMin: 0)
+
+            do {
+                let data: Data
+                let filename = "save.json"
+                // Check that the fileExists in the documents directory
+                let filemanager = FileManager.default
+                let localPath = getDocumentsDirectory().appendingPathComponent(filename)
+
+                if filemanager.fileExists(atPath: localPath.path) {
+                    do {
+                        do {
+                            data = try Data(contentsOf: localPath)
+                        } catch {
+                            fatalError("Couldn't load save.json from documents directory:\n\(error)")
+                        }
+                    } catch {
+                        fatalError("Couldn't load \(filename) from documents directory:\n\(error)")
+                    }
+                    //
+                    do {
+                        let decoder = JSONDecoder()
+                        decode = try decoder.decode(Chart.self, from: data)
+                    } catch {
+                        fatalError("Couldn't parse \(filename) as Swe.Chart.self:\n\(error)")
+                    }
+                } else {
+                    /*
+                    // If the file doesn't exist in the documents directory load it from the bundle
+                    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+                            else {
+                        fatalError("Couldn't find \(filename) in main bundle.")
+                    }
+                    do {
+                        data = try Data(contentsOf: file)
+                    } catch {
+                        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+                    }*/
+                }
+
+
+            } catch {
+                do {
+                    let path = Bundle.main.path(forResource: "data", ofType: "json")
+                    let jsonData = try! String(contentsOfFile: path!).data(using: .utf8)!
+                    decode = try JSONDecoder().decode(Chart.self, from: jsonData)
+                } catch {
+                    print("Unable to open chart file")
+                }
+                print("Unable to open saved chart file")
+            }
+
+            var dateN = DateComponents()
+            dateN.year = Int(decode.nYear)
+            dateN.month = Int(decode.nMonth)
+            dateN.day = Int(decode.nDay)
+            dateN.hour = Int(decode.nHour)
+            dateN.minute = Int(decode.nMin)
+            let calandarNatal = Calendar(identifier: .gregorian).date(from: dateN)
+            self.sdNatal = calandarNatal.unsafelyUnwrapped
+
+            var dateT = DateComponents()
+            dateT.year = Int(decode.tYear)
+            dateT.month = Int(decode.tMonth)
+            dateT.day = Int(decode.tDay)
+            dateT.hour = Int(decode.nHour)
+            dateT.minute = Int(decode.nMin)
+            let calandarTransit = Calendar(identifier: .gregorian).date(from: dateT)
+            let _ = calandarTransit.unsafelyUnwrapped
+            
+            self.bdLat = Double(decode.nLat)
+            self.bdLng = Double(decode.nLng)
+            self.biTimeZone = Int(decode.nTimeZone)
+            
+            //self.sChart = decode
         }
     }
 }
