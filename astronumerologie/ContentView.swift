@@ -55,6 +55,9 @@ struct ContentView: View {
             TabView(selection: $siSelected.onUpdate {
                 if siSelected == 3 {
                     sAstro = Astrologie(natal: sdNatal, lat: bdLat, lng: bdLng, tz: biTimeZone)
+                    do {
+                        sleep (2)
+                    }
                     let url = sAstro.create_png()
                     sInputImageAstro = UIImage(contentsOfFile: url.path)
                     guard let sInputImageAstro = sInputImageAstro else { return }

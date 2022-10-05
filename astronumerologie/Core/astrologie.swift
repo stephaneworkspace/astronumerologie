@@ -19,6 +19,7 @@ struct AstroData {
 class Astrologie {
     var astro: AstroData
     var ephem: String
+    var pngPath: String
     
     init(natal: Date, lat: Double, lng: Double, tz: Int) {
         let dateFormatter = DateFormatter()
@@ -42,6 +43,7 @@ class Astrologie {
             //TODO toast
             self.ephem = "" // Computed values
         }
+        self.pngPath = ""
     }
     
     func create_png() -> URL {
@@ -103,6 +105,8 @@ class Astrologie {
             //handle write error here
             // TODO pdf d'erreur
         }
+        let png_file = documentsURL.absoluteString
+        self.pngPath = png_file.replacingOccurrences(of: "file://", with: "")
         return documentsURL.absoluteURL
     }
     
@@ -146,6 +150,7 @@ class Astrologie {
 
     func print() {
         do {
+            /*
             let ta = theme_astral(self.astro.y,
                                   self.astro.m,
                                   self.astro.d,
@@ -181,13 +186,14 @@ class Astrologie {
             let svg_file2 = svg_file.replacingOccurrences(of: "file://", with: "")
             
             let base64StringPtr = create_png_from_file(svg_file2).b_64
-            
+            */
             let printInfo = UIPrintInfo(dictionary: nil)
             printInfo.outputType = UIPrintInfo.OutputType.general
             printInfo.jobName = "Theme astral"
             
-            let png: String = String(cString: UnsafePointer<CChar>(base64StringPtr!))
+            //let png: String = String(cString: UnsafePointer<CChar>(base64StringPtr!))
             
+            let png = self.pngPath
             
             let createPdf = create_pdf_b64_from_png_b64(png)
             
