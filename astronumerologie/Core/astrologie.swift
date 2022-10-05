@@ -106,6 +106,7 @@ class Astrologie {
         return documentsURL.absoluteURL
     }
     
+    /*
     func create_png2() -> URL {
         let ta = theme_astral(self.astro.y,
                               self.astro.m,
@@ -141,8 +142,8 @@ class Astrologie {
             // TODO pdf d'erreur
         }
         return documentsURL.absoluteURL
-    }
-    
+    }*/
+
     func print() {
         do {
             let ta = theme_astral(self.astro.y,
@@ -156,17 +157,44 @@ class Astrologie {
                                   self.ephem);
             let svg: String = String(cString: UnsafePointer<CChar>(ta.b_64))
             
-
+            
+            guard
+                var documentsURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last,
+                let convertedData = Data(base64Encoded: svg)
+            else {
+                //handle error when getting documents URL
+                // TODO pdf d'erreur
+                //let url = Bundle.main.url(forResource: "cfc", withExtension: "pdf")!
+                //return url
+                return
+            }
+            
+            documentsURL.appendPathComponent("astrologie.svg")
+            do {
+                try convertedData.write(to: documentsURL)
+            } catch {
+                //handle write error here
+                // TODO pdf d'erreur
+            }
+            
+            let svg_file = documentsURL.absoluteString
+            let svg_file2 = svg_file.replacingOccurrences(of: "file://", with: "")
+            
+            let base64StringPtr = create_png_from_file(svg_file2).b_64
             
             let printInfo = UIPrintInfo(dictionary: nil)
             printInfo.outputType = UIPrintInfo.OutputType.general
             printInfo.jobName = "Theme astral"
             
-            let pdfFileData = try! Data(contentsOf: Astrologie.svgToPdfURL(svg: svg))
+            let png: String = String(cString: UnsafePointer<CChar>(base64StringPtr!))
             
-            //do {
-            //    sleep(2)
-            //}
+            
+            let createPdf = create_pdf_b64_from_png_b64(png)
+            
+            let base64String: String = String(cString: UnsafePointer<CChar>(createPdf.b_64))
+            let base64StringRes: String = String(cString: UnsafePointer<CChar>(createPdf.err))
+            
+            let pdfFileData = Data(base64Encoded: base64String)
             
             let printController = UIPrintInteractionController.shared
             printController.printInfo = printInfo
@@ -176,6 +204,8 @@ class Astrologie {
             // zip pas bon
         }
     }
+    
+    /*
     
     static func svgToPdfURL(svg: String) -> URL {
         let svg_p = svg.toUnsafePointer()
@@ -202,5 +232,5 @@ class Astrologie {
             // TODO pdf d'erreur
         }
         return documentsURL.absoluteURL
-    }
+    }*/
 }

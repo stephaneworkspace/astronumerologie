@@ -22,9 +22,10 @@ struct B64 theme_astral(int year,
                         const char* ephem_path);
 //void log_app(const char* output, const char* error);
 
-struct B64 create_png_b64(const char* p_svg_b64);
+//struct B64 create_png_b64(const char* p_svg_b64);
 struct B64 create_png_from_file(const char* svg_file);
-struct B64 create_pdf_b64(const char* p_svg_b64);
+//struct B64 create_pdf_b64(const char* p_svg_b64);
+struct B64 create_pdf_b64_from_png_b64(const char* p_png_b64);
 
 // libswe
 

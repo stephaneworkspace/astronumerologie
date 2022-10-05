@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in closure #1 in ContentView.body.getter:ContentView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Astrologie.create_png():astrologie.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Astrologie.init(natal:lat:lng:tz:):astrologie.swift">
+      </ContextState>
+      <ContextState
+         contextName = "Astrologie.print():astrologie.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "png">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
