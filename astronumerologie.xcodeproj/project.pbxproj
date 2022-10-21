@@ -73,7 +73,6 @@
 		F426B43528E8528100FE1469 /* antools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = antools.cpp; sourceTree = "<group>"; };
 		F426B43628E8528100FE1469 /* antools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = antools.hpp; sourceTree = "<group>"; };
 		F426B43E28E8544B00FE1469 /* librantools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librantools.a; path = astronumerologie/CodeBridge/lib/librantools.a; sourceTree = "<group>"; };
-		F426B43F28E8544B00FE1469 /* libantools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libantools.a; path = astronumerologie/CodeBridge/lib/libantools.a; sourceTree = "<group>"; };
 		F426B44228E875D000FE1469 /* libswe.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libswe.a; path = astronumerologie/CodeBridge/lib/libswe.a; sourceTree = "<group>"; };
 		F426B44428E8B4E200FE1469 /* libSweInterface.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libSweInterface.a; path = astronumerologie/CodeBridge/lib/libSweInterface.a; sourceTree = "<group>"; };
 		F437A23428D8A34200A6D196 /* print-numerologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "print-numerologie.swift"; sourceTree = "<group>"; };
@@ -193,7 +192,6 @@
 				F484F7B028ECD7AE0096F98D /* libSvg.a */,
 				F426B44428E8B4E200FE1469 /* libSweInterface.a */,
 				F426B44228E875D000FE1469 /* libswe.a */,
-				F426B43F28E8544B00FE1469 /* libantools.a */,
 				F426B43E28E8544B00FE1469 /* librantools.a */,
 			);
 			name = Frameworks;
