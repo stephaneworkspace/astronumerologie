@@ -24,6 +24,7 @@
 		F426B44328E875D000FE1469 /* libswe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B44228E875D000FE1469 /* libswe.a */; };
 		F426B44528E8B4E200FE1469 /* libSweInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B44428E8B4E200FE1469 /* libSweInterface.a */; };
 		F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437A23428D8A34200A6D196 /* print-numerologie.swift */; };
+		F461E9DD29031554003BFCEF /* SweSvg in Frameworks */ = {isa = PBXBuildFile; productRef = F461E9DC29031554003BFCEF /* SweSvg */; };
 		F484F7B128ECD7AE0096F98D /* libSvg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F484F7B028ECD7AE0096F98D /* libSvg.a */; };
 		F484F7B928ECDBA60096F98D /* ephem.zip in Resources */ = {isa = PBXBuildFile; fileRef = F484F7B828ECDBA60096F98D /* ephem.zip */; };
 		F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A95CAF28E9EA2E0004B22F /* astrologie.swift */; };
@@ -102,6 +103,7 @@
 				F4F9F52C28EEEDC100B0520A /* Zip in Frameworks */,
 				F484F7B128ECD7AE0096F98D /* libSvg.a in Frameworks */,
 				F426B44528E8B4E200FE1469 /* libSweInterface.a in Frameworks */,
+				F461E9DD29031554003BFCEF /* SweSvg in Frameworks */,
 				F426B44328E875D000FE1469 /* libswe.a in Frameworks */,
 				F426B44028E8544C00FE1469 /* librantools.a in Frameworks */,
 			);
@@ -279,6 +281,7 @@
 			name = astronumerologie;
 			packageProductDependencies = (
 				F4F9F52B28EEEDC100B0520A /* Zip */,
+				F461E9DC29031554003BFCEF /* SweSvg */,
 			);
 			productName = astronumerologie;
 			productReference = F4C42CFB28C3C67300EA0BC6 /* astronumerologie.app */;
@@ -355,6 +358,7 @@
 			mainGroup = F4C42CF228C3C67300EA0BC6;
 			packageReferences = (
 				F4F9F52A28EEEDC100B0520A /* XCRemoteSwiftPackageReference "Zip" */,
+				F49D56442903142D00AF8F9F /* XCRemoteSwiftPackageReference "SweSvg" */,
 			);
 			productRefGroup = F4C42CFC28C3C67300EA0BC6 /* Products */;
 			projectDirPath = "";
@@ -775,6 +779,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F49D56442903142D00AF8F9F /* XCRemoteSwiftPackageReference "SweSvg" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephaneworkspace/SweSvg.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F4F9F52A28EEEDC100B0520A /* XCRemoteSwiftPackageReference "Zip" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/Zip.git";
@@ -786,6 +798,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F461E9DC29031554003BFCEF /* SweSvg */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F49D56442903142D00AF8F9F /* XCRemoteSwiftPackageReference "SweSvg" */;
+			productName = SweSvg;
+		};
 		F4F9F52B28EEEDC100B0520A /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F4F9F52A28EEEDC100B0520A /* XCRemoteSwiftPackageReference "Zip" */;

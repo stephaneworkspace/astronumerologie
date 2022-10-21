@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Zip
+import SweSvg
 
 
 struct AstroData {
@@ -52,7 +53,7 @@ class Astrologie {
     
     func create_png() -> URL {
         
-        let svg: String = String(cString: UnsafePointer<CChar>(theme_astral_svg(self.astro.y,
+        /*let svg: String = String(cString: UnsafePointer<CChar>(theme_astral_svg(self.astro.y,
                                                                                 self.astro.m,
                                                                                 self.astro.d,
                                                                                 self.astro.hour,
@@ -61,7 +62,10 @@ class Astrologie {
                                                                                 self.astro.lng,
                                                                                 self.astro.tz,
                                                                                 self.ephem)))
-        
+        */
+        let sweSvg = SweSvg(ephemPath: self.ephem)
+        let svg = sweSvg.theme_astral(year: self.astro.y, month: self.astro.m, day: self.astro.d, hour: self.astro.hour, min: self.astro.min, lat: self.astro.lat, lng: self.astro.lng, tz: self.astro.tz)
+
         
         guard
             var documentsURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last,

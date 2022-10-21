@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "swesvg",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephaneworkspace/SweSvg.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0d6813575a0895cea09e09faf7b335349924e138"
+      }
+    },
+    {
       "identity" : "zip",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/marmelroy/Zip.git",
