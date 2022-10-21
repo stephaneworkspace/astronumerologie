@@ -21,11 +21,8 @@
 		552E8ED3D208BC59E1AF363A /* VNumerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8A32F70A98B91713FDFF /* VNumerologie.swift */; };
 		F426B43728E8528100FE1469 /* antools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F426B43528E8528100FE1469 /* antools.cpp */; };
 		F426B44028E8544C00FE1469 /* librantools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B43E28E8544B00FE1469 /* librantools.a */; };
-		F426B44328E875D000FE1469 /* libswe.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B44228E875D000FE1469 /* libswe.a */; };
-		F426B44528E8B4E200FE1469 /* libSweInterface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B44428E8B4E200FE1469 /* libSweInterface.a */; };
 		F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437A23428D8A34200A6D196 /* print-numerologie.swift */; };
 		F461E9DD29031554003BFCEF /* SweSvg in Frameworks */ = {isa = PBXBuildFile; productRef = F461E9DC29031554003BFCEF /* SweSvg */; };
-		F484F7B128ECD7AE0096F98D /* libSvg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F484F7B028ECD7AE0096F98D /* libSvg.a */; };
 		F484F7B928ECDBA60096F98D /* ephem.zip in Resources */ = {isa = PBXBuildFile; fileRef = F484F7B828ECDBA60096F98D /* ephem.zip */; };
 		F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A95CAF28E9EA2E0004B22F /* astrologie.swift */; };
 		F4A95CB328EA451B0004B22F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4A95CB228EA451B0004B22F /* .gitignore */; };
@@ -101,10 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F9F52C28EEEDC100B0520A /* Zip in Frameworks */,
-				F484F7B128ECD7AE0096F98D /* libSvg.a in Frameworks */,
-				F426B44528E8B4E200FE1469 /* libSweInterface.a in Frameworks */,
 				F461E9DD29031554003BFCEF /* SweSvg in Frameworks */,
-				F426B44328E875D000FE1469 /* libswe.a in Frameworks */,
 				F426B44028E8544C00FE1469 /* librantools.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
