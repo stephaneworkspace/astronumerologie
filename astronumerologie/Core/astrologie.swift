@@ -51,16 +51,16 @@ class Astrologie {
     }
     
     func create_png() -> URL {
-        let ta = theme_astral(self.astro.y,
-                              self.astro.m,
-                              self.astro.d,
-                              self.astro.hour,
-                              self.astro.min,
-                              self.astro.lat,
-                              self.astro.lng,
-                              self.astro.tz,
-                              self.ephem);
-        let svg: String = String(cString: UnsafePointer<CChar>(ta.b_64))
+        
+        let svg: String = String(cString: UnsafePointer<CChar>(theme_astral_svg(self.astro.y,
+                                                                                self.astro.m,
+                                                                                self.astro.d,
+                                                                                self.astro.hour,
+                                                                                self.astro.min,
+                                                                                self.astro.lat,
+                                                                                self.astro.lng,
+                                                                                self.astro.tz,
+                                                                                self.ephem)))
         
         
         guard
