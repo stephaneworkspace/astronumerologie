@@ -6,6 +6,96 @@
 //
 
 import Foundation
+/*
+
+var md_print_numerologie = """
+# Thème de numerologie
+
+| Numérologie      | Nombre      |
+|------------------|-------------|
+| La naissance     | @Naissance@ |
+| L'age            | @Age@       |
+| Le chemin de vie | @CDV@       |
+
+| Cycle adjacents | Calcul    | Nombre      |
+|-----------------|-----------|-------------|
+| Formatif        | Mois      | @Formatif@  |
+| Productif       | Jour      | @Productif@ |
+| Moisson         | Année     | @Moisson@   |
+
+
+| Cycle de réalisation | Calcul       | Nombre                |
+|----------------------|--------------|-----------------------|
+| @AgeRealisationJM@   | Jour + Mois  | @NombreRealisationJM@ |
+| @AgeRealisationJA@   | Jour + Année | @NombreRealisationJA@ |
+| @AgeRealisation12@   | 1 + 2        | @NombreRealisation12@ |
+| @AgeRealisationMA@   | Mois + Année | @NombreRealisationMA@ |
+
+| Cycle universels | Nombre |
+|------------------|--------|
+| 0 à 9 ans        | 1      |
+| 9 à 18 ans       | 2      |
+| 18 à 27 ans      | 3      |
+| 27 à 36 ans      | 4      |
+| 36 à 45 ans      | 5      |
+| 45 à 54 ans      | 6      |
+| 54 à 63 ans      | 7      |
+| 63 à 72 ans      | 8      |
+| 72 à 81 ans      | 9      |
+"""
+
+func writeMdNumerologie(sL: L, dBornDate: Date) -> String {
+    var md = md_print_numerologie
+    var temp: String = load(dBornDate: dBornDate)
+    md = md.replacingOccurrences(of: "@Naissance@", with: temp)
+    temp = String(age(dBornDate: dBornDate))
+    md = md.replacingOccurrences(of: "@Age@", with: temp)
+    temp = cheminDeVie(dBornDate: dBornDate)
+    md = md.replacingOccurrences(of: "@CDV@", with: temp)
+    temp = cycleAdjacents(dBornDate: dBornDate, eCycle: .Formatif)
+    md = md.replacingOccurrences(of: "@Formatif@", with: temp)
+    temp = cycleAdjacents(dBornDate: dBornDate, eCycle: .Productif)
+    md = md.replacingOccurrences(of: "@Productif@", with: temp)
+    temp = cycleAdjacents(dBornDate: dBornDate, eCycle: .Moisson)
+    md = md.replacingOccurrences(of: "@Moisson@", with: temp)
+
+    temp = LCycleRealisation(L: sL, iLivePath: cheminDeVieInt(dBornDate: dBornDate), eCycle: .JplusM)
+    md = md.replacingOccurrences(of: "@AgeRealisationJM@", with: temp)
+    temp = jPlusMInt(dBornDate: dBornDate)
+    md = md.replacingOccurrences(of: "@NombreRealisationJM@", with: temp)
+
+    temp = LCycleRealisation(L: sL, iLivePath: cheminDeVieInt(dBornDate: dBornDate), eCycle: .JplusA)
+    md = md.replacingOccurrences(of: "@AgeRealisationJA@", with: temp)
+    temp = jPlusAInt(dBornDate: dBornDate)
+    md = md.replacingOccurrences(of: "@NombreRealisationJA@", with: temp)
+
+    temp = LCycleRealisation(L: sL, iLivePath: cheminDeVieInt(dBornDate: dBornDate), eCycle: .UnplusDeux)
+    md = md.replacingOccurrences(of: "@AgeRealisation12@", with: temp)
+    temp = unPlusDeuxInt(dBornDate: dBornDate)
+    md = md.replacingOccurrences(of: "@NombreRealisation12@", with: temp)
+
+    temp = LCycleRealisation(L: sL, iLivePath: cheminDeVieInt(dBornDate: dBornDate), eCycle: .MplusA)
+    md = md.replacingOccurrences(of: "@AgeRealisationMA@", with: temp)
+    temp = mPlusAInt(dBornDate: dBornDate)
+    md = md.replacingOccurrences(of: "@NombreRealisationMA@", with: temp)
+
+    let fileName = "numerologie.md"
+    let DocumentDirURL = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+    
+    let fileURL = DocumentDirURL.appendingPathComponent(fileName).appendingPathExtension("txt")
+    print("FilePath: \(fileURL.path)")
+
+    do {
+        // Write to the file
+        try md.write(to: fileURL, atomically: true, encoding: String.Encoding.utf8)
+    } catch let error as NSError {
+        print("Failed writing to URL: \(fileURL), Error: " + error.localizedDescription)
+    }
+    
+    let f = fileURL.path.replacingOccurrences(of: "file://", with: "")
+    return f
+}
+*/
 
 var html_print_numerologie = """
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Numérologie</title><style>table,td,th{border:2px solid #000;border-collapse:collapse;padding:6px;text-align:center}.left{text-align:left}.right{text-align:right}.bold{font-weight:700}table{width:100%}</style></head><body><table><tr><td class="bold" colspan="3">Numérologie</td></tr><tr><td class="left">La naissance</td><td class="right" colspan="2">@Naissance@</td></tr><tr><td class="left">L'age</td><td class="right" colspan="2">@Age@</td></tr><tr><td class="left">Le chemin de vie</td><td class="right" colspan="2">@CDV@</td></tr><tr><td class="bold" colspan="3">Cycle adjacents</td></tr><tr><td>Cycle</td><td>Calcul</td><td>Nombre</td></tr><tr><td class="left">Formatif</td><td>Mois</td><td class="right">@Formatif@</td></tr><tr><td class="left">Productif</td><td>Jour</td><td class="right">@Productif@</td></tr><tr><td class="left">Moisson</td><td>Année</td><td class="right">@Moisson@</td></tr><tr><td class="bold" colspan="3">Cycle de réalisation</td></tr><tr><td>Age de à</td><td>Calcul</td><td>Nombre</td></tr><tr><td class="left">@AgeRealisationJM@</td><td>J + M</td><td class="right">@NombreRealisationJM@</td></tr><tr><td class="left">@AgeRealisationJA@</td><td>J + A</td><td class="right">@NombreRealisationJA@</td></tr><tr><td class="left">@AgeRealisation12@</td><td>1 + 2</td><td class="right">@NombreRealisation12@</td></tr><tr><td class="left">@AgeRealisationMA@</td><td>M + A</td><td class="right">@NombreRealisationMA@</td></tr><tr><td class="bold" colspan="3">Cycle universels</td></tr><tr><td>Age de à</td><td colspan="2">Nombre</td><tr><td class="left">0 à 9 ans</td><td class="right" colspan="2">1</td></tr><tr><td class="left">9 à 18 ans</td><td class="right" colspan="2">2</td></tr><tr><td class="left">18 à 27 ans</td><td class="right" colspan="2">3</td></tr><tr><td class="left">27 à 36 ans</td><td class="right" colspan="2">4</td></tr><tr><td class="left">36 à 45 ans</td><td class="right" colspan="2">5</td></tr><tr><td class="left">45 à 54 ans</td><td class="right" colspan="2">6</td></tr><tr><td class="left">54 à 63 ans</td><td class="right" colspan="2">7</td></tr><tr><td class="left">63 à 72 ans</td><td class="right" colspan="2">8</td></tr><tr><td class="left">72 à 81 ans</td><td class="right" colspan="2">9</td></tr></table></body></html>

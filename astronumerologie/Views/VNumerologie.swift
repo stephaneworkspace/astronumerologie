@@ -290,6 +290,23 @@ struct VNumerologie: View {
 
                 }
             })
+            /*
+            Button(action: {
+                fMd(sL: sL, dBornDate: bdNatal)
+            }, label: {
+
+                VStack {
+                    Text("Imprimer2")
+                            .padding()
+                            .foregroundColor(.black)
+                            .background(Color.white)
+                            .mask(RoundedRectangle(cornerRadius: 30, style: .continuous))
+                            .shadow(color: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)).opacity(0.3), radius: 10, x: 0, y: 10)
+                            .padding()
+                            .frame(maxWidth: 300)
+
+                }
+            })*/
             Spacer()
         }
     }
@@ -301,6 +318,20 @@ struct Cycle: Identifiable {
     let sNumber: String
     let id = UUID()
 }
+
+/*
+func fMd(sL: L, dBornDate: Date) {
+    let file: String = writeMdNumerologie(sL: sL, dBornDate: dBornDate)
+    let base64String = String(cString: UnsafePointer<CChar>(md_to_b64(file).b_64))
+    let pdfFileData = Data(base64Encoded: base64String)
+    let printInfo = UIPrintInfo(dictionary: nil)
+    printInfo.outputType = UIPrintInfo.OutputType.general
+    printInfo.jobName = "Numérologie"
+    let printController = UIPrintInteractionController.shared
+    printController.printInfo = printInfo
+    printController.printingItem = pdfFileData
+    printController.present(animated: true, completionHandler: nil)
+}*/
 
 
 func fPrint(sL: L, dBornDate: Date) {

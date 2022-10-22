@@ -65,30 +65,8 @@ class Astrologie {
         */
         let sweSvg = SweSvg(ephemPath: self.ephem)
         let svg = sweSvg.theme_astral(year: self.astro.y, month: self.astro.m, day: self.astro.d, hour: self.astro.hour, min: self.astro.min, lat: self.astro.lat, lng: self.astro.lng, tz: self.astro.tz)
-
         
-        guard
-            var documentsURL = (FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)).last,
-            let convertedData = Data(base64Encoded: svg)
-        else {
-            //handle error when getting documents URL
-            // TODO pdf d'erreur
-            let url = Bundle.main.url(forResource: "cfc", withExtension: "pdf")!
-            return url
-        }
-        
-        documentsURL.appendPathComponent("astrologie.svg")
-        do {
-            try convertedData.write(to: documentsURL)
-        } catch {
-            //handle write error here
-            // TODO pdf d'erreur
-        }
-        
-        let svg_file = documentsURL.absoluteString
-        let svg_file2 = svg_file.replacingOccurrences(of: "file://", with: "")
-        
-        let base64String = String(cString: UnsafePointer<CChar>(create_png_from_file(svg_file2).b_64))
+        let base64String = String(cString: UnsafePointer<CChar>(create_png_from_file(svg).b_64))
         
         //let svg_p = svg.toUnsafePointer()
         
