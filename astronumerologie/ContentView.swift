@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SweSvg
 
 extension String {
     func toUnsafePointer() -> UnsafePointer<UInt8>? {
@@ -34,6 +35,7 @@ extension String {
 }
 
 struct ContentView: View {
+    //@Environment(\.colorScheme) var colorScheme: ColorScheme
     @State private var siSelected: Int = 1
     @State private var sdNatal: Date = Date()
     @State var ssFirstName: String = "Stéphane"
@@ -49,6 +51,7 @@ struct ContentView: View {
     @State var sAstro: Astrologie = Astrologie(natal: Date(),lat: 0, lng: 0, tz: 0)
     @State private var sInputImageAstro: UIImage?
     @State var sImageAstro: Image?
+    @State var sweSwiftUi: SweSwiftUi = SweSwiftUi()
 
     var body: some View {
         VStack {
@@ -137,6 +140,19 @@ struct ContentView: View {
                     
                 }
                 .tag(3)
+                VStack {
+                    Text("Astrologie 2")
+                    DrawAstrologieView(swe_swift_ui: sweSwiftUi)
+                }
+                .padding()
+                .tabItem {
+                    VStack {
+                        Image(systemName: "plus")
+                        Text("Astrologie")
+                    }
+                    
+                }
+                .tag(4)
             }
         }.onAppear {
             var decode: Chart = Chart.init(
