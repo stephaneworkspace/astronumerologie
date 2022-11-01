@@ -35,7 +35,7 @@ extension String {
 }
 
 struct ContentView: View {
-    //@Environment(\.colorScheme) var colorScheme: ColorScheme
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @State private var siSelected: Int = 1
     @State private var sdNatal: Date = Date()
     @State var ssFirstName: String = "Stéphane"
@@ -142,7 +142,11 @@ struct ContentView: View {
                 .tag(3)
                 VStack {
                     Text("Astrologie 2")
-                    DrawAstrologieView(swe_swift_ui: sweSwiftUi)
+                    if (colorScheme == .light) {
+                        DrawAstrologieLightView(swe_swift_ui: sweSwiftUi)
+                    } else {
+                        DrawAstrologieDarkView(swe_swift_ui: sweSwiftUi)
+                    }
                 }
                 .padding()
                 .tabItem {
