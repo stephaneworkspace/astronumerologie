@@ -51,7 +51,6 @@ struct ContentView: View {
     @State var sAstro: Astrologie = Astrologie(natal: Date(),lat: 0, lng: 0, tz: 0)
     @State private var sInputImageAstro: UIImage?
     @State var sImageAstro: Image?
-    @State var sweSwiftUi: SweSwiftUi = SweSwiftUi()
 
     var body: some View {
         VStack {
@@ -143,9 +142,19 @@ struct ContentView: View {
                 VStack {
                     Text("Astrologie 2")
                     if (colorScheme == .light) {
-                        DrawAstrologieLightView(swe_swift_ui: sweSwiftUi)
+                        DrawAstrologieLightView(swe_swift_ui: SweSwiftUi(
+                            natal: sdNatal,
+                            lat: bdLat,
+                            lng: bdLng,
+                            tz: Int32(biTimeZone),
+                            pathEphe: "")) // TODO path
                     } else {
-                        DrawAstrologieDarkView(swe_swift_ui: sweSwiftUi)
+                        DrawAstrologieDarkView(swe_swift_ui: SweSwiftUi(
+                            natal: sdNatal,
+                            lat: bdLat,
+                            lng: bdLng,
+                            tz: Int32(biTimeZone),
+                            pathEphe: "")) // TODO path
                     }
                 }
                 .padding()
