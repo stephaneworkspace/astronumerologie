@@ -33,7 +33,7 @@ public class Swe {
         var offX: Double
         var offY: Double
     }
-
+    
     struct SplitDeg {
         var print: String
         var deg: Int32
@@ -88,6 +88,7 @@ public class Swe {
         }
         return path
     }
+    
 
     public func circles() -> [Circle] {
         var res: [Circle] = []
@@ -223,6 +224,52 @@ public class Swe {
         return getRadiusTotal() * (((CIRCLE_SIZE_TRANSIT[2].0 - CIRCLE_SIZE_TRANSIT[1].0) / size)
                 + CIRCLE_SIZE_TRANSIT[1].0) / 100.0
     }
+    
+    func house_lines() -> [HouseLine] {
+        var res: [HouseLine] = []
+        for iIdx in 0...11 {
+            let offHouse = 360.0 - swec.houses[0].longitude
+            let pos = getFixedPos(pos_value: offHouse + swec.houses[iIdx].longitude)
+            var axyTriangle: [Offset] = []
+            let angularPointer = -1.0 // TODO CONST
+            if swec.houses[iIdx].angle == Angle.nothing.rawValue {
+                axyTriangle = getTriangleTrigo(
+                        angular: pos,
+                        angularPointer: angularPointer,
+                        radiusCircleBegin: getRadiusInsideCircleHouseForPointerBottom(),
+                        radiusCircleEnd: getRadiusInsideCircleHouseForPointerTop())
+                let axyLine: [Offset] = getLineTrigo(
+                        angular: pos,
+                        radiusCircleBegin: getRadiusCircle(occurs: 3).0,
+                        radiusCircleEnd: getRadiusCircle(occurs: 2).0)
+                res.append(HouseLine(
+                        lX1: axyLine[0].offX,
+                        lY1: axyLine[0].offY,
+                        lX2: axyLine[1].offX,
+                        lY2: axyLine[1].offY,
+                        lXY3: false,
+                        lX3: 0.0,
+                        lY3: 0.0)
+                )
+            } else {
+                axyTriangle = getTriangleTrigo(
+                        angular: pos,
+                        angularPointer: angularPointer,
+                        radiusCircleBegin: getRadiusCircle(occurs: 3).0,
+                        radiusCircleEnd: getRadiusCircle(occurs: 2).0)
+            }
+            res.append(HouseLine(
+                    lX1: axyTriangle[0].offX,
+                    lY1: axyTriangle[0].offY,
+                    lX2: axyTriangle[1].offX,
+                    lY2: axyTriangle[1].offY,
+                    lXY3: true,
+                    lX3: axyTriangle[2].offX,
+                    lY3: axyTriangle[2].offY)
+            )
+        }
+        return res
+    }
 
     private func getCenter() -> Offset {
         Offset(offX: getRadiusTotal(), offY: getRadiusTotal())
@@ -249,5 +296,53 @@ public class Swe {
                 ) + CIRCLE_SIZE_TRANSIT[1].0))
                 / 100.0
     }
+    
+    private func getRadiusInsideCircleHouseForPointerBottom() -> Double {
+        let divTraitPointer = 1.5 // TODO CONST
+        return (getRadiusTotal() * (((CIRCLE_SIZE_TRANSIT[3].0 - CIRCLE_SIZE_TRANSIT[2].0)
+                / divTraitPointer)
+                - CIRCLE_SIZE_TRANSIT[3].0)) / 100.0
+    }
+
+    private func getRadiusInsideCircleHouseForPointerTop() -> Double {
+        (getRadiusTotal() * ((CIRCLE_SIZE_TRANSIT[3].0 - CIRCLE_SIZE_TRANSIT[2].0)
+                - CIRCLE_SIZE_TRANSIT[3].0)) / 100.0
+    }
+
+    private func getTriangleTrigo(angular: Double, angularPointer: Double, radiusCircleBegin: Double, radiusCircleEnd: Double) -> [Offset] {
+        var res: [Offset] = []
+        let angular1 = getFixedPos(pos_value: angular - angularPointer)
+        let angular2 = getFixedPos(pos_value: angular + angularPointer)
+        let dx1: Double = getCenter().offX
+                + cos(angular1 / CIRCLE * 2.0 * Double.pi)
+                * -1.0
+                * radiusCircleBegin
+        let dy1: Double = getCenter().offY
+                + sin(angular1 / CIRCLE * 2.0 * Double.pi)
+                * radiusCircleBegin
+        let dx2: Double = getCenter().offX
+                + cos(angular2 / CIRCLE * 2.0 * Double.pi)
+                * -1.0
+                * radiusCircleBegin
+        let dy2: Double = getCenter().offY
+                + sin(angular2 / CIRCLE * 2.0 * Double.pi)
+                * radiusCircleBegin
+        let dx3: Double = getCenter().offX
+                + cos(angular / CIRCLE * 2.0 * Double.pi)
+                * -1.0
+                * radiusCircleEnd
+        let dy3: Double = getCenter().offY
+                + sin(angular / CIRCLE * 2.0 * Double.pi)
+                * radiusCircleEnd
+        res.append(Offset(offX: dx1, offY: dy1))
+        res.append(Offset(offX: dx2, offY: dy2))
+        res.append(Offset(offX: dx3, offY: dy3))
+        return res
+    }
+
+    
+
 }
+
+
 

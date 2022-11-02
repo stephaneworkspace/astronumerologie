@@ -45,6 +45,7 @@
 		F4DFA0812911BBB9004DE58F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DFA07F2911BBB9004DE58F /* InfoPlist.strings */; };
 		F4DFA0842911BC07004DE58F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DFA0822911BC07004DE58F /* InfoPlist.strings */; };
 		F4F26B582912E81800E4E026 /* VAstrologieZodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F26B572912E81800E4E026 /* VAstrologieZodiac.swift */; };
+		F4F26B5A2912EA3700E4E026 /* VAstrologieHouses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F26B592912EA3700E4E026 /* VAstrologieHouses.swift */; };
 		F4F9F52C28EEEDC100B0520A /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = F4F9F52B28EEEDC100B0520A /* Zip */; };
 		F4FAD30F28EDA061000349F4 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAD30E28EDA061000349F4 /* Chart.swift */; };
 /* End PBXBuildFile section */
@@ -109,6 +110,7 @@
 		F4DFA0802911BBB9004DE58F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F4DFA0832911BC07004DE58F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F4F26B572912E81800E4E026 /* VAstrologieZodiac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieZodiac.swift; sourceTree = "<group>"; };
+		F4F26B592912EA3700E4E026 /* VAstrologieHouses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieHouses.swift; sourceTree = "<group>"; };
 		F4FAD30E28EDA061000349F4 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +234,7 @@
 			children = (
 				F49927D12912A142006AD339 /* VAstrologieSigns.swift */,
 				F4F26B572912E81800E4E026 /* VAstrologieZodiac.swift */,
+				F4F26B592912EA3700E4E026 /* VAstrologieHouses.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				F4C42D0128C3C67300EA0BC6 /* ContentView.swift in Sources */,
 				F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */,
 				F49927D22912A142006AD339 /* VAstrologieSigns.swift in Sources */,
+				F4F26B5A2912EA3700E4E026 /* VAstrologieHouses.swift in Sources */,
 				552E853188E18A296444B346 /* VInput.swift in Sources */,
 				F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */,
 				552E809ACA7506CE4C063FA2 /* config.swift in Sources */,
