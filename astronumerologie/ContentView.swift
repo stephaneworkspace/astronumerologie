@@ -51,6 +51,7 @@ struct ContentView: View {
     @State var sAstro: Astrologie = Astrologie(natal: Date(),lat: 0, lng: 0, tz: 0)
     @State private var sInputImageAstro: UIImage?
     @State var sImageAstro: Image?
+    @State var swe: Swe = Swe(pathEphe: "")
 
     var body: some View {
         VStack {
@@ -65,6 +66,8 @@ struct ContentView: View {
                     sInputImageAstro = UIImage(contentsOfFile: url.path)
                     guard let sInputImageAstro = sInputImageAstro else { return }
                     sImageAstro = Image(uiImage: sInputImageAstro)
+                } else if siSelected == 4 {
+                    self.swe.set(natal: sdNatal, lat: bdLat, lng: bdLng, tz: Int32(biTimeZone))
                 }
             }) {
                 VStack {
@@ -141,7 +144,7 @@ struct ContentView: View {
                 .tag(3)
                 VStack {
                     Text("Astrologie 2")
-                    VAstrologie(swe: Swe(natal: sdNatal, lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), pathEphe: "")) // TODO path
+                    VAstrologie(swe: $swe, bdNatal: $sdNatal, bdLat: $bdLat, bdLng: $bdLng, biTimeZone: $biTimeZone)
                 }
                 .padding()
                 .tabItem {

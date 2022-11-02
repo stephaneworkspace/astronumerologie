@@ -52,9 +52,13 @@ public class Swe {
     public var size: Int // TODO sizeChart: (screenSize.width == 744 && screenSize.height == 1133) ? 630.0 : 390.0)
     public var swec: SweSvg
 
-    public init(natal: Date, lat: Double, lng: Double, tz: Int32, pathEphe: String) {
+    public init(pathEphe: String) {
         size = 400
-        self.swec = SweSvg(natal: natal, lat: lat, lng: lng, tz: tz, ephemPath: pathEphe)
+        self.swec = SweSvg(ephemPath: pathEphe)
+    }
+    
+    public func set(natal: Date, lat: Double, lng: Double, tz: Int32) {
+        self.swec.set(natal: natal, lat: lat, lng: lng, tz: tz)
     }
 
     public func drawCircle(circles: [Circle]) -> Path {

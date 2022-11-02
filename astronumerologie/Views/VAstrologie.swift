@@ -9,7 +9,12 @@ import SwiftUI
 
 struct VAstrologie: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @State var swe: Swe
+    @Binding var swe: Swe
+    @Binding var bdNatal: Date
+    @Binding var bdLat: Double
+    @Binding var bdLng: Double
+    @Binding var biTimeZone: Int
+
     var body: some View {
         ZStack {
             let colorStroke: Color = colorScheme == .light ? .black : .white
