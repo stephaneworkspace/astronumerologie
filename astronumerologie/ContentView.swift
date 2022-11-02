@@ -141,22 +141,7 @@ struct ContentView: View {
                 .tag(3)
                 VStack {
                     Text("Astrologie 2")
-                    /*
-                    if (colorScheme == .light) {
-                        DrawAstrologieLightView(swe_swift_ui: SweSwiftUi(
-                            natal: sdNatal,
-                            lat: bdLat,
-                            lng: bdLng,
-                            tz: Int32(biTimeZone),
-                            pathEphe: "")) // TODO path
-                    } else {
-                        DrawAstrologieDarkView(swe_swift_ui: SweSwiftUi(
-                            natal: sdNatal,
-                            lat: bdLat,
-                            lng: bdLng,
-                            tz: Int32(biTimeZone),
-                            pathEphe: "")) // TODO path
-                    }*/
+                    VAstrologie(swe: Swe(natal: sdNatal, lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), pathEphe: "")) // TODO path
                 }
                 .padding()
                 .tabItem {

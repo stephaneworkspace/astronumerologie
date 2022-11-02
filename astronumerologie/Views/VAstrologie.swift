@@ -8,14 +8,16 @@
 import SwiftUI
 
 struct VAstrologie: View {
+    @Environment(\.colorScheme) var colorScheme: ColorScheme
     @State var swe: Swe
     var body: some View {
         ZStack {
+            let colorStroke: Color = colorScheme == .light ? .black : .white
             VStack {
-                swe.drawCircle(circles: swe.circles()).stroke(.black, lineWidth: 1.0)
+                swe.drawCircle(circles: swe.circles()).stroke(colorStroke, lineWidth: 1.0)
             }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
             VStack {
-                swe.drawLine(lines: swe.zodiac_lines()).stroke(.black, lineWidth: 1.0)
+                swe.drawLine(lines: swe.zodiac_lines()).stroke(colorStroke, lineWidth: 1.0)
             }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
             ForEach(1...12, id: \.self) { idx in
                 VStack {
