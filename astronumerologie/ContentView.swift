@@ -51,7 +51,7 @@ struct ContentView: View {
     @State var sAstro: Astrologie = Astrologie(natal: Date(),lat: 0, lng: 0, tz: 0)
     @State private var sInputImageAstro: UIImage?
     @State var sImageAstro: Image?
-    @State var swe: Swe = Swe(pathEphe: "")
+    @State private var swe: Swe = Swe(pathEphe: "")
 
     var body: some View {
         VStack {

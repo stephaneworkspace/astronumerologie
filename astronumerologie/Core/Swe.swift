@@ -61,7 +61,7 @@ public class Swe {
     public func set(natal: Date, lat: Double, lng: Double, tz: Int32) {
         self.swec.set(natal: natal, lat: lat, lng: lng, tz: tz)
     }
-
+    
     public func drawCircle(circles: [Circle]) -> Path {
         var path = Path()
         for circle in circles.reversed() {
