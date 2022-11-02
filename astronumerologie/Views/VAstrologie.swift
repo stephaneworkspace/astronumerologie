@@ -26,7 +26,7 @@ struct VAstrologie: View {
                 swe.drawLine(lines: swe.zodiac_lines()).stroke(colorStroke, lineWidth: 1.0)
             }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
             ForEach(1...12, id: \.self)  { i in
-                VSigns(swe: $swe, sign: i)
+                VAstrologieSigns(swe: $swe, sign: i)
             }
         }
     }
