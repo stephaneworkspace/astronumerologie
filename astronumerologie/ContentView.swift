@@ -61,7 +61,7 @@ struct ContentView: View {
                     do {
                         sleep (2)
                     }
-                    let url = sAstro.create_png()
+                    let url = sAstro.create_png(natal: sdNatal, lat: bdLat, lng: bdLng, tz: Int32(biTimeZone))
                     sInputImageAstro = UIImage(contentsOfFile: url.path)
                     guard let sInputImageAstro = sInputImageAstro else { return }
                     sImageAstro = Image(uiImage: sInputImageAstro)
@@ -141,6 +141,7 @@ struct ContentView: View {
                 .tag(3)
                 VStack {
                     Text("Astrologie 2")
+                    /*
                     if (colorScheme == .light) {
                         DrawAstrologieLightView(swe_swift_ui: SweSwiftUi(
                             natal: sdNatal,
@@ -155,7 +156,7 @@ struct ContentView: View {
                             lng: bdLng,
                             tz: Int32(biTimeZone),
                             pathEphe: "")) // TODO path
-                    }
+                    }*/
                 }
                 .padding()
                 .tabItem {

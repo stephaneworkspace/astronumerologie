@@ -24,6 +24,13 @@
 		F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437A23428D8A34200A6D196 /* print-numerologie.swift */; };
 		F461E9DD29031554003BFCEF /* SweSvg in Frameworks */ = {isa = PBXBuildFile; productRef = F461E9DC29031554003BFCEF /* SweSvg */; };
 		F484F7B928ECDBA60096F98D /* ephem.zip in Resources */ = {isa = PBXBuildFile; fileRef = F484F7B828ECDBA60096F98D /* ephem.zip */; };
+		F49927BF29126EF4006AD339 /* Swe.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927BE29126EF4006AD339 /* Swe.swift */; };
+		F49927C229127668006AD339 /* Angle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927C129127668006AD339 /* Angle.swift */; };
+		F49927C429127689006AD339 /* Calandar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927C329127689006AD339 /* Calandar.swift */; };
+		F49927C629127699006AD339 /* LargerDrawLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927C529127699006AD339 /* LargerDrawLine.swift */; };
+		F49927C8291276AD006AD339 /* Signs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927C7291276AD006AD339 /* Signs.swift */; };
+		F49927CA291276D9006AD339 /* VAstrologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927C9291276D9006AD339 /* VAstrologie.swift */; };
+		F49927CC291277E3006AD339 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927CB291277E3006AD339 /* Const.swift */; };
 		F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A95CAF28E9EA2E0004B22F /* astrologie.swift */; };
 		F4A95CB328EA451B0004B22F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4A95CB228EA451B0004B22F /* .gitignore */; };
 		F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42CFE28C3C67300EA0BC6 /* astronumerologieApp.swift */; };
@@ -33,6 +40,8 @@
 		F4C42D1028C3C67500EA0BC6 /* astronumerologieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D0F28C3C67500EA0BC6 /* astronumerologieTests.swift */; };
 		F4C42D1A28C3C67500EA0BC6 /* astronumerologieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D1928C3C67500EA0BC6 /* astronumerologieUITests.swift */; };
 		F4C42D1C28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */; };
+		F4DFA0812911BBB9004DE58F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DFA07F2911BBB9004DE58F /* InfoPlist.strings */; };
+		F4DFA0842911BC07004DE58F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DFA0822911BC07004DE58F /* InfoPlist.strings */; };
 		F4F9F52C28EEEDC100B0520A /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = F4F9F52B28EEEDC100B0520A /* Zip */; };
 		F4FAD30F28EDA061000349F4 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAD30E28EDA061000349F4 /* Chart.swift */; };
 /* End PBXBuildFile section */
@@ -73,6 +82,13 @@
 		F426B43E28E8544B00FE1469 /* librantools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librantools.a; path = astronumerologie/CodeBridge/lib/librantools.a; sourceTree = "<group>"; };
 		F437A23428D8A34200A6D196 /* print-numerologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "print-numerologie.swift"; sourceTree = "<group>"; };
 		F484F7B828ECDBA60096F98D /* ephem.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ephem.zip; sourceTree = "<group>"; };
+		F49927BE29126EF4006AD339 /* Swe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swe.swift; sourceTree = "<group>"; };
+		F49927C129127668006AD339 /* Angle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Angle.swift; sourceTree = "<group>"; };
+		F49927C329127689006AD339 /* Calandar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calandar.swift; sourceTree = "<group>"; };
+		F49927C529127699006AD339 /* LargerDrawLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargerDrawLine.swift; sourceTree = "<group>"; };
+		F49927C7291276AD006AD339 /* Signs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signs.swift; sourceTree = "<group>"; };
+		F49927C9291276D9006AD339 /* VAstrologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologie.swift; sourceTree = "<group>"; };
+		F49927CB291277E3006AD339 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		F4A95CAF28E9EA2E0004B22F /* astrologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astrologie.swift; sourceTree = "<group>"; };
 		F4A95CB128EA2B3B0004B22F /* astronumerologie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = astronumerologie.entitlements; sourceTree = "<group>"; };
 		F4A95CB228EA451B0004B22F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -86,6 +102,8 @@
 		F4C42D1528C3C67500EA0BC6 /* astronumerologieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = astronumerologieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C42D1928C3C67500EA0BC6 /* astronumerologieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieUITests.swift; sourceTree = "<group>"; };
 		F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F4DFA0802911BBB9004DE58F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = InfoPlist.strings; sourceTree = "<group>"; };
+		F4DFA0832911BC07004DE58F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F4FAD30E28EDA061000349F4 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +153,7 @@
 			children = (
 				552E8E55DDA74932A21F1787 /* VInput.swift */,
 				552E8A32F70A98B91713FDFF /* VNumerologie.swift */,
+				F49927C9291276D9006AD339 /* VAstrologie.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -152,10 +171,13 @@
 		552E8BA22D54DECD72627BE0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				F49927C029127651006AD339 /* Enum */,
 				552E86AE32F0924F4EE036CC /* numerologie.swift */,
 				F437A23428D8A34200A6D196 /* print-numerologie.swift */,
 				F4A95CAF28E9EA2E0004B22F /* astrologie.swift */,
 				F4FAD30E28EDA061000349F4 /* Chart.swift */,
+				F49927BE29126EF4006AD339 /* Swe.swift */,
+				F49927CB291277E3006AD339 /* Const.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -187,9 +209,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F49927C029127651006AD339 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				F49927C129127668006AD339 /* Angle.swift */,
+				F49927C329127689006AD339 /* Calandar.swift */,
+				F49927C529127699006AD339 /* LargerDrawLine.swift */,
+				F49927C7291276AD006AD339 /* Signs.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		F4C42CF228C3C67300EA0BC6 = {
 			isa = PBXGroup;
 			children = (
+				F4DFA07E2911BBA4004DE58F /* fr.lproj */,
+				F4DFA07D2911BB97004DE58F /* en.lproj */,
 				F4C42CFD28C3C67300EA0BC6 /* astronumerologie */,
 				F4C42D0E28C3C67500EA0BC6 /* astronumerologieTests */,
 				F4C42D1828C3C67500EA0BC6 /* astronumerologieUITests */,
@@ -249,6 +284,22 @@
 				F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */,
 			);
 			path = astronumerologieUITests;
+			sourceTree = "<group>";
+		};
+		F4DFA07D2911BB97004DE58F /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F4DFA0822911BC07004DE58F /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		F4DFA07E2911BBA4004DE58F /* fr.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				F4DFA07F2911BBB9004DE58F /* InfoPlist.strings */,
+			);
+			path = fr.lproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +393,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = F4C42CF228C3C67300EA0BC6;
 			packageReferences = (
@@ -365,9 +417,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4C42D0628C3C67500EA0BC6 /* Preview Assets.xcassets in Resources */,
+				F4DFA0842911BC07004DE58F /* InfoPlist.strings in Resources */,
 				F484F7B928ECDBA60096F98D /* ephem.zip in Resources */,
 				F4A95CB328EA451B0004B22F /* .gitignore in Resources */,
 				F4C42D0328C3C67500EA0BC6 /* Assets.xcassets in Resources */,
+				F4DFA0812911BBB9004DE58F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,11 +447,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */,
+				F49927C8291276AD006AD339 /* Signs.swift in Sources */,
+				F49927C229127668006AD339 /* Angle.swift in Sources */,
+				F49927CA291276D9006AD339 /* VAstrologie.swift in Sources */,
+				F49927C629127699006AD339 /* LargerDrawLine.swift in Sources */,
 				F4C42D0128C3C67300EA0BC6 /* ContentView.swift in Sources */,
 				F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */,
 				552E853188E18A296444B346 /* VInput.swift in Sources */,
 				F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */,
 				552E809ACA7506CE4C063FA2 /* config.swift in Sources */,
+				F49927C429127689006AD339 /* Calandar.swift in Sources */,
 				552E8522466D8A70C639E63B /* EDatePicker.swift in Sources */,
 				552E877BDE64B0729FCB33CF /* langua.swift in Sources */,
 				552E8D96C76F0CCB78FC489E /* ETitleData.swift in Sources */,
@@ -406,6 +465,8 @@
 				552E804A7ACBFFC1E90D83E5 /* ELocalisationTextField.swift in Sources */,
 				552E879089C4087F4D4B2ED9 /* numerologie.swift in Sources */,
 				F426B43728E8528100FE1469 /* antools.cpp in Sources */,
+				F49927CC291277E3006AD339 /* Const.swift in Sources */,
+				F49927BF29126EF4006AD339 /* Swe.swift in Sources */,
 				F4FAD30F28EDA061000349F4 /* Chart.swift in Sources */,
 				552E8ED3D208BC59E1AF363A /* VNumerologie.swift in Sources */,
 				552E879B97B13CCDDF7BF3F9 /* ETitleNumerologie.swift in Sources */,
@@ -444,6 +505,25 @@
 			targetProxy = F4C42D1628C3C67500EA0BC6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F4DFA07F2911BBB9004DE58F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4DFA0802911BBB9004DE58F /* fr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F4DFA0822911BC07004DE58F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F4DFA0832911BC07004DE58F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		F4C42D1D28C3C67500EA0BC6 /* Debug */ = {
