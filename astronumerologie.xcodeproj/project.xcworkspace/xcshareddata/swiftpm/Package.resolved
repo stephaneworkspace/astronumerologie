@@ -1,12 +1,21 @@
 {
   "pins" : [
     {
+      "identity" : "svgview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/exyte/SVGView",
+      "state" : {
+        "revision" : "18bf73efc2f2dede5dfa73f517ddf4e054061294",
+        "version" : "1.0.4"
+      }
+    },
+    {
       "identity" : "swesvg",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/stephaneworkspace/SweSvg.git",
       "state" : {
         "branch" : "main",
-        "revision" : "53b6348f50759c98656111e933a2053a35eca00f"
+        "revision" : "1ca7524cc5f09edce439749630a49012b27a779a"
       }
     },
     {

@@ -31,6 +31,8 @@
 		F49927C8291276AD006AD339 /* Signs.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927C7291276AD006AD339 /* Signs.swift */; };
 		F49927CA291276D9006AD339 /* VAstrologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927C9291276D9006AD339 /* VAstrologie.swift */; };
 		F49927CC291277E3006AD339 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927CB291277E3006AD339 /* Const.swift */; };
+		F49927CF291291E9006AD339 /* SVGView in Frameworks */ = {isa = PBXBuildFile; productRef = F49927CE291291E9006AD339 /* SVGView */; };
+		F49927D22912A142006AD339 /* VSigns.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927D12912A142006AD339 /* VSigns.swift */; };
 		F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A95CAF28E9EA2E0004B22F /* astrologie.swift */; };
 		F4A95CB328EA451B0004B22F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4A95CB228EA451B0004B22F /* .gitignore */; };
 		F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42CFE28C3C67300EA0BC6 /* astronumerologieApp.swift */; };
@@ -89,6 +91,7 @@
 		F49927C7291276AD006AD339 /* Signs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signs.swift; sourceTree = "<group>"; };
 		F49927C9291276D9006AD339 /* VAstrologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologie.swift; sourceTree = "<group>"; };
 		F49927CB291277E3006AD339 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		F49927D12912A142006AD339 /* VSigns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VSigns.swift; sourceTree = "<group>"; };
 		F4A95CAF28E9EA2E0004B22F /* astrologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astrologie.swift; sourceTree = "<group>"; };
 		F4A95CB128EA2B3B0004B22F /* astronumerologie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = astronumerologie.entitlements; sourceTree = "<group>"; };
 		F4A95CB228EA451B0004B22F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -114,6 +117,7 @@
 			files = (
 				F4F9F52C28EEEDC100B0520A /* Zip in Frameworks */,
 				F461E9DD29031554003BFCEF /* SweSvg in Frameworks */,
+				F49927CF291291E9006AD339 /* SVGView in Frameworks */,
 				F426B44028E8544C00FE1469 /* librantools.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +155,7 @@
 		552E836197E998B988955775 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F49927D02912A12C006AD339 /* SubViews */,
 				552E8E55DDA74932A21F1787 /* VInput.swift */,
 				552E8A32F70A98B91713FDFF /* VNumerologie.swift */,
 				F49927C9291276D9006AD339 /* VAstrologie.swift */,
@@ -218,6 +223,14 @@
 				F49927C7291276AD006AD339 /* Signs.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		F49927D02912A12C006AD339 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				F49927D12912A142006AD339 /* VSigns.swift */,
+			);
+			path = SubViews;
 			sourceTree = "<group>";
 		};
 		F4C42CF228C3C67300EA0BC6 = {
@@ -321,6 +334,7 @@
 			packageProductDependencies = (
 				F4F9F52B28EEEDC100B0520A /* Zip */,
 				F461E9DC29031554003BFCEF /* SweSvg */,
+				F49927CE291291E9006AD339 /* SVGView */,
 			);
 			productName = astronumerologie;
 			productReference = F4C42CFB28C3C67300EA0BC6 /* astronumerologie.app */;
@@ -399,6 +413,7 @@
 			packageReferences = (
 				F4F9F52A28EEEDC100B0520A /* XCRemoteSwiftPackageReference "Zip" */,
 				F49D56442903142D00AF8F9F /* XCRemoteSwiftPackageReference "SweSvg" */,
+				F49927CD291291E9006AD339 /* XCRemoteSwiftPackageReference "SVGView" */,
 			);
 			productRefGroup = F4C42CFC28C3C67300EA0BC6 /* Products */;
 			projectDirPath = "";
@@ -453,6 +468,7 @@
 				F49927C629127699006AD339 /* LargerDrawLine.swift in Sources */,
 				F4C42D0128C3C67300EA0BC6 /* ContentView.swift in Sources */,
 				F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */,
+				F49927D22912A142006AD339 /* VSigns.swift in Sources */,
 				552E853188E18A296444B346 /* VInput.swift in Sources */,
 				F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */,
 				552E809ACA7506CE4C063FA2 /* config.swift in Sources */,
@@ -847,6 +863,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F49927CD291291E9006AD339 /* XCRemoteSwiftPackageReference "SVGView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/SVGView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		F49D56442903142D00AF8F9F /* XCRemoteSwiftPackageReference "SweSvg" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stephaneworkspace/SweSvg.git";
@@ -870,6 +894,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F49D56442903142D00AF8F9F /* XCRemoteSwiftPackageReference "SweSvg" */;
 			productName = SweSvg;
+		};
+		F49927CE291291E9006AD339 /* SVGView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F49927CD291291E9006AD339 /* XCRemoteSwiftPackageReference "SVGView" */;
+			productName = SVGView;
 		};
 		F4F9F52B28EEEDC100B0520A /* Zip */ = {
 			isa = XCSwiftPackageProductDependency;

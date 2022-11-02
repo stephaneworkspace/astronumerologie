@@ -4,7 +4,7 @@
 
 import Foundation
 
-enum Signs: Int32 {
+enum Signs: Int {
     case aries = 1,
          taurus = 2,
          gemini = 3,

@@ -5,6 +5,7 @@
 import Foundation
 import SwiftUI
 import SweSvg
+import SVGView
 
 // TODO ailleur
 public struct Object {
@@ -142,7 +143,7 @@ public class Swe {
         return res
     }
 
-    public func zodiac_sign(sign: Int32) -> Object {
+    public func zodiac_sign(sign: Int) -> Object {
         let zodiacSize = (((ZODIAC_SIZE * ZODIAC_RATIO) / 100.0) * Double(size)) / 100.0;
         let offPosAsc = CIRCLE - swec.houses[0].longitude
         let signEnum: Signs = Signs.init(rawValue: sign) ?? Signs.aries
@@ -159,6 +160,10 @@ public class Swe {
                 oPx: offset.offX,
                 oPy: offset.offY)
         return res
+    }
+    
+    public func zodiac_asset(i: Int) -> SVGView {
+        return SVGView(contentsOf: try! swec.asset_sign(i: i))
     }
 
     private func getRadiusTotal() -> Double {
