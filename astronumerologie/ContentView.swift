@@ -144,7 +144,7 @@ struct ContentView: View {
                 .tag(3)
                 VStack {
                     Text("Astrologie 2")
-                    VAstrologie(swe: $swe, bdNatal: $sdNatal, bdLat: $bdLat, bdLng: $bdLng, biTimeZone: $biTimeZone)
+                    VAstrologie(swe: $swe)
                 }
                 .padding()
                 .tabItem {
