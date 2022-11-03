@@ -249,9 +249,9 @@ public class Swe {
             // natal
             for b in swec.bodies_natal {
                 if b.bodie == bodie.rawValue {
-                    if abs(b.calculUt.speedLongitude) < 0.0003 {
+                    if abs(b.calc_ut.speed_longitude) < 0.0003 {
                         // Stationary
-                    } else if b.calculUt.speedLongitude > 0.0 {
+                    } else if b.calc_ut.speed_longitude > 0.0 {
                         // Direct
                     } else {
                         swRetrograde = true
@@ -262,9 +262,9 @@ public class Swe {
             // transit
             for b in swec.bodies_transit {
                 if b.bodie == bodie.rawValue {
-                    if abs(b.calculUt.speedLongitude) < 0.0003 {
+                    if abs(b.calc_ut.speed_longitude) < 0.0003 {
                         // Stationary
-                    } else if b.calculUt.speedLongitude > 0.0 {
+                    } else if b.calc_ut.speed_longitude > 0.0 {
                         // Direct
                     } else {
                         swRetrograde = true
@@ -278,14 +278,14 @@ public class Swe {
             // natal
             for b in swec.bodies_natal {
                 if b.bodie == bodie.rawValue {
-                    pos = getBodieLongitude(bodie_longitude: b.calculUt.longitude, swTransit: swTransit)
+                    pos = getBodieLongitude(bodie_longitude: b.calc_ut.longitude, swTransit: swTransit)
                 }
             }
         } else {
             // transit
             for b in swec.bodies_transit {
                 if b.bodie == bodie.rawValue {
-                    pos = getBodieLongitude(bodie_longitude: b.calculUt.longitude, swTransit: swTransit)
+                    pos = getBodieLongitude(bodie_longitude: b.calc_ut.longitude, swTransit: swTransit)
                 }
             }
         }
