@@ -13,14 +13,15 @@ struct VAstrologieAssetSigns: View {
     @State var sign: Int = 0
     var body: some View {
         VStack {
+            let s = swe.zodiac_sign(sign: sign)
             GeometryReader { geometry in
                 SVGView(contentsOf: try! swe.swec.asset_sign(i: sign))
                     .offset(
-                        x: swe.zodiac_sign(sign: sign).oPx,
-                        y: swe.zodiac_sign(sign: sign).oPy)
+                        x: s.oPx,
+                        y: s.oPy)
                     .frame(
-                        width: swe.zodiac_sign(sign: sign).oSx,
-                        height: swe.zodiac_sign(sign: sign).oSy)
+                        width: s.oSx,
+                        height: s.oSy)
             }
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
     }

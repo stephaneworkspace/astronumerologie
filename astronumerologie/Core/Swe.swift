@@ -16,6 +16,13 @@ public struct Object {
     var oPy: Double
 }
 
+public struct ObjectHouse {
+    var oSx: Double
+    var oSy: Double
+    var oPx: Double
+    var oPy: Double
+}
+
 public class Swe {
     public struct Circle {
         var center: Double
@@ -163,8 +170,42 @@ public class Swe {
         return res
     }
     
-    public func zodiac_asset(i: Int) -> SVGView {
-        return SVGView(contentsOf: try! swec.asset_sign(i: i))
+    public func house(number: Int) -> ObjectHouse {
+        var houseSize = (((HOUSE_SIZE * HOUSE_RATIO) / 100.0) * Double(size)) / 100.0
+        let offPosAsc = CIRCLE - swec.houses[0].longitude
+        var posNext: Double
+        if number > 11 {
+            posNext = swec.houses[0].longitude + offPosAsc
+        } else {
+            posNext = swec.houses[Int(number)].longitude + offPosAsc
+        }
+        let posNow = swec.houses[Int(number - 1)].longitude + offPosAsc
+        var pos: Double
+        if posNow > posNext {
+            pos = posNow + ((posNext - posNow - CIRCLE) / 2.0)
+        } else {
+            pos = posNow + ((posNext - posNow) / 2.0)
+        }
+        pos = getFixedPos(pos_value: pos)
+        let offset = getCenterItem(
+                size: houseSize,
+                offset: getPosTrigo(
+                        angular: pos,
+                        radiusCircle: getRadiusCircleHouse()))
+        if number > 9 {
+            return ObjectHouse(
+                    oSx: houseSize,
+                    oSy: houseSize,
+                    oPx: offset.offX,
+                    oPy: offset.offY)
+        } else {
+            return ObjectHouse(
+                    oSx: houseSize / 1.5,
+                    oSy: houseSize,
+                    oPx: offset.offX,
+                    oPy: offset.offY)
+
+        }
     }
 
     private func getRadiusTotal() -> Double {
@@ -340,8 +381,12 @@ public class Swe {
         return res
     }
 
-    
-
+    private func getRadiusCircleHouse() -> Double {
+        (getRadiusTotal() * (((
+                (CIRCLE_SIZE_TRANSIT[3].0 - CIRCLE_SIZE_TRANSIT[2].0) / 2.0))
+                + CIRCLE_SIZE_TRANSIT[2].0))
+                / 100.0
+    }
 }
 
 
