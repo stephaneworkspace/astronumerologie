@@ -23,6 +23,14 @@ public struct ObjectHouse {
     var oPy: Double
 }
 
+struct ObjectBodie {
+    var swRetrograde: Bool
+    var oSx: Double
+    var oSy: Double
+    var oPx: Double
+    var oPy: Double
+}
+
 public class Swe {
     public struct Circle {
         var center: Double
@@ -58,10 +66,26 @@ public class Swe {
     }
 
     public var size: Int // TODO sizeChart: (screenSize.width == 744 && screenSize.height == 1133) ? 630.0 : 390.0)
+    public var bodies: [Bodies]
     public var swec: SweSvg
 
     public init(pathEphe: String) {
         size = 400
+        bodies = []
+        bodies.append(Bodies.Soleil)
+        bodies.append(Bodies.Lune)
+        bodies.append(Bodies.Mercure)
+        bodies.append(Bodies.Venus)
+        bodies.append(Bodies.Mars)
+        bodies.append(Bodies.Jupiter)
+        bodies.append(Bodies.Saturn)
+        bodies.append(Bodies.Uranus)
+        bodies.append(Bodies.Neptune)
+        bodies.append(Bodies.Pluto)
+        bodies.append(Bodies.NoeudLunaire)
+        bodies.append(Bodies.Chiron)
+        bodies.append(Bodies.Ceres)
+        bodies.append(Bodies.NoeudLunaireSud)
         self.swec = SweSvg(ephemPath: pathEphe)
     }
     
@@ -206,6 +230,87 @@ public class Swe {
                     oPy: offset.offY)
 
         }
+    }
+    
+    func bodie(bodie: Bodies, swTransit: Bool) -> ObjectBodie {
+        var planetRatio: Double
+        if swTransit {
+            planetRatio = 6.0 // TODO const
+        } else {
+            planetRatio = 12.0 // TODO const
+        }
+        let planetSize = (((BODIE_SIZE * ZODIAC_RATIO) / 100.0) * Double(size)) / 100.0;
+        let degRatio = 6.0 // TODO const
+        let degSize = (((DEG_SIZE * degRatio) / 100.0) * Double(size))
+        let minRatio = 6.0 // TODO const
+        let minSize = (((MIN_SIZE * degRatio) / 100.0) * Double(size))
+        var swRetrograde = false
+        if (!swTransit) {
+            // natal
+            for b in swec.bodies_natal {
+                if b.bodie == bodie.rawValue {
+                    if abs(b.calculUt.speedLongitude) < 0.0003 {
+                        // Stationary
+                    } else if b.calculUt.speedLongitude > 0.0 {
+                        // Direct
+                    } else {
+                        swRetrograde = true
+                    }
+                }
+            }
+        } else {
+            // transit
+            for b in swec.bodies_transit {
+                if b.bodie == bodie.rawValue {
+                    if abs(b.calculUt.speedLongitude) < 0.0003 {
+                        // Stationary
+                    } else if b.calculUt.speedLongitude > 0.0 {
+                        // Direct
+                    } else {
+                        swRetrograde = true
+                    }
+                }
+            }
+        }
+
+        var pos = 0.0
+        if (!swTransit) {
+            // natal
+            for b in swec.bodies_natal {
+                if b.bodie == bodie.rawValue {
+                    pos = getBodieLongitude(bodie_longitude: b.calculUt.longitude, swTransit: swTransit)
+                }
+            }
+        } else {
+            // transit
+            for b in swec.bodies_transit {
+                if b.bodie == bodie.rawValue {
+                    pos = getBodieLongitude(bodie_longitude: b.calculUt.longitude, swTransit: swTransit)
+                }
+            }
+        }
+        let offset: Offset
+        if swTransit {
+            offset = getCenterItem(
+                    size: planetSize,
+                    offset: getPosTrigo(
+                            angular: pos,
+                            radiusCircle: getRadiusCircle(occurs: 9).0))
+        } else {
+            offset = getCenterItem(
+                    size: planetSize,
+                    offset: getPosTrigo(
+                            angular: pos,
+                            radiusCircle: getRadiusCircle(occurs: 5).0))
+        }
+        // TODO deg min line 1336 sw_draw.rs
+        let res = ObjectBodie(
+                swRetrograde: swRetrograde,
+                oSx: planetSize,
+                oSy: planetSize,
+                oPx: offset.offX,
+                oPy: offset.offY)
+        return res
     }
 
     private func getRadiusTotal() -> Double {
@@ -386,6 +491,17 @@ public class Swe {
                 (CIRCLE_SIZE_TRANSIT[3].0 - CIRCLE_SIZE_TRANSIT[2].0) / 2.0))
                 + CIRCLE_SIZE_TRANSIT[2].0))
                 / 100.0
+    }
+    
+    private func getBodieLongitude(bodie_longitude: Double, swTransit: Bool) -> Double {
+        var pos = 0.0
+        if swTransit {
+            pos = CIRCLE - swec.houses[0].longitude + bodie_longitude
+        } else {
+            pos = CIRCLE - swec.houses[0].longitude + bodie_longitude
+        }
+        pos = getFixedPos(pos_value: pos)
+        return pos
     }
 }
 

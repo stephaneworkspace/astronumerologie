@@ -43,6 +43,8 @@
 		F4C42D1028C3C67500EA0BC6 /* astronumerologieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D0F28C3C67500EA0BC6 /* astronumerologieTests.swift */; };
 		F4C42D1A28C3C67500EA0BC6 /* astronumerologieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D1928C3C67500EA0BC6 /* astronumerologieUITests.swift */; };
 		F4C42D1C28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */; };
+		F4CE6DD72914161F003CA160 /* Bodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE6DD62914161F003CA160 /* Bodies.swift */; };
+		F4CE6DD9291417B4003CA160 /* VAstrologieAssetBodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CE6DD8291417B4003CA160 /* VAstrologieAssetBodies.swift */; };
 		F4DFA0812911BBB9004DE58F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DFA07F2911BBB9004DE58F /* InfoPlist.strings */; };
 		F4DFA0842911BC07004DE58F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DFA0822911BC07004DE58F /* InfoPlist.strings */; };
 		F4F26B582912E81800E4E026 /* VAstrologieZodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4F26B572912E81800E4E026 /* VAstrologieZodiac.swift */; };
@@ -109,6 +111,8 @@
 		F4C42D1528C3C67500EA0BC6 /* astronumerologieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = astronumerologieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C42D1928C3C67500EA0BC6 /* astronumerologieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieUITests.swift; sourceTree = "<group>"; };
 		F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F4CE6DD62914161F003CA160 /* Bodies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bodies.swift; sourceTree = "<group>"; };
+		F4CE6DD8291417B4003CA160 /* VAstrologieAssetBodies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieAssetBodies.swift; sourceTree = "<group>"; };
 		F4DFA0802911BBB9004DE58F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F4DFA0832911BC07004DE58F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F4F26B572912E81800E4E026 /* VAstrologieZodiac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieZodiac.swift; sourceTree = "<group>"; };
@@ -227,6 +231,7 @@
 				F49927C329127689006AD339 /* Calandar.swift */,
 				F49927C529127699006AD339 /* LargerDrawLine.swift */,
 				F49927C7291276AD006AD339 /* Signs.swift */,
+				F4CE6DD62914161F003CA160 /* Bodies.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				F4F26B572912E81800E4E026 /* VAstrologieZodiac.swift */,
 				F4F26B592912EA3700E4E026 /* VAstrologieHouses.swift */,
 				F47EDC3F2913D60600841F97 /* VAstrologieAssetHouses.swift */,
+				F4CE6DD8291417B4003CA160 /* VAstrologieAssetBodies.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -477,6 +483,7 @@
 				F49927CA291276D9006AD339 /* VAstrologie.swift in Sources */,
 				F49927C629127699006AD339 /* LargerDrawLine.swift in Sources */,
 				F4C42D0128C3C67300EA0BC6 /* ContentView.swift in Sources */,
+				F4CE6DD72914161F003CA160 /* Bodies.swift in Sources */,
 				F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */,
 				F49927D22912A142006AD339 /* VAstrologieAssetSigns.swift in Sources */,
 				F4F26B5A2912EA3700E4E026 /* VAstrologieHouses.swift in Sources */,
@@ -491,6 +498,7 @@
 				552E820486700CDF313BCED2 /* ENamesTextField.swift in Sources */,
 				552E8ED31064F61BA413E19E /* ETitleLocalisation.swift in Sources */,
 				552E804A7ACBFFC1E90D83E5 /* ELocalisationTextField.swift in Sources */,
+				F4CE6DD9291417B4003CA160 /* VAstrologieAssetBodies.swift in Sources */,
 				552E879089C4087F4D4B2ED9 /* numerologie.swift in Sources */,
 				F426B43728E8528100FE1469 /* antools.cpp in Sources */,
 				F49927CC291277E3006AD339 /* Const.swift in Sources */,

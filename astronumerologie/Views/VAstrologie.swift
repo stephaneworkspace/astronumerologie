@@ -22,6 +22,11 @@ struct VAstrologie: View {
             ForEach(1...12, id: \.self)  { i in
                 VAstrologieAssetHouses(swe: $swe, house: i)
             }
+            //
+            ForEach(swe.bodies, id: \.self) { i in
+                VAstrologieAssetBodies(swe: $swe, bodie: i, swTransit: false)
+                VAstrologieAssetBodies(swe: $swe, bodie: i, swTransit: true)
+            }
         }
     }
 }

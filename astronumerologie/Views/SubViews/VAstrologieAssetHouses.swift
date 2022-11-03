@@ -10,7 +10,7 @@ import SVGView
 
 struct VAstrologieAssetHouses: View {
     @Binding var swe: Swe
-    @State var house: Int = 0
+    @State var house: Int
     var body: some View {
         let h = swe.house(number: house)
         VStack {

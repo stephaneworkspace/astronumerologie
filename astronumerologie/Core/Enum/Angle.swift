@@ -4,6 +4,7 @@
 
 import Foundation
 
+// TODO Int
 enum Angle: Int32 {
     case nothing = 0,
          asc = 1,
