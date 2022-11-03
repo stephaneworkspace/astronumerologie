@@ -89,8 +89,8 @@ public class Swe {
         self.swec = SweSvg(ephemPath: pathEphe)
     }
     
-    public func set(natal: Date, lat: Double, lng: Double, tz: Int32) {
-        self.swec.set(natal: natal, lat: lat, lng: lng, tz: tz)
+    public func set(natal: Date, transit: Date, lat: Double, lng: Double, tz: Int32) {
+        self.swec.set(natal: natal, transit: transit, lat: lat, lng: lng, tz: tz)
     }
     
     public func drawCircle(circles: [Circle]) -> Path {
