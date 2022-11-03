@@ -14,17 +14,16 @@ struct VAstrologieAssetBodies: View {
     @State var swTransit: Bool
     var body: some View {
         VStack {
-            let s = swe.bodie(bodie: bodie, swTransit: swTransit)
-            /*
+            let b = swe.bodie(bodie: bodie, swTransit: swTransit)
             GeometryReader { geometry in
                 SVGView(contentsOf: try! swe.swec.asset_bodie(i: bodie.rawValue))
                     .offset(
-                        x: s.oPx,
-                        y: s.oPy)
+                        x: b.oPx,
+                        y: b.oPy)
                     .frame(
-                        width: s.oSx,
-                        height: s.oSy)
-            }*/
+                        width: b.oSx,
+                        height: b.oSy)
+            }
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
     }
 }
