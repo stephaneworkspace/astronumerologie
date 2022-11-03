@@ -8,7 +8,7 @@
 import SwiftUI
 import SVGView
 
-struct VAstrologieSigns: View {
+struct VAstrologieAssetSigns: View {
     @Binding var swe: Swe
     @State var sign: Int = 0
     var body: some View {

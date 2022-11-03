@@ -16,7 +16,7 @@ struct VAstrologie: View {
         ZStack {
             VAstrologieZodiac(swe: $swe)
             ForEach(1...12, id: \.self)  { i in
-                VAstrologieSigns(swe: $swe, sign: i)
+                VAstrologieAssetSigns(swe: $swe, sign: i)
             }
             VAstrologieHouses(swe: $swe)
         }
