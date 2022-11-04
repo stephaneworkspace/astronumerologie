@@ -24,6 +24,8 @@ struct VAstrologie: View {
             }
             //
             ForEach(swe.bodies, id: \.self) { i in
+                VAstrologieBodies(swe: $swe, bodie: i, swTransit: false)
+                VAstrologieBodies(swe: $swe, bodie: i, swTransit: true)
                 VAstrologieAssetBodies(swe: $swe, bodie: i, swTransit: false)
                 VAstrologieAssetBodies(swe: $swe, bodie: i, swTransit: true)
             }

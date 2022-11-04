@@ -7,7 +7,7 @@ import SwiftUI
 import SweSvg
 import SVGView
 
-// TODO ailleur
+// TODO ailleur public inside swe
 public struct Object {
     var sign: Signs
     var oSx: Double
@@ -83,9 +83,9 @@ public class Swe {
         bodies.append(Bodies.Neptune)
         bodies.append(Bodies.Pluto)
         bodies.append(Bodies.NoeudLunaire)
-        bodies.append(Bodies.Chiron)
-        bodies.append(Bodies.Ceres)
-        bodies.append(Bodies.NoeudLunaireSud)
+        //bodies.append(Bodies.Chiron)
+        //bodies.append(Bodies.Ceres)
+        //bodies.append(Bodies.NoeudLunaireSud)
         self.swec = SweSvg(ephemPath: pathEphe)
     }
     
@@ -310,6 +310,71 @@ public class Swe {
                 oSy: planetSize,
                 oPx: offset.offX,
                 oPy: offset.offY)
+        return res
+    }
+    
+    public func bodie_lines(bodie: Bodies, swTransit: Bool) -> [Line] {
+        var res: [Line] = []
+        var pos = 0.0
+        if (!swTransit) {
+            // natal
+            for b in swec.bodies_natal {
+                if (b.bodie == bodie.rawValue) {
+                    var axy: [Offset]
+                    pos = getBodieLongitude(bodie_longitude: b.calc_ut.longitude, swTransit: swTransit)
+                    axy =
+                            getLineTrigo(
+                                    angular: pos,
+                                    radiusCircleBegin: getRadiusCircle(occurs: 3).0,
+                                    radiusCircleEnd: getRadiusCircle(occurs: 7).0)
+                    res.append(Line(
+                            lX1: axy[0].offX,
+                            lY1: axy[0].offY,
+                            lX2: axy[1].offX,
+                            lY2: axy[1].offY)
+                    )
+                    axy = getLineTrigo(
+                            angular: pos,
+                            radiusCircleBegin: getRadiusCircle(occurs: 7).0,
+                            radiusCircleEnd: getRadiusCircle(occurs: 8).0)
+                    res.append(Line(
+                            lX1: axy[0].offX,
+                            lY1: axy[0].offY,
+                            lX2: axy[1].offX,
+                            lY2: axy[1].offY)
+                    )
+                }
+            }
+        } else {
+            // transit
+            for b in swec.bodies_transit {
+                if (b.bodie == bodie.rawValue) {
+                    var axy: [Offset]
+                    pos = getBodieLongitude(bodie_longitude: b.calc_ut.longitude, swTransit: swTransit)
+                    axy =
+                            getLineTrigo(
+                                    angular: pos,
+                                    radiusCircleBegin: getRadiusCircle(occurs: 1).0,
+                                    radiusCircleEnd: getRadiusCircle(occurs: 10).0)
+                    res.append(Line(
+                            lX1: axy[0].offX,
+                            lY1: axy[0].offY,
+                            lX2: axy[1].offX,
+                            lY2: axy[1].offY)
+                    )
+                    axy = getLineTrigo(
+                            angular: pos,
+                            radiusCircleBegin: getRadiusCircle(occurs: 10).0,
+                            radiusCircleEnd: getRadiusCircle(occurs: 11).0)
+                    res.append(Line(
+                            lX1: axy[0].offX,
+                            lY1: axy[0].offY,
+                            lX2: axy[1].offX,
+                            lY2: axy[1].offY)
+                    )
+                }
+            }
+        }
         return res
     }
 
