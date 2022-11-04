@@ -23,6 +23,15 @@ struct VAstrologieAssetBodies: View {
                     .frame(
                         width: b.oSx,
                         height: b.oSy)
+                //if (b.swRetrograde) {
+                    SVGView(contentsOf: try! swe.swec.asset_bodie_r(i: bodie.rawValue))
+                        .offset(
+                            x: b.oPx + b.oSx / RETROGRADE_DIV,
+                            y: b.oPy + b.oSy / RETROGRADE_DIV) //
+                        .frame(
+                            width: b.oSx / RETROGRADE_SIZE_DIV,
+                            height: b.oSy / RETROGRADE_SIZE_DIV)
+                //}
             }
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
     }
