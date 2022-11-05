@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-import SweSvg
+import SweBressaniDev
 
 struct DrawCircle: Shape {
     var circles: [SweCore.AstroCircle]

@@ -6,8 +6,8 @@
 //
 
 import SwiftUI
+import SweBressaniDev
 import SVGView
-import SweSvg
 
 struct VAstrologieAssetAngles: View {
     @Binding var swe: SweCore

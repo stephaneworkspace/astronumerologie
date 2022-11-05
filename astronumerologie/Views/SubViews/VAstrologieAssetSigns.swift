@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SweSvg
+import SweBressaniDev
 import SVGView
 
 struct VAstrologieAssetSigns: View {

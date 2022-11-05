@@ -3,19 +3,28 @@
     {
       "identity" : "svgview",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/exyte/SVGView",
+      "location" : "https://github.com/stephaneworkspace/SVGView.git",
       "state" : {
-        "revision" : "18bf73efc2f2dede5dfa73f517ddf4e054061294",
-        "version" : "1.0.4"
+        "branch" : "main",
+        "revision" : "bcc3e54051acd94df1c54522815e6688ac9d6966"
       }
     },
     {
-      "identity" : "zip",
+      "identity" : "swebressanidev",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/marmelroy/Zip.git",
+      "location" : "https://github.com/stephaneworkspace/SweBressaniDev.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a535c59dca6f6bb9a7fac1311b317b46e3ebde34"
+      }
+    },
+    {
+      "identity" : "zip-1",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/stephaneworkspace/Zip-1",
       "state" : {
         "branch" : "master",
-        "revision" : "67fa55813b9e7b3b9acee9c0ae501def28746d76"
+        "revision" : "f34106fbf053319638ea42056eb5d131c6bb2149"
       }
     }
   ],

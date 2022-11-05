@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SweSvg
+import SweBressaniDev
 
 struct VAstrologieAngles: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
