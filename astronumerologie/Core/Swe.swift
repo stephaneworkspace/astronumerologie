@@ -5,7 +5,6 @@
 import Foundation
 import SwiftUI
 import SweSvg
-import SVGView
 
 public class Swe {
     struct Circle {
