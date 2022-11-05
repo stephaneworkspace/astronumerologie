@@ -10,12 +10,12 @@
       }
     },
     {
-      "identity" : "swesvg",
+      "identity" : "swebressanidev",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stephaneworkspace/SweSvg.git",
+      "location" : "https://github.com/stephaneworkspace/SweBressaniDev.git",
       "state" : {
         "branch" : "main",
-        "revision" : "f28b3fe1ed6603c0ba307ade6baf8d92b9cc4032"
+        "revision" : "a535c59dca6f6bb9a7fac1311b317b46e3ebde34"
       }
     },
     {
