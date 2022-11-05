@@ -51,7 +51,7 @@ class Astrologie {
         return Chart.init(nLat: self.astro.lat, nLng: self.astro.lng, nTimeZone: self.astro.tz, nYear: self.astro.y, nMonth: self.astro.m, nDay: self.astro.d, nHour: self.astro.hour, nMin: self.astro.min, tLat: self.astro.lat, tLng: self.astro.lng, tTimeZone: self.astro.tz, tYear: 2022, tMonth: 1, tDay: 1, tHour: 0, tMin: 0)
     }
     
-    func create_png(natal: Date, lat: Double, lng: Double, tz: Int32) -> URL {
+    func create_png(natal: Date, lat: Double, lng: Double, tz: Int32, colorScheme: ColorScheme) -> URL {
         
         /*let svg: String = String(cString: UnsafePointer<CChar>(theme_astral_svg(self.astro.y,
                                                                                 self.astro.m,
@@ -65,7 +65,7 @@ class Astrologie {
         */
         // self.astro.natal etc... // TODO et remove la func
         var sweSvg = SweSvg(ephemPath: self.ephem)
-        sweSvg.set(natal: natal, transit: natal, lat: lat, lng: lng, tz: tz, colorMode: .Light) // TODO
+        sweSvg.set(natal: natal, transit: natal, lat: lat, lng: lng, tz: tz, colorMode: colorScheme == .light ? .Light : .Dark) // TODO
         let svg = sweSvg.theme_astral()
         
         let base64String = String(cString: UnsafePointer<CChar>(create_png_from_file(svg).b_64))

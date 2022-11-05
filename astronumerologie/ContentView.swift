@@ -62,7 +62,7 @@ struct ContentView: View {
                     do {
                         sleep (2)
                     }
-                    let url = sAstro.create_png(natal: sdNatal, lat: bdLat, lng: bdLng, tz: Int32(biTimeZone))
+                    let url = sAstro.create_png(natal: sdNatal, lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), colorScheme: colorScheme)
                     sInputImageAstro = UIImage(contentsOfFile: url.path)
                     guard let sInputImageAstro = sInputImageAstro else { return } // TODO return ?
                     sImageAstro = Image(uiImage: sInputImageAstro)
