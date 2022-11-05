@@ -4,8 +4,7 @@
 
 import Foundation
 
-// TODO Int
-enum Angle: Int32 {
+enum Angles: Int32 {
     case nothing = 0,
          asc = 1,
          fc = 2,

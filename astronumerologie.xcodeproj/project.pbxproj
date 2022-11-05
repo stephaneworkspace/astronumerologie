@@ -23,6 +23,7 @@
 		F426B44028E8544C00FE1469 /* librantools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B43E28E8544B00FE1469 /* librantools.a */; };
 		F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437A23428D8A34200A6D196 /* print-numerologie.swift */; };
 		F461E9DD29031554003BFCEF /* SweSvg in Frameworks */ = {isa = PBXBuildFile; productRef = F461E9DC29031554003BFCEF /* SweSvg */; };
+		F46F21AF2916B17E00211049 /* VAstrologieAssetAngles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F21AE2916B17E00211049 /* VAstrologieAssetAngles.swift */; };
 		F47EDC402913D60600841F97 /* VAstrologieAssetHouses.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47EDC3F2913D60600841F97 /* VAstrologieAssetHouses.swift */; };
 		F47FD84F291526EE000A3B73 /* VAstrologieBodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F47FD84E291526EE000A3B73 /* VAstrologieBodies.swift */; };
 		F484F7B928ECDBA60096F98D /* ephem.zip in Resources */ = {isa = PBXBuildFile; fileRef = F484F7B828ECDBA60096F98D /* ephem.zip */; };
@@ -89,6 +90,7 @@
 		F426B43628E8528100FE1469 /* antools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = antools.hpp; sourceTree = "<group>"; };
 		F426B43E28E8544B00FE1469 /* librantools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librantools.a; path = astronumerologie/CodeBridge/lib/librantools.a; sourceTree = "<group>"; };
 		F437A23428D8A34200A6D196 /* print-numerologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "print-numerologie.swift"; sourceTree = "<group>"; };
+		F46F21AE2916B17E00211049 /* VAstrologieAssetAngles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieAssetAngles.swift; sourceTree = "<group>"; };
 		F47EDC3F2913D60600841F97 /* VAstrologieAssetHouses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieAssetHouses.swift; sourceTree = "<group>"; };
 		F47FD84E291526EE000A3B73 /* VAstrologieBodies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieBodies.swift; sourceTree = "<group>"; };
 		F484F7B828ECDBA60096F98D /* ephem.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ephem.zip; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				F47EDC3F2913D60600841F97 /* VAstrologieAssetHouses.swift */,
 				F4CE6DD8291417B4003CA160 /* VAstrologieAssetBodies.swift */,
 				F47FD84E291526EE000A3B73 /* VAstrologieBodies.swift */,
+				F46F21AE2916B17E00211049 /* VAstrologieAssetAngles.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -503,6 +506,7 @@
 				552E804A7ACBFFC1E90D83E5 /* ELocalisationTextField.swift in Sources */,
 				F4CE6DD9291417B4003CA160 /* VAstrologieAssetBodies.swift in Sources */,
 				F47FD84F291526EE000A3B73 /* VAstrologieBodies.swift in Sources */,
+				F46F21AF2916B17E00211049 /* VAstrologieAssetAngles.swift in Sources */,
 				552E879089C4087F4D4B2ED9 /* numerologie.swift in Sources */,
 				F426B43728E8528100FE1469 /* antools.cpp in Sources */,
 				F49927CC291277E3006AD339 /* Const.swift in Sources */,

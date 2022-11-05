@@ -7,37 +7,13 @@ import SwiftUI
 import SweSvg
 import SVGView
 
-// TODO ailleur public inside swe
-public struct Object {
-    var sign: Signs
-    var oSx: Double
-    var oSy: Double
-    var oPx: Double
-    var oPy: Double
-}
-
-public struct ObjectHouse {
-    var oSx: Double
-    var oSy: Double
-    var oPx: Double
-    var oPy: Double
-}
-
-struct ObjectBodie {
-    var swRetrograde: Bool
-    var oSx: Double
-    var oSy: Double
-    var oPx: Double
-    var oPy: Double
-}
-
 public class Swe {
-    public struct Circle {
+    struct Circle {
         var center: Double
         var radius: Double
     }
 
-    public struct Line {
+    struct Line {
         var lX1: Double
         var lY1: Double
         var lX2: Double
@@ -54,7 +30,7 @@ public class Swe {
         var lY3: Double
     }
 
-    public struct Offset {
+    struct Offset {
         var offX: Double
         var offY: Double
     }
@@ -69,10 +45,40 @@ public class Swe {
         var result: Double
     }
 
-    public struct HouseResult {
+    struct HouseResult {
         var cusps: [Double]
         var ascmc: [Double]
         var result: Int32
+    }
+    
+    struct Object {
+        var sign: Signs
+        var oSx: Double
+        var oSy: Double
+        var oPx: Double
+        var oPy: Double
+    }
+
+    struct ObjectHouse {
+        var oSx: Double
+        var oSy: Double
+        var oPx: Double
+        var oPy: Double
+    }
+
+    struct ObjectBodie {
+        var swRetrograde: Bool
+        var oSx: Double
+        var oSy: Double
+        var oPx: Double
+        var oPy: Double
+    }
+    
+    struct ObjectAngle {
+        var oSx: Double
+        var oSy: Double
+        var oPx: Double
+        var oPy: Double
     }
 
     public var size: Int // TODO sizeChart: (screenSize.width == 744 && screenSize.height == 1133) ? 630.0 : 390.0)
@@ -106,7 +112,7 @@ public class Swe {
         self.swec.set(natal: natal, transit: transit, lat: lat, lng: lng, tz: tz, colorMode: colorMode)
     }
 
-    public func drawCircle(circles: [Circle]) -> Path {
+    func drawCircle(circles: [Circle]) -> Path {
         var path = Path()
         for circle in circles.reversed() {
             path.move(to: CGPoint(x: circle.center + circle.radius, y: circle.center))
@@ -123,7 +129,7 @@ public class Swe {
         return path
     }
 
-    public func drawLine(lines: [Line]) -> Path {
+    func drawLine(lines: [Line]) -> Path {
         var path = Path()
         for line in lines {
             path.move(to: CGPoint(x: line.lX1, y: line.lY1))
@@ -134,7 +140,7 @@ public class Swe {
     }
     
 
-    public func circles() -> [Circle] {
+    func circles() -> [Circle] {
         var res: [Circle] = []
         let center = getRadiusTotal()
         for (idx, circleSize) in CIRCLE_SIZE_TRANSIT.enumerated() {
@@ -146,7 +152,7 @@ public class Swe {
         return res
     }
 
-    public func zodiac_lines() -> [Line] {
+    func zodiac_lines() -> [Line] {
         var res: [Line] = []
         for iIdx in 1...12 {
             // 0°
@@ -188,7 +194,7 @@ public class Swe {
         return res
     }
 
-    public func zodiac_sign(sign: Int) -> Object {
+    func zodiac_sign(sign: Int) -> Object {
         let zodiacSize = (((ZODIAC_SIZE * ZODIAC_RATIO) / 100.0) * Double(size)) / 100.0;
         let offPosAsc = CIRCLE - swec.houses[0].longitude
         let signEnum: Signs = Signs.init(rawValue: sign) ?? Signs.aries
@@ -207,7 +213,7 @@ public class Swe {
         return res
     }
     
-    public func house(number: Int) -> ObjectHouse {
+    func house(number: Int) -> ObjectHouse {
         var houseSize = (((HOUSE_SIZE * HOUSE_RATIO) / 100.0) * Double(size)) / 100.0
         let offPosAsc = CIRCLE - swec.houses[0].longitude
         var posNext: Double
@@ -326,7 +332,7 @@ public class Swe {
         return res
     }
     
-    public func bodie_lines(bodie: Bodies, swTransit: Bool) -> [Line] {
+    func bodie_lines(bodie: Bodies, swTransit: Bool) -> [Line] {
         var res: [Line] = []
         var pos = 0.0
         if (!swTransit) {
@@ -388,6 +394,23 @@ public class Swe {
                 }
             }
         }
+        return res
+    }
+    
+    func angle(a: Angles) -> ObjectAngle {
+        let angleRatio = 12.0 // TODO const
+        var angleSize = (((ANGLE_SIZE * angleRatio) / 100.0) * Double(size)) / 100.0
+        let pos = getAngleLongitude(angle: a)
+        let offAngle = getCenterItem(
+                size: angleSize,
+                offset: getPosTrigo(
+                        angular: pos,
+                        radiusCircle: getRadiusCircle(occurs: 5).0))
+        let res = ObjectAngle(
+                oSx: angleSize,
+                oSy: angleSize,
+                oPx: offAngle.offX,
+                oPy: offAngle.offY)
         return res
     }
 
@@ -456,7 +479,7 @@ public class Swe {
             let pos = getFixedPos(pos_value: offHouse + swec.houses[iIdx].longitude)
             var axyTriangle: [Offset] = []
             let angularPointer = -1.0 // TODO CONST
-            if swec.houses[iIdx].angle == Angle.nothing.rawValue {
+            if swec.houses[iIdx].angle == Angles.nothing.rawValue {
                 axyTriangle = getTriangleTrigo(
                         angular: pos,
                         angularPointer: angularPointer,
@@ -577,6 +600,18 @@ public class Swe {
             pos = CIRCLE - swec.houses[0].longitude + bodie_longitude
         } else {
             pos = CIRCLE - swec.houses[0].longitude + bodie_longitude
+        }
+        pos = getFixedPos(pos_value: pos)
+        return pos
+    }
+    
+    private func getAngleLongitude(angle: Angles) -> Double {
+        var pos = 0.0
+        for house in swec.houses {
+            if house.angle == angle.rawValue {
+                pos = CIRCLE - swec.houses[0].longitude + house.longitude
+                break
+            }
         }
         pos = getFixedPos(pos_value: pos)
         return pos
