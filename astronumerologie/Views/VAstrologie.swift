@@ -17,10 +17,11 @@ struct VAstrologie: View {
             ForEach(1...12, id: \.self)  { i in
                 VAstrologieAssetSigns(swe: $swe, sign: i)
             }
-            VAstrologieAssetAngles(swe: $swe, angle: .Asc)
-            VAstrologieAssetAngles(swe: $swe, angle: .Fc)
-            VAstrologieAssetAngles(swe: $swe, angle: .Desc)
-            VAstrologieAssetAngles(swe: $swe, angle: .Mc)
+            ForEach(1...4, id: \.self) { i in
+                let angle = Angles(rawValue: Int32(i))!
+                VAstrologieAssetAngles(swe: $swe, angle: angle)
+                VAstrologieAngles(swe: $swe, angle: angle)
+            }
             VAstrologieHouses(swe: $swe)
             ForEach(1...12, id: \.self)  { i in
                 VAstrologieAssetHouses(swe: $swe, house: i)

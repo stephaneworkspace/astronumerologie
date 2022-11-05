@@ -143,7 +143,6 @@ struct ContentView: View {
                 }
                 .tag(3)
                 VStack {
-                    Text("Astrologie 2")
                     VAstrologie(swe: $swe)
                 }
                 .padding()
