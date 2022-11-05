@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import SweSvg
 
 struct VAstrologieZodiac: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @Binding var swe: Swe
+    @Binding var swe: SweCore
     
     var body: some View {
         let colorStroke: Color = colorScheme == .light ? .black : .white
         VStack {
-            swe.drawCircle(circles: swe.circles()).stroke(colorStroke, lineWidth: 1.0)
+            DrawCircle(circles: swe.circles()).stroke(colorStroke, lineWidth: 1.0)
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
         VStack {
-            swe.drawLine(lines: swe.zodiac_lines()).stroke(colorStroke, lineWidth: 1.0)
+            DrawLine(lines: swe.zodiac_lines()).stroke(colorStroke, lineWidth: 1.0)
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
     }
 }

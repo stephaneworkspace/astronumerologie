@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SweSvg
 import SVGView
 
 struct VAstrologieAssetHouses: View {
-    @Binding var swe: Swe
+    @Binding var swe: SweCore
     @State var house: Int
     var body: some View {
         let h = swe.house(number: house)

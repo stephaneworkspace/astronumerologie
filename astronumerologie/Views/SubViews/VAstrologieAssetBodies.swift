@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import SweSvg
 import SVGView
 
 struct VAstrologieAssetBodies: View {
-    @Binding var swe: Swe
-    @State var bodie: Bodies
+    @Binding var swe: SweCore
+    @State var bodie: SweCore.Bodies
     @State var swTransit: Bool
     var body: some View {
         VStack {

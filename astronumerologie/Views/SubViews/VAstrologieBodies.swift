@@ -6,25 +6,12 @@
 //
 
 import SwiftUI
-
-struct DrawBodieLine: Shape {
-    var lines: [Swe.Line]
-    
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        for line in lines {
-            path.move(to: CGPoint(x: line.lX1, y: line.lY1))
-            path.addLine(to: CGPoint(x: line.lX2, y: line.lY2))
-            path.closeSubpath()
-        }
-        return path
-    }
-}
+import SweSvg
 
 struct VAstrologieBodies: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @Binding var swe: Swe
-    @State var bodie: Bodies
+    @Binding var swe: SweCore
+    @State var bodie: SweCore.Bodies
     @State var swTransit: Bool
     
     var body: some View {

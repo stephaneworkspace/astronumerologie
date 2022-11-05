@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import SweSvg
 
 struct VAstrologieHouses: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @Binding var swe: Swe
+    @Binding var swe: SweCore
     
     var body: some View {
         let colorStroke: Color = colorScheme == .light ? .black : .white
         VStack {
-            swe.drawHouseTriangle(lines: swe.house_lines()).fill(colorStroke)
+            DrawHouseTriangle(lines: swe.house_lines()).fill(colorStroke)
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
         VStack {
-            swe.drawHouseLine(lines: swe.house_lines()).stroke(colorStroke, lineWidth: 1.0)
+            DrawHouseLine(lines: swe.house_lines()).stroke(colorStroke, lineWidth: 1.0)
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
     }
 }

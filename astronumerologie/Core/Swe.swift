@@ -6,7 +6,7 @@ import Foundation
 import SwiftUI
 import SweSvg
 
-public class Swe {
+public class SweOld {
     struct Circle {
         var center: Double
         var radius: Double
@@ -106,74 +106,10 @@ public class Swe {
         self.swec = SweSvg(ephemPath: pathEphe)
     }
     
-    public func set(natal: Date, transit: Date, lat: Double, lng: Double, tz: Int32, colorScheme: ColorScheme) {
+    func set(natal: Date, transit: Date, lat: Double, lng: Double, tz: Int32, colorScheme: ColorScheme) {
         colorMode = colorScheme == .light ? .Light : .Dark
         self.swec.set(natal: natal, transit: transit, lat: lat, lng: lng, tz: tz, colorMode: colorMode)
     }
-
-    func drawCircle(circles: [Circle]) -> Path {
-        var path = Path()
-        for circle in circles.reversed() {
-            path.move(to: CGPoint(x: circle.center + circle.radius, y: circle.center))
-            path.addArc(
-                    center: CGPoint(
-                            x: circle.center,
-                            y: circle.center),
-                    radius: circle.radius,
-                    startAngle: .zero,
-                    endAngle: .degrees(360.0),
-                    clockwise: false)
-            path.closeSubpath()
-        }
-        return path
-    }
-
-    func drawLine(lines: [Line]) -> Path {
-        var path = Path()
-        for line in lines {
-            path.move(to: CGPoint(x: line.lX1, y: line.lY1))
-            path.addLine(to: CGPoint(x: line.lX2, y: line.lY2))
-            path.closeSubpath()
-        }
-        return path
-    }
-    
-    func drawHouseLine(lines: [HouseLine]) -> Path {
-        var path = Path()
-        for line in lines {
-            if line.lXY3 {
-                /* path.move(to: CGPoint(x: line.lX3, y: line.lY3))
-                path.addLine(to: CGPoint(x: line.lX1, y: line.lY1))
-                path.addLine(to: CGPoint(x: line.lX2, y: line.lY2))
-                path.addLine(to: CGPoint(x: line.lX3, y: line.lY3))
-                path.closeSubpath()*/
-            } else {
-                path.move(to: CGPoint(x: line.lX1, y: line.lY1))
-                path.addLine(to: CGPoint(x: line.lX2, y: line.lY2))
-                path.closeSubpath()
-            }
-        }
-        return path
-    }
-
-    func drawHouseTriangle(lines: [HouseLine]) -> Path {
-        var path = Path()
-        for line in lines {
-            if line.lXY3 {
-                path.move(to: CGPoint(x: line.lX3, y: line.lY3))
-                path.addLine(to: CGPoint(x: line.lX1, y: line.lY1))
-                path.addLine(to: CGPoint(x: line.lX2, y: line.lY2))
-                path.addLine(to: CGPoint(x: line.lX3, y: line.lY3))
-                path.closeSubpath()
-            } /*else {
-                path.move(to: CGPoint(x: line.lX1, y: line.lY1))
-                path.addLine(to: CGPoint(x: line.lX2, y: line.lY2))
-                path.closeSubpath()
-            }*/
-        }
-        return path
-    }
-
 
     func circles() -> [Circle] {
         var res: [Circle] = []

@@ -51,7 +51,7 @@ struct ContentView: View {
     @State var sAstro: Astrologie = Astrologie(natal: Date(),lat: 0, lng: 0, tz: 0)
     @State private var sInputImageAstro: UIImage?
     @State var sImageAstro: Image?
-    @State private var swe: Swe = Swe(pathEphe: "")
+    @State private var swe: SweCore = SweCore(pathEphe: "")
 
     var body: some View {
         VStack {
@@ -67,7 +67,7 @@ struct ContentView: View {
                     guard let sInputImageAstro = sInputImageAstro else { return } // TODO return ?
                     sImageAstro = Image(uiImage: sInputImageAstro)
                 } else if siSelected == 4 {
-                    self.swe.set(natal: sdNatal, transit: Date(), lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), colorScheme: colorScheme) // TODO
+                    self.swe.set(natal: sdNatal, transit: Date(), lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), colorMode: colorScheme == .light ? .Light : .Dark) // TODO
                 }
             }) {
                 VStack {

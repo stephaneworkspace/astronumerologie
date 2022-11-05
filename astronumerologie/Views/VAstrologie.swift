@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SweSvg
 
 struct VAstrologie: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @Binding var swe: Swe
+    @Binding var swe: SweCore
 
     var body: some View {
         ZStack {
@@ -18,7 +19,7 @@ struct VAstrologie: View {
                 VAstrologieAssetSigns(swe: $swe, sign: i)
             }
             ForEach(1...4, id: \.self) { i in
-                let angle = Angles(rawValue: Int32(i))!
+                let angle = SweCore.Angles(rawValue: Int32(i))!
                 VAstrologieAssetAngles(swe: $swe, angle: angle)
                 VAstrologieAngles(swe: $swe, angle: angle)
             }

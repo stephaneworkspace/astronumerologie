@@ -7,10 +7,11 @@
 
 import SwiftUI
 import SVGView
+import SweSvg
 
 struct VAstrologieAssetAngles: View {
-    @Binding var swe: Swe
-    @State var angle: Angles
+    @Binding var swe: SweCore
+    @State var angle: SweCore.Angles
     var body: some View {
         VStack {
             let a = swe.angle(a: angle)
