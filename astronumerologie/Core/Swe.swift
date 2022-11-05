@@ -43,6 +43,16 @@ public class Swe {
         var lX2: Double
         var lY2: Double
     }
+    
+    struct HouseLine {
+        var lX1: Double
+        var lY1: Double
+        var lX2: Double
+        var lY2: Double
+        var lXY3: Bool
+        var lX3: Double
+        var lY3: Double
+    }
 
     public struct Offset {
         var offX: Double
@@ -92,7 +102,7 @@ public class Swe {
     public func set(natal: Date, transit: Date, lat: Double, lng: Double, tz: Int32) {
         self.swec.set(natal: natal, transit: transit, lat: lat, lng: lng, tz: tz)
     }
-    
+
     public func drawCircle(circles: [Circle]) -> Path {
         var path = Path()
         for circle in circles.reversed() {

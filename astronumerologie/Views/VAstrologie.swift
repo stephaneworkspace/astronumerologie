@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct VAstrologie: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @Binding var swe: Swe

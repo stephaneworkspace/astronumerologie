@@ -8,18 +8,10 @@
 import SwiftUI
 
 
-struct HouseLine {
-    var lX1: Double
-    var lY1: Double
-    var lX2: Double
-    var lY2: Double
-    var lXY3: Bool
-    var lX3: Double
-    var lY3: Double
-}
+
 
 struct DrawHouseLine: Shape {
-    var lines: [HouseLine]
+    var lines: [Swe.HouseLine]
     
     func path(in rect: CGRect) -> Path {
         var path = Path()
@@ -42,7 +34,7 @@ struct DrawHouseLine: Shape {
 
 
 struct DrawHouseTriangle: Shape {
-    var lines: [HouseLine]
+    var lines: [Swe.HouseLine]
 
     func path(in rect: CGRect) -> Path {
         var path = Path()
