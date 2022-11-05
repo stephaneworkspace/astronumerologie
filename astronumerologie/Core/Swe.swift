@@ -139,6 +139,42 @@ public class Swe {
         return path
     }
     
+    func drawHouseLine(lines: [HouseLine]) -> Path {
+        var path = Path()
+        for line in lines {
+            if line.lXY3 {
+                /* path.move(to: CGPoint(x: line.lX3, y: line.lY3))
+                path.addLine(to: CGPoint(x: line.lX1, y: line.lY1))
+                path.addLine(to: CGPoint(x: line.lX2, y: line.lY2))
+                path.addLine(to: CGPoint(x: line.lX3, y: line.lY3))
+                path.closeSubpath()*/
+            } else {
+                path.move(to: CGPoint(x: line.lX1, y: line.lY1))
+                path.addLine(to: CGPoint(x: line.lX2, y: line.lY2))
+                path.closeSubpath()
+            }
+        }
+        return path
+    }
+
+    func drawHouseTriangle(lines: [HouseLine]) -> Path {
+        var path = Path()
+        for line in lines {
+            if line.lXY3 {
+                path.move(to: CGPoint(x: line.lX3, y: line.lY3))
+                path.addLine(to: CGPoint(x: line.lX1, y: line.lY1))
+                path.addLine(to: CGPoint(x: line.lX2, y: line.lY2))
+                path.addLine(to: CGPoint(x: line.lX3, y: line.lY3))
+                path.closeSubpath()
+            } /*else {
+                path.move(to: CGPoint(x: line.lX1, y: line.lY1))
+                path.addLine(to: CGPoint(x: line.lX2, y: line.lY2))
+                path.closeSubpath()
+            }*/
+        }
+        return path
+    }
+
 
     func circles() -> [Circle] {
         var res: [Circle] = []
