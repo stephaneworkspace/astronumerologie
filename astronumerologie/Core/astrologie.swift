@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 import Zip
-import SweSvg
+import SweBressaniDev
 
 
 struct AstroData {

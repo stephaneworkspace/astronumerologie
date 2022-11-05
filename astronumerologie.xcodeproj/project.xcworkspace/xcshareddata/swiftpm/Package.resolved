@@ -10,15 +10,6 @@
       }
     },
     {
-      "identity" : "swebressanidev",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/stephaneworkspace/SweBressaniDev.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "a535c59dca6f6bb9a7fac1311b317b46e3ebde34"
-      }
-    },
-    {
       "identity" : "zip",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/marmelroy/Zip.git",

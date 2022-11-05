@@ -22,7 +22,6 @@
 		F426B43728E8528100FE1469 /* antools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F426B43528E8528100FE1469 /* antools.cpp */; };
 		F426B44028E8544C00FE1469 /* librantools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B43E28E8544B00FE1469 /* librantools.a */; };
 		F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437A23428D8A34200A6D196 /* print-numerologie.swift */; };
-		F461E9DD29031554003BFCEF /* SweSvg in Frameworks */ = {isa = PBXBuildFile; productRef = F461E9DC29031554003BFCEF /* SweSvg */; };
 		F46F21AF2916B17E00211049 /* VAstrologieAssetAngles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F21AE2916B17E00211049 /* VAstrologieAssetAngles.swift */; };
 		F46F21B12916C7D900211049 /* VAstrologieAngles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F21B02916C7D900211049 /* VAstrologieAngles.swift */; };
 		F46F21B32916CCE900211049 /* AstrologieShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46F21B22916CCE900211049 /* AstrologieShape.swift */; };
@@ -120,7 +119,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F9F52C28EEEDC100B0520A /* Zip in Frameworks */,
-				F461E9DD29031554003BFCEF /* SweSvg in Frameworks */,
 				F49927CF291291E9006AD339 /* SVGView in Frameworks */,
 				F426B44028E8544C00FE1469 /* librantools.a in Frameworks */,
 			);
@@ -331,7 +329,6 @@
 			name = astronumerologie;
 			packageProductDependencies = (
 				F4F9F52B28EEEDC100B0520A /* Zip */,
-				F461E9DC29031554003BFCEF /* SweSvg */,
 				F49927CE291291E9006AD339 /* SVGView */,
 			);
 			productName = astronumerologie;
@@ -412,6 +409,7 @@
 				F4F9F52A28EEEDC100B0520A /* XCRemoteSwiftPackageReference "Zip" */,
 				F49D56442903142D00AF8F9F /* XCRemoteSwiftPackageReference "SweSvg" */,
 				F49927CD291291E9006AD339 /* XCRemoteSwiftPackageReference "SVGView" */,
+				F46F21B42916DD9400211049 /* XCRemoteSwiftPackageReference "SweBressaniDev" */,
 			);
 			productRefGroup = F4C42CFC28C3C67300EA0BC6 /* Products */;
 			projectDirPath = "";
@@ -863,6 +861,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F46F21B42916DD9400211049 /* XCRemoteSwiftPackageReference "SweBressaniDev" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephaneworkspace/SweBressaniDev.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		F49927CD291291E9006AD339 /* XCRemoteSwiftPackageReference "SVGView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/exyte/SVGView";
@@ -890,11 +896,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F461E9DC29031554003BFCEF /* SweSvg */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F49D56442903142D00AF8F9F /* XCRemoteSwiftPackageReference "SweSvg" */;
-			productName = SweSvg;
-		};
 		F49927CE291291E9006AD339 /* SVGView */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F49927CD291291E9006AD339 /* XCRemoteSwiftPackageReference "SVGView" */;
