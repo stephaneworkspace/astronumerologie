@@ -65,7 +65,7 @@ class Astrologie {
         */
         // self.astro.natal etc... // TODO et remove la func
         var sweSvg = SweSvg(ephemPath: self.ephem)
-        sweSvg.set(natal: natal, transit: natal, lat: lat, lng: lng, tz: tz) // TODO
+        sweSvg.set(natal: natal, transit: natal, lat: lat, lng: lng, tz: tz, colorMode: .Light) // TODO
         let svg = sweSvg.theme_astral()
         
         let base64String = String(cString: UnsafePointer<CChar>(create_png_from_file(svg).b_64))

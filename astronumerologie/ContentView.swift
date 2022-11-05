@@ -67,7 +67,7 @@ struct ContentView: View {
                     guard let sInputImageAstro = sInputImageAstro else { return } // TODO return ?
                     sImageAstro = Image(uiImage: sInputImageAstro)
                 } else if siSelected == 4 {
-                    self.swe.set(natal: sdNatal, transit: Date(), lat: bdLat, lng: bdLng, tz: Int32(biTimeZone)) // TODO
+                    self.swe.set(natal: sdNatal, transit: Date(), lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), colorScheme: colorScheme) // TODO
                 }
             }) {
                 VStack {

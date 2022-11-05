@@ -76,11 +76,13 @@ public class Swe {
     }
 
     public var size: Int // TODO sizeChart: (screenSize.width == 744 && screenSize.height == 1133) ? 630.0 : 390.0)
+    public var colorMode: SweSvg.ColorMode
     public var bodies: [Bodies]
     public var swec: SweSvg
 
     public init(pathEphe: String) {
         size = 400
+        colorMode = .Light
         bodies = []
         bodies.append(Bodies.Soleil)
         bodies.append(Bodies.Lune)
@@ -99,8 +101,9 @@ public class Swe {
         self.swec = SweSvg(ephemPath: pathEphe)
     }
     
-    public func set(natal: Date, transit: Date, lat: Double, lng: Double, tz: Int32) {
-        self.swec.set(natal: natal, transit: transit, lat: lat, lng: lng, tz: tz)
+    public func set(natal: Date, transit: Date, lat: Double, lng: Double, tz: Int32, colorScheme: ColorScheme) {
+        colorMode = colorScheme == .light ? .Light : .Dark
+        self.swec.set(natal: natal, transit: transit, lat: lat, lng: lng, tz: tz, colorMode: colorMode)
     }
 
     public func drawCircle(circles: [Circle]) -> Path {
@@ -257,7 +260,7 @@ public class Swe {
         var swRetrograde = false
         if (!swTransit) {
             // natal
-            for b in swec.bodies_natal {
+            for b in swec.bodiesNatal {
                 if b.bodie == bodie.rawValue {
                     if abs(b.calc_ut.speed_longitude) < 0.0003 {
                         // Stationary
@@ -270,7 +273,7 @@ public class Swe {
             }
         } else {
             // transit
-            for b in swec.bodies_transit {
+            for b in swec.bodiesTransit {
                 if b.bodie == bodie.rawValue {
                     if abs(b.calc_ut.speed_longitude) < 0.0003 {
                         // Stationary
@@ -286,14 +289,14 @@ public class Swe {
         var pos = 0.0
         if (!swTransit) {
             // natal
-            for b in swec.bodies_natal {
+            for b in swec.bodiesNatal {
                 if b.bodie == bodie.rawValue {
                     pos = getBodieLongitude(bodie_longitude: b.calc_ut.longitude, swTransit: swTransit)
                 }
             }
         } else {
             // transit
-            for b in swec.bodies_transit {
+            for b in swec.bodiesTransit {
                 if b.bodie == bodie.rawValue {
                     pos = getBodieLongitude(bodie_longitude: b.calc_ut.longitude, swTransit: swTransit)
                 }
@@ -328,7 +331,7 @@ public class Swe {
         var pos = 0.0
         if (!swTransit) {
             // natal
-            for b in swec.bodies_natal {
+            for b in swec.bodiesNatal {
                 if (b.bodie == bodie.rawValue) {
                     var axy: [Offset]
                     pos = getBodieLongitude(bodie_longitude: b.calc_ut.longitude, swTransit: swTransit)
@@ -357,7 +360,7 @@ public class Swe {
             }
         } else {
             // transit
-            for b in swec.bodies_transit {
+            for b in swec.bodiesTransit {
                 if (b.bodie == bodie.rawValue) {
                     var axy: [Offset]
                     pos = getBodieLongitude(bodie_longitude: b.calc_ut.longitude, swTransit: swTransit)
