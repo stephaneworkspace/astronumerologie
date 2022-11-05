@@ -17,6 +17,10 @@ struct VAstrologie: View {
             ForEach(1...12, id: \.self)  { i in
                 VAstrologieAssetSigns(swe: $swe, sign: i)
             }
+            VAstrologieAssetAngles(swe: $swe, angle: .Asc)
+            VAstrologieAssetAngles(swe: $swe, angle: .Fc)
+            VAstrologieAssetAngles(swe: $swe, angle: .Desc)
+            VAstrologieAssetAngles(swe: $swe, angle: .Mc)
             VAstrologieHouses(swe: $swe)
             ForEach(1...12, id: \.self)  { i in
                 VAstrologieAssetHouses(swe: $swe, house: i)

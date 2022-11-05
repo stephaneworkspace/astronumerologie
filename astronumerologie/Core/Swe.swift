@@ -205,12 +205,12 @@ public class Swe {
                     lY2: axy[1].offY)
             )
             // 1° to 29°
-            var largerDrawLine: LargerDrawLine = .large
+            var largerDrawLine: LargerDrawLine = .Large
             for jIdx in 1...15 {
                 if jIdx == 5 || jIdx == 10 || jIdx == 15 {
-                    largerDrawLine = .large
+                    largerDrawLine = .Large
                 } else {
-                    largerDrawLine = .small
+                    largerDrawLine = .Small
                 }
                 pos = (Double(iIdx) * 30.0) + Double(jIdx) * 2.0 + offPosAsc
                 pos = getFixedPos(pos_value: pos)
@@ -232,7 +232,7 @@ public class Swe {
     func zodiac_sign(sign: Int) -> Object {
         let zodiacSize = (((ZODIAC_SIZE * ZODIAC_RATIO) / 100.0) * Double(size)) / 100.0;
         let offPosAsc = CIRCLE - swec.houses[0].longitude
-        let signEnum: Signs = Signs.init(rawValue: sign) ?? Signs.aries
+        let signEnum: Signs = Signs.init(rawValue: sign) ?? Signs.Aries
         let pos = (Double(signEnum.rawValue - 1) * 30.0) + 15.0 + offPosAsc
         let offset = getCenterItem(
                 size: zodiacSize,
@@ -433,8 +433,16 @@ public class Swe {
     }
     
     func angle(a: Angles) -> ObjectAngle {
-        let angleRatio = 12.0 // TODO const
-        var angleSize = (((ANGLE_SIZE * angleRatio) / 100.0) * Double(size)) / 100.0
+        var angleRatio = ANGLE_RATIO_DESC
+        if (a == .Asc) {
+            angleRatio = ANGLE_RATIO_ASC
+        } else if (a == .Mc) {
+            angleRatio = ANGLE_RATIO_MC
+        } else if (a == .Fc) {
+            angleRatio = ANGLE_RATIO_FC
+        }
+        let angleSize = (((ANGLE_SIZE * angleRatio) / 100.0) * Double(size)) / 100.0
+        
         let pos = getAngleLongitude(angle: a)
         let offAngle = getCenterItem(
                 size: angleSize,
@@ -498,9 +506,9 @@ public class Swe {
     func getRadiusRulesInsideCircle(largerDrawLine: LargerDrawLine) -> Double {
         var size = 0.0
         switch largerDrawLine {
-        case .small:
+        case .Small:
             size = 1.0 + LARGER_DRAW_LINE_RULES_SMALL
-        case .large:
+        case .Large:
             size = 1.0 + LARGER_DRAW_LINE_RULES_LARGE
         }
         return getRadiusTotal() * (((CIRCLE_SIZE_TRANSIT[2].0 - CIRCLE_SIZE_TRANSIT[1].0) / size)
@@ -514,7 +522,7 @@ public class Swe {
             let pos = getFixedPos(pos_value: offHouse + swec.houses[iIdx].longitude)
             var axyTriangle: [Offset] = []
             let angularPointer = -1.0 // TODO CONST
-            if swec.houses[iIdx].angle == Angles.nothing.rawValue {
+            if swec.houses[iIdx].angle == Angles.Nothing.rawValue {
                 axyTriangle = getTriangleTrigo(
                         angular: pos,
                         angularPointer: angularPointer,

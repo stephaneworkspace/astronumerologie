@@ -5,9 +5,9 @@
 import Foundation
 
 enum Angles: Int32 {
-    case nothing = 0,
-         asc = 1,
-         fc = 2,
-         desc = 3,
-         mc = 4
+    case Nothing = 0,
+         Asc = 1,
+         Fc = 2,
+         Desc = 3,
+         Mc = 4
 }

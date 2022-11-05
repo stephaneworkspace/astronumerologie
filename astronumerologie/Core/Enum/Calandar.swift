@@ -5,5 +5,5 @@
 import Foundation
 
 enum Calandar: Int32 {
-    case julian = 0, gregorian = 1
+    case Julian = 0, Gregorian = 1
 }

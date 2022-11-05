@@ -5,5 +5,5 @@
 import Foundation
 
 enum LargerDrawLine {
-    case large, small
+    case Large, Small
 }
