@@ -41,7 +41,19 @@ struct ContentView: View {
                     guard let sInputImageAstro = sInputImageAstro else { return } // TODO return ?
                     sImageAstro = Image(uiImage: sInputImageAstro)
                 } else if siSelected == 4 {
-                    self.swe.set(natal: sdNatal, transit: Date(), lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), colorMode: colorScheme == .light ? .Light : .Dark) // TODO
+                    var bodies: [SweCore.Bodies] = []
+                    bodies.append(SweCore.Bodies.Soleil)
+                    bodies.append(SweCore.Bodies.Lune)
+                    bodies.append(SweCore.Bodies.Mercure)
+                    bodies.append(SweCore.Bodies.Venus)
+                    bodies.append(SweCore.Bodies.Mars)
+                    bodies.append(SweCore.Bodies.Jupiter)
+                    bodies.append(SweCore.Bodies.Saturn)
+                    bodies.append(SweCore.Bodies.Uranus)
+                    bodies.append(SweCore.Bodies.Neptune)
+                    bodies.append(SweCore.Bodies.Pluto)
+                    bodies.append(SweCore.Bodies.NoeudLunaire)
+                    self.swe.set(natal: sdNatal, transit: Date(), lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), bodies: bodies, colorMode: colorScheme == .light ? .Light : .Dark) // TODO
                 }
             }) {
                 VStack {
