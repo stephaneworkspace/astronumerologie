@@ -26,7 +26,23 @@ struct ContentView: View {
     @State private var sInputImageAstro: UIImage?
     @State var sImageAstro: Image?
     @State private var swe: SweCore = SweCore(pathEphe: "")
-    @State private var bodies: [SweCore.Bodies] = [
+    @State private var swBodies: [Bool] = [
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+        false,
+        false,
+        false,
+    ]
+    @State private var bodiesForLoop: [SweCore.Bodies] = [
         SweCore.Bodies.Soleil,
         SweCore.Bodies.Lune,
         SweCore.Bodies.Mercure,
@@ -38,6 +54,9 @@ struct ContentView: View {
         SweCore.Bodies.Neptune,
         SweCore.Bodies.Pluto,
         SweCore.Bodies.NoeudLunaire,
+        SweCore.Bodies.Chiron,
+        SweCore.Bodies.Ceres,
+        SweCore.Bodies.NoeudLunaireSud,
     ]
 
     var body: some View {
@@ -54,6 +73,12 @@ struct ContentView: View {
                     guard let sInputImageAstro = sInputImageAstro else { return } // TODO return ?
                     sImageAstro = Image(uiImage: sInputImageAstro)
                 } else if siSelected == 4 {
+                    var bodies: [SweCore.Bodies] = []
+                    for (i, b) in bodiesForLoop.enumerated() {
+                        if (swBodies[i]) {
+                            bodies.append(b)
+                        }
+                    }
                     self.swe.set(natal: sdNatal, transit: Date(), lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), bodies: bodies, colorMode: colorScheme == .light ? .Light : .Dark)
                 }
             }) {
@@ -142,7 +167,7 @@ struct ContentView: View {
                 }
                 .tag(4)
                 VStack {
-                    Text("Astrologie sélection")
+                    VSelection(swe: $swe, swBodies: $swBodies, bodiesForLoop: bodiesForLoop)
                 }
                 .padding()
                 .tabItem {
