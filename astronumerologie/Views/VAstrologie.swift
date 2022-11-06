@@ -11,6 +11,8 @@ import SweBressaniDev
 struct VAstrologie: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @Binding var swe: SweCore
+    @Binding var swBodies: [Bool]
+    @State var bodiesForLoop: [SweCore.Bodies]
 
     var body: some View {
         ZStack {
@@ -28,11 +30,13 @@ struct VAstrologie: View {
                 VAstrologieAssetHouses(swe: $swe, house: i)
             }
             //
-            ForEach(swe.bodies, id: \.self) { i in
-                VAstrologieBodies(swe: $swe, bodie: i, swTransit: false)
-                VAstrologieBodies(swe: $swe, bodie: i, swTransit: true)
-                VAstrologieAssetBodies(swe: $swe, bodie: i, swTransit: false)
-                VAstrologieAssetBodies(swe: $swe, bodie: i, swTransit: true)
+            ForEach(Array(zip(bodiesForLoop.indices, bodiesForLoop)), id: \.1) { i, b in
+                if (swBodies[i]) {
+                    VAstrologieBodies(swe: $swe, bodie: b, swTransit: false)
+                    VAstrologieBodies(swe: $swe, bodie: b, swTransit: true)
+                    VAstrologieAssetBodies(swe: $swe, bodie: b, swTransit: false)
+                    VAstrologieAssetBodies(swe: $swe, bodie: b, swTransit: true)
+                }
             }
         }
     }

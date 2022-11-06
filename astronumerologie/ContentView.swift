@@ -155,7 +155,7 @@ struct ContentView: View {
                 }
                 .tag(3)
                 VStack {
-                    VAstrologie(swe: $swe)
+                    VAstrologie(swe: $swe, swBodies: $swBodies, bodiesForLoop: bodiesForLoop)
                 }
                 .padding()
                 .tabItem {
