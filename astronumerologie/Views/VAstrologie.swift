@@ -39,6 +39,14 @@ struct VAstrologie: View {
                 }
             }
         }
+        // Tableau 1
+        VStack(spacing: 0) {
+            ForEach(Array(zip(bodiesForLoop.indices, bodiesForLoop)), id: \.1) { i, b in
+                if (swBodies[i]) {
+                    VAstrologieTableau1(swe: $swe, bodie: b, swTransit: false)
+                }
+            }
+        }
     }
 }
 
