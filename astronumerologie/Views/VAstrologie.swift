@@ -43,7 +43,11 @@ struct VAstrologie: View {
         VStack(spacing: 0) {
             ForEach(Array(zip(bodiesForLoop.indices, bodiesForLoop)), id: \.1) { i, b in
                 if (swBodies[i]) {
-                    VAstrologieTableau1(swe: $swe, bodie: b, swTransit: false)
+                    ZStack(alignment: .topLeading) {
+                        VAstrologieTableau1(swe: $swe, bodie: b)
+                        VAstrologieTableau1Signs(swe: $swe, bodie: b, swTransit: false)
+                        VAstrologieTableau1Signs(swe: $swe, bodie: b, swTransit: true)
+                    }
                 }
             }
         }
