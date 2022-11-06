@@ -14,7 +14,7 @@ struct VAstrologieAngles: View {
     @State var angle: SweCore.Angles
     
     var body: some View {
-        let l = swe.angle_lines(angle: angle)
+        let l = swe.angleLines(angle: angle)
         let colorStroke: Color = colorScheme == .light ? .black : .white
         VStack {
             DrawAngleLine(lines: l).stroke(colorStroke, lineWidth: 1.5)

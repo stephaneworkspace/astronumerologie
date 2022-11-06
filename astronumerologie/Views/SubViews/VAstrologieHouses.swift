@@ -15,10 +15,10 @@ struct VAstrologieHouses: View {
     var body: some View {
         let colorStroke: Color = colorScheme == .light ? .black : .white
         VStack {
-            DrawHouseTriangle(lines: swe.house_lines()).fill(colorStroke)
+            DrawHouseTriangle(lines: swe.houseLines()).fill(colorStroke)
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
         VStack {
-            DrawHouseLine(lines: swe.house_lines()).stroke(colorStroke, lineWidth: 1.0)
+            DrawHouseLine(lines: swe.houseLines()).stroke(colorStroke, lineWidth: 1.0)
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
     }
 }

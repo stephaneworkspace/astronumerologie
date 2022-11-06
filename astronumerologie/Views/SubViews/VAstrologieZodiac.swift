@@ -18,7 +18,7 @@ struct VAstrologieZodiac: View {
             DrawCircle(circles: swe.circles()).stroke(colorStroke, lineWidth: 1.0)
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
         VStack {
-            DrawLine(lines: swe.zodiac_lines()).stroke(colorStroke, lineWidth: 1.0)
+            DrawLine(lines: swe.zodiacLines()).stroke(colorStroke, lineWidth: 1.0)
         }.frame(width: CGFloat(swe.size), height: CGFloat(swe.size))
     }
 }

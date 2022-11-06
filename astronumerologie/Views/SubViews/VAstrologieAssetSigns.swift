@@ -14,7 +14,7 @@ struct VAstrologieAssetSigns: View {
     @State var sign: Int
     var body: some View {
         VStack {
-            let s = swe.zodiac_sign(sign: sign)
+            let s = swe.zodiacSign(sign: sign)
             GeometryReader { geometry in
                 SVGView(contentsOf: try! swe.swec.asset_sign(i: sign))
                     .offset(

@@ -75,7 +75,7 @@ struct ContentView: View {
                 } else if siSelected == 4 {
                     var bodies: [SweCore.Bodies] = []
                     for (i, b) in bodiesForLoop.enumerated() {
-                        if (swBodies[i]) {
+                        if swBodies[i] {
                             bodies.append(b)
                         }
                     }
