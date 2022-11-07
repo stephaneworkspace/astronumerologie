@@ -73,13 +73,14 @@ struct ContentView: View {
                     guard let sInputImageAstro = sInputImageAstro else { return } // TODO return ?
                     sImageAstro = Image(uiImage: sInputImageAstro)
                 } else if siSelected == 4 {
+                    /*
                     var bodies: [SweCore.Bodies] = []
                     for (i, b) in bodiesForLoop.enumerated() {
                         if swBodies[i] {
                             bodies.append(b)
                         }
-                    }
-                    self.swe.set(natal: sdNatal, transit: Date(), lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), bodies: bodies, colorMode: colorScheme == .light ? .Light : .Dark)
+                    }*/
+                    self.swe.set(natal: sdNatal, transit: Date(), lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), colorMode: colorScheme == .light ? .Light : .Dark)
                 }
             }) {
                 VStack {
