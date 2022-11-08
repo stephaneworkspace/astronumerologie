@@ -27,8 +27,10 @@ struct VAstrologieTableau2AspectsBodies: View {
         let xPos = bodPos + (cas / 2) + (cas * Double(i) * casDivx) - fix
         let yPos = bodPos + (cas * (y + 1) * casDiv)
         VStack {
-            SVGView(contentsOf: try! swe.swec.asset_aspect(i: aspect.rawValue))
-                .frame(width: 16.0, height: 16.0)
+            if (aspect.rawValue >= 0) {
+                SVGView(contentsOf: try! swe.swec.asset_aspect(i: aspect.rawValue))
+                    .frame(width: 16.0, height: 16.0)
+            }
         }.frame(maxWidth: .infinity, alignment: .leading).offset(x: xPos, y: yPos)
     }
 }
