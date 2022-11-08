@@ -69,21 +69,39 @@ struct VAstrologie: View {
                     }
                 }
                 // Content
-                VStack(spacing: 0) {
+                /*
+                ZStack(alignment: .topLeading) {
                     ForEach(swe.bodAng(swBodies: swBodies), id: \.id) { b in
-                        ZStack(alignment: .topLeading) {
-                            ForEach(1...12, id: \.self)  { i in
-                                let bodAng = swe.bodAngAspectPos(swBodies: swBodies, bodAngPos: b.pos, swTransit1: false, swTransit2: false, y: i)
-                                switch(bodAng.bodAng2) {
-                                case .Bodie(let _):
-                                    VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1)
-                                case .Angle(let _):
+                        ForEach(1...12, id: \.self)  { i in
+                            let bodAng = swe.bodAngAspectPos(swBodies: swBodies, bodAngPos: b.pos, swTransit1: false, swTransit2: false, y: i)
+                            switch (bodAng.bodAng2) {
+                            case .Bodie(let bodie):
+                                VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1, y: Double(i))
+                            case .Angle(let angle):
+                                VStack(spacing: 0) {
                                     Text("Angle")
                                 }
                             }
                         }
                     }
+                }*/
+                
+                //VStack(spacing: 0) {
+                let ba = swe.bodAng(swBodies: swBodies)
+                ForEach(ba, id: \.id) { b in
+                    ZStack(alignment: .topLeading) {
+                        ForEach(b.pos...12, id: \.self)  { i in
+                            let bodAng = swe.bodAngAspectPos(swBodies: swBodies, bodAngPos: b.pos, swTransit1: false, swTransit2: false, y: i)
+                            switch(bodAng.bodAng2) {
+                            case .Bodie(let _):
+                                VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1, y: Double(i))
+                            case .Angle(let _):
+                                VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1, y: Double(i))
+                            }
+                        }
+                    }
                 }
+                //}
             }
         }
     }
