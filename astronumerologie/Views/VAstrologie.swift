@@ -55,7 +55,7 @@ struct VAstrologie: View {
             ZStack {
                 // Header
                 VStack(spacing: 0) {
-                    ForEach(swe.bodAng(swBodies: swBodies), id: \.id) { b in
+                    ForEach(swe.bodAng(), id: \.id) { b in
                         switch (b.bodAng) {
                         case .Bodie(let bodie):
                             ZStack(alignment: .topLeading) {
@@ -69,23 +69,26 @@ struct VAstrologie: View {
                     }
                 }
                 // Content
-                let ba = swe.bodAng(swBodies: swBodies)
+                let ba = swe.bodAng()
                 ForEach(ba, id: \.id) { b in
                     ZStack(alignment: .topLeading) {
-                        ForEach(b.pos...ba.count - 2, id: \.self)  { i in
-                            let bodAng = swe.bodAngAspectPos(swBodies: swBodies, bodAngPos: b.pos, swTransit1: false, swTransit2: false, y: i)
-                            switch(bodAng.bodAng2) {
-                            case .Bodie(let _):
-                                if (bodAng.pos1 >= ba.count - 2) {
-                                } else {
-                                    VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1, y: Double(i))
-                                }
-                            case .Angle(let angle):
-                                if (bodAng.pos1 >= ba.count - 2) {
-                                } else {
-                                    VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1, y: Double(i))
+                        ForEach(b.pos...ba.count, id: \.self)  { i in
+                            let bodAng = swe.bodAngAspectPos(bodAngPos: b.pos, swTransit1: false, swTransit2: false, y: i)
+                            if bodAng.1 {
+                                switch(bodAng.0.bodAng2) {
+                                case .Bodie(let _):
+                                    if (bodAng.0.pos1 >= ba.count - 2) {
+                                    } else {
+                                        VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.0.aspect, i: bodAng.0.pos1, y: Double(i))
+                                    }
+                                case .Angle(let angle):
+                                    if (bodAng.0.pos1 >= ba.count - 2) {
+                                    } else {
+                                        VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.0.aspect, i: bodAng.0.pos1, y: Double(i))
+                                    }
                                 }
                             }
+
                         }
                     }
                 }
