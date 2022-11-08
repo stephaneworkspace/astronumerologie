@@ -40,6 +40,7 @@ struct VAstrologie: View {
             }
         }
         // Tableau 1
+        /*
         VStack(spacing: 0) {
             ForEach(Array(zip(bodiesForLoop.indices, bodiesForLoop)), id: \.1) { i, b in
                 if (swBodies[i]) {
@@ -50,8 +51,35 @@ struct VAstrologie: View {
                     }
                 }
             }
+        }*/
+        // Tableau 2
+        VStack(spacing: 0) {
+            ForEach(Array(zip(bodiesForLoop.indices, bodiesForLoop)), id: \.1) { i, b in
+                if (swBodies[i]) {
+                    ZStack(alignment: .topLeading) {
+                        VAstrologieTableau2Bodies(swe: $swe, bodie: b, i: i)
+                    }
+                }
+            }
+            let i = countTableau2(bodiesForLoop: bodiesForLoop, swBodies: swBodies)
+            ZStack(alignment: .topLeading) {
+                VAstrologieTableau2Angles(swe: $swe, angle: .Asc, i: i)
+            }
+            ZStack(alignment: .topLeading) {
+                VAstrologieTableau2Angles(swe: $swe, angle: .Mc, i: i)
+            }
         }
     }
+}
+
+func countTableau2(bodiesForLoop: [SweCore.Bodies], swBodies: [Bool]) -> Int {
+    var j = 0
+    for (i, _) in bodiesForLoop.enumerated() {
+        if swBodies[i] {
+            j += 1
+        }
+    }
+    return j
 }
 
 /* // TODO

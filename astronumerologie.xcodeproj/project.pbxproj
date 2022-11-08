@@ -19,6 +19,8 @@
 		552E8D96C76F0CCB78FC489E /* ETitleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8F9AE6BCC2ADD733E982 /* ETitleData.swift */; };
 		552E8ED31064F61BA413E19E /* ETitleLocalisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8960177AFBCB4F3E1DD6 /* ETitleLocalisation.swift */; };
 		552E8ED3D208BC59E1AF363A /* VNumerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8A32F70A98B91713FDFF /* VNumerologie.swift */; };
+		F4045AA0291A51090084827B /* VAstrologieTableau2Bodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4045A9F291A51090084827B /* VAstrologieTableau2Bodies.swift */; };
+		F4045AA2291A561A0084827B /* VAstrologieTableau2Angles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4045AA1291A561A0084827B /* VAstrologieTableau2Angles.swift */; };
 		F426B43728E8528100FE1469 /* antools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F426B43528E8528100FE1469 /* antools.cpp */; };
 		F426B44028E8544C00FE1469 /* librantools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B43E28E8544B00FE1469 /* librantools.a */; };
 		F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437A23428D8A34200A6D196 /* print-numerologie.swift */; };
@@ -83,6 +85,8 @@
 		552E8E916E7B42CDA5B02658 /* renderImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = renderImage.swift; sourceTree = "<group>"; };
 		552E8ECBB9B07A00B235A428 /* ENamesTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ENamesTextField.swift; sourceTree = "<group>"; };
 		552E8F9AE6BCC2ADD733E982 /* ETitleData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ETitleData.swift; sourceTree = "<group>"; };
+		F4045A9F291A51090084827B /* VAstrologieTableau2Bodies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieTableau2Bodies.swift; sourceTree = "<group>"; };
+		F4045AA1291A561A0084827B /* VAstrologieTableau2Angles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieTableau2Angles.swift; sourceTree = "<group>"; };
 		F426B43428E8528000FE1469 /* astronumerologie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "astronumerologie-Bridging-Header.h"; sourceTree = "<group>"; };
 		F426B43528E8528100FE1469 /* antools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = antools.cpp; sourceTree = "<group>"; };
 		F426B43628E8528100FE1469 /* antools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = antools.hpp; sourceTree = "<group>"; };
@@ -236,6 +240,8 @@
 				F46F21B02916C7D900211049 /* VAstrologieAngles.swift */,
 				F48101C62918136300E451EB /* VAstrologieTableau1.swift */,
 				F48101C829182F4200E451EB /* VAstrologieTableau1Signs.swift */,
+				F4045A9F291A51090084827B /* VAstrologieTableau2Bodies.swift */,
+				F4045AA1291A561A0084827B /* VAstrologieTableau2Angles.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -487,11 +493,13 @@
 				552E820486700CDF313BCED2 /* ENamesTextField.swift in Sources */,
 				552E8ED31064F61BA413E19E /* ETitleLocalisation.swift in Sources */,
 				552E804A7ACBFFC1E90D83E5 /* ELocalisationTextField.swift in Sources */,
+				F4045AA0291A51090084827B /* VAstrologieTableau2Bodies.swift in Sources */,
 				F48101C72918136300E451EB /* VAstrologieTableau1.swift in Sources */,
 				F4CE6DD9291417B4003CA160 /* VAstrologieAssetBodies.swift in Sources */,
 				F47FD84F291526EE000A3B73 /* VAstrologieBodies.swift in Sources */,
 				F46F21AF2916B17E00211049 /* VAstrologieAssetAngles.swift in Sources */,
 				552E879089C4087F4D4B2ED9 /* numerologie.swift in Sources */,
+				F4045AA2291A561A0084827B /* VAstrologieTableau2Angles.swift in Sources */,
 				F426B43728E8528100FE1469 /* antools.cpp in Sources */,
 				F4FAD30F28EDA061000349F4 /* Chart.swift in Sources */,
 				552E8ED3D208BC59E1AF363A /* VNumerologie.swift in Sources */,
