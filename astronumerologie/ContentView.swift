@@ -26,7 +26,7 @@ struct ContentView: View {
     @State var sAstro: Astrologie = Astrologie(natal: Date(),lat: 0, lng: 0, tz: 0)
     @State private var sInputImageAstro: UIImage?
     @State var sImageAstro: Image?
-    @State private var swe: SweCore = SweCore(pathEphe: try! Zip.quickUnzipFile(Bundle.main.url(forResource: "ephem", withExtension: "zip")!).absoluteString)
+    @State private var swe: SweCore = SweCore(pathEphe: try! Zip.quickUnzipFile(Bundle.main.url(forResource: "ephem", withExtension: "zip")!).absoluteString, size: 400)
     @State private var swBodies: [Bool] = [
         true,
         true,
