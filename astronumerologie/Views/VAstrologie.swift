@@ -54,19 +54,17 @@ struct VAstrologie: View {
         }*/
         // Tableau 2
         VStack(spacing: 0) {
-            ForEach(Array(zip(bodiesForLoop.indices, bodiesForLoop)), id: \.1) { i, b in
-                if (swBodies[i]) {
+            ForEach(swe.bodAng(swBodies: swBodies), id: \.id) { b in
+                switch (b.bodAng) {
+                case .Bodie(let bodie):
                     ZStack(alignment: .topLeading) {
-                        VAstrologieTableau2Bodies(swe: $swe, bodie: b, i: i)
+                        VAstrologieTableau2Bodies(swe: $swe, bodie: bodie, i: b.pos)
+                    }
+                case .Angle(let angle):
+                    ZStack(alignment: .topLeading) {
+                        VAstrologieTableau2Angles(swe: $swe, angle: angle, i: b.pos)
                     }
                 }
-            }
-            let i = countTableau2(bodiesForLoop: bodiesForLoop, swBodies: swBodies)
-            ZStack(alignment: .topLeading) {
-                VAstrologieTableau2Angles(swe: $swe, angle: .Asc, i: i)
-            }
-            ZStack(alignment: .topLeading) {
-                VAstrologieTableau2Angles(swe: $swe, angle: .Mc, i: i)
             }
         }
     }

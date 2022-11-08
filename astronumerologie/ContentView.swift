@@ -58,7 +58,7 @@ struct ContentView: View {
         SweCore.Bodies.Chiron,
         SweCore.Bodies.Ceres,
         SweCore.Bodies.NoeudLunaireSud,
-    ]
+    ] // TODO swe.bodiesForLoop
 
     var body: some View {
         VStack {
