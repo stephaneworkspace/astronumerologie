@@ -52,47 +52,9 @@ struct VAstrologie: View {
                 }
             }
             // Tableau 2
-            ZStack {
-                // Header
-                VStack(spacing: 0) {
-                    ForEach(swe.bodAng(), id: \.id) { b in
-                        switch (b.bodAng) {
-                        case .Bodie(let bodie):
-                            ZStack(alignment: .topLeading) {
-                                VAstrologieTableau2Bodies(swe: $swe, bodie: bodie, i: b.pos)
-                            }
-                        case .Angle(let angle):
-                            ZStack(alignment: .topLeading) {
-                                VAstrologieTableau2Angles(swe: $swe, angle: angle, i: b.pos)
-                            }
-                        }
-                    }
-                }
-                // Content
-                let ba = swe.bodAng()
-                ForEach(ba, id: \.id) { b in
-                    ZStack(alignment: .topLeading) {
-                        ForEach(b.pos...ba.count, id: \.self)  { i in
-                            let bodAng = swe.bodAngAspectPos(bodAngPos: b.pos, swTransit1: false, swTransit2: false, y: i)
-                            if bodAng.1 {
-                                switch(bodAng.0.bodAng2) {
-                                case .Bodie(let _):
-                                    if (bodAng.0.pos1 >= ba.count - 2) {
-                                    } else {
-                                        VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.0.aspect, i: bodAng.0.pos1, y: Double(i))
-                                    }
-                                case .Angle(let angle):
-                                    if (bodAng.0.pos1 >= ba.count - 2) {
-                                    } else {
-                                        VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.0.aspect, i: bodAng.0.pos1, y: Double(i))
-                                    }
-                                }
-                            }
-
-                        }
-                    }
-                }
-            }
+            VAstrologieTableau2(swe: $swe, swTransit1: false, swTransit2: false)
+            VAstrologieTableau2(swe: $swe, swTransit1: false, swTransit2: true)
+            VAstrologieTableau2(swe: $swe, swTransit1: true, swTransit2: true)
         }
     }
 }
