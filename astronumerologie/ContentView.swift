@@ -43,22 +43,6 @@ struct ContentView: View {
         false,
         false,
     ]
-    @State private var bodiesForLoop: [SweCore.Bodies] = [
-        SweCore.Bodies.Soleil,
-        SweCore.Bodies.Lune,
-        SweCore.Bodies.Mercure,
-        SweCore.Bodies.Venus,
-        SweCore.Bodies.Mars,
-        SweCore.Bodies.Jupiter,
-        SweCore.Bodies.Saturn,
-        SweCore.Bodies.Uranus,
-        SweCore.Bodies.Neptune,
-        SweCore.Bodies.Pluto,
-        SweCore.Bodies.NoeudLunaire,
-        SweCore.Bodies.Chiron,
-        SweCore.Bodies.Ceres,
-        SweCore.Bodies.NoeudLunaireSud,
-    ] // TODO swe.bodiesForLoop
 
     var body: some View {
         VStack {
@@ -157,7 +141,7 @@ struct ContentView: View {
                 }
                 .tag(3)
                 VStack {
-                    VAstrologie(swe: $swe, swBodies: $swBodies, bodiesForLoop: bodiesForLoop)
+                    VAstrologie(swe: $swe, swBodies: $swBodies)
                 }
                 .padding()
                 .tabItem {
@@ -169,7 +153,7 @@ struct ContentView: View {
                 }
                 .tag(4)
                 VStack {
-                    VSelection(swe: $swe, swBodies: $swBodies, bodiesForLoop: bodiesForLoop)
+                    VSelection(swe: $swe, swBodies: $swBodies)
                 }
                 .padding()
                 .tabItem {

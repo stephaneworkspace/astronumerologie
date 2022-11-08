@@ -12,7 +12,6 @@ struct VAstrologie: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @Binding var swe: SweCore
     @Binding var swBodies: [Bool]
-    @State var bodiesForLoop: [SweCore.Bodies]
 
     var body: some View {
         ZStack {
@@ -30,7 +29,7 @@ struct VAstrologie: View {
                 VAstrologieAssetHouses(swe: $swe, house: i)
             }
             //
-            ForEach(Array(zip(bodiesForLoop.indices, bodiesForLoop)), id: \.1) { i, b in
+            ForEach(Array(zip(swe.bodiesForLoop.indices, swe.bodiesForLoop)), id: \.1) { i, b in
                 if (swBodies[i]) {
                     VAstrologieBodies(swe: $swe, bodie: b, swTransit: false)
                     VAstrologieBodies(swe: $swe, bodie: b, swTransit: true)
@@ -40,9 +39,8 @@ struct VAstrologie: View {
             }
         }
         // Tableau 1
-        /*
         VStack(spacing: 0) {
-            ForEach(Array(zip(bodiesForLoop.indices, bodiesForLoop)), id: \.1) { i, b in
+            ForEach(Array(zip(swe.bodiesForLoop.indices, swe.bodiesForLoop)), id: \.1) { i, b in
                 if (swBodies[i]) {
                     ZStack(alignment: .topLeading) {
                         VAstrologieTableau1(swe: $swe, bodie: b)
@@ -51,8 +49,9 @@ struct VAstrologie: View {
                     }
                 }
             }
-        }*/
+        }
         // Tableau 2
+        /*
         VStack(spacing: 0) {
             ForEach(swe.bodAng(swBodies: swBodies), id: \.id) { b in
                 switch (b.bodAng) {
@@ -66,7 +65,7 @@ struct VAstrologie: View {
                     }
                 }
             }
-        }
+        }*/
     }
 }
 

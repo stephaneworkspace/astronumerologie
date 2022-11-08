@@ -13,7 +13,6 @@ struct VSelection: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
     @Binding var swe: SweCore
     @Binding var swBodies: [Bool]
-    @State var bodiesForLoop: [SweCore.Bodies]
     
     var body: some View {
         ZStack {
@@ -22,7 +21,7 @@ struct VSelection: View {
                     HStack {
                     }.frame(height: 40) // TODO ok pour iphone11 les autres je ne sais pas
                     Spacer()
-                    ForEach(Array(zip(bodiesForLoop.indices, bodiesForLoop)), id: \.1) { i, b in
+                    ForEach(Array(zip(swe.bodiesForLoop.indices, swe.bodiesForLoop)), id: \.1) { i, b in
                         HStack {
                             Toggle(swe.swec.text_bodie(i: b.rawValue), isOn: $swBodies[i])
                             GeometryReader { geometry in
