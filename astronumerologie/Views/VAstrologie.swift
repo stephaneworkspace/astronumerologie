@@ -53,8 +53,8 @@ struct VAstrologie: View {
             }
             // Tableau 2
             VAstrologieTableau2(swe: $swe, swTransit1: false, swTransit2: false)
-            VAstrologieTableau2(swe: $swe, swTransit1: false, swTransit2: true)
             VAstrologieTableau2(swe: $swe, swTransit1: true, swTransit2: true)
+            VAstrologieTableau2(swe: $swe, swTransit1: false, swTransit2: true)
         }
     }
 }

@@ -32,6 +32,7 @@ struct VAstrologieTableau2AspectsBodies: View {
                     .frame(width: 16.0, height: 16.0)
             }
         }.frame(maxWidth: .infinity, alignment: .leading).offset(x: xPos, y: yPos)
+
     }
 }
 
