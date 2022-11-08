@@ -58,8 +58,8 @@ struct DrawAspectArray: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
         let cas = Double(size) / 16
-        let MAX = 12 // TODO const global
-        var max = 12
+        let MAX = 15 // TODO const global
+        var max = 15
         //if transitType == .NatalTransit {
         //    max -= 2
         //}
