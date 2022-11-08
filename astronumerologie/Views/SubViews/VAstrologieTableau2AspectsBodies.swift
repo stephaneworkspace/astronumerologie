@@ -41,7 +41,7 @@ func VAstrologieTableau2AspectsBodiesxPos(size: Int, i: Int) -> Double {
     let cas = VAstrologieTableau2AspectsBodiescas(size: size)
     let bodPos = VAstrologieTableau2AspectsBodiesbodPos(size: size)
     let casDivx = 1.00
-    let fix = 200.0
+    let fix = 199.0
     return bodPos + (cas / 2.0) + (cas * Double(i) * casDivx) + fix
 }
 
@@ -49,7 +49,7 @@ func VAstrologieTableau2AspectsBodiesyPos(size: Int, y: Double) -> Double {
     let cas = VAstrologieTableau2AspectsBodiescas(size: size)
     let bodPos = VAstrologieTableau2AspectsBodiesbodPos(size: size)
     let casDiv = 1.0
-    let fix = 50.0
+    let fix = 49.5
     return bodPos + (cas * (y + 1.0) * casDiv) + fix;
 }
 
