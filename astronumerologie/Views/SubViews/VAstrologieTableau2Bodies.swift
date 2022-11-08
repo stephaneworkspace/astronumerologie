@@ -17,7 +17,7 @@ struct VAstrologieTableau2Bodies: View {
 
     var body: some View {
         let xPos = VAstrologieTableau2BodiesxPos(size: swe.size, i: i)
-        var yPos = VAstrologieTableau2BodiesyPos(i: i)
+        let yPos = VAstrologieTableau2BodiesyPos(i: i)
         VStack {
             SVGView(contentsOf: try! swe.swec.asset_bodie(i: bodie.rawValue))
                 .frame(width: 20.0, height: 20.0)

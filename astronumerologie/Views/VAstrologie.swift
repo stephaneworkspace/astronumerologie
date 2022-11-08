@@ -57,6 +57,7 @@ struct VAstrologie: View {
             VAstrologieTableau2(swe: $swe, swTransit1: true, swTransit2: true)
             VStack{}.frame(height: 16 * 6)
             VAstrologieTableau2(swe: $swe, swTransit1: false, swTransit2: true)
+            VStack{}.frame(height: 16 * 6)
         }
     }
 }

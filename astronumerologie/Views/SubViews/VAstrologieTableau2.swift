@@ -59,7 +59,7 @@ struct DrawAspectArray: Shape {
         var path = Path()
         let cas = Double(size) / 16
         let MAX = 15 // TODO const global
-        var max = 15
+        let max = 15
         //if transitType == .NatalTransit {
         //    max -= 2
         //}

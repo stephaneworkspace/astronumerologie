@@ -20,11 +20,35 @@ struct VAstrologieTableau2Angles: View {
     let casDiv = 1.1
     
     var body: some View {
-        let xPos = bodPos + (cas / 2) + (cas * Double(i)) - fix
+        let xPos = VAstrologieTableau2AnglesxPos(size: swe.size, i: i)
+        let yPos = VAstrologieTableau2AnglesyPos(i: i, angle: angle)
         VStack {
             SVGView(contentsOf: try! swe.swec.asset_angle(i: Int(angle.rawValue)))
                 .frame(width: 20.0, height: 20.0)
-        }.frame(maxWidth: .infinity, alignment: .leading).offset(x: xPos, y: 0)
+        }.frame(maxWidth: .infinity, alignment: .leading).offset(x: xPos, y: yPos)
+    }
+}
+
+func VAstrologieTableau2AnglesbodPos(size: Int) -> Double {
+    return (Double(size) / 2.0) * -1.0
+}
+
+func VAstrologieTableau2Anglescas(size: Int) -> Double {
+    return Double(size) / 16.0
+}
+
+func VAstrologieTableau2AnglesxPos(size: Int, i: Int) -> Double {
+    let fix = 210.0
+    let bodPos = VAstrologieTableau2AnglesbodPos(size: size)
+    let cas = VAstrologieTableau2Anglescas(size: size)
+    return bodPos  + (cas * Double(i)) + fix
+}
+
+func VAstrologieTableau2AnglesyPos(i: Int, angle: SweCore.Angles) -> Double {
+    if (angle == SweCore.Angles.Mc) {
+        return Double(i) * 5.2
+    } else {
+        return Double(i) * 5.0
     }
 }
 
