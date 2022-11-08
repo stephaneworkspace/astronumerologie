@@ -52,16 +52,35 @@ struct VAstrologie: View {
                 }
             }
             // Tableau 2
-            VStack(spacing: 0) {
-                ForEach(swe.bodAng(swBodies: swBodies), id: \.id) { b in
-                    switch (b.bodAng) {
-                    case .Bodie(let bodie):
-                        ZStack(alignment: .topLeading) {
-                            VAstrologieTableau2Bodies(swe: $swe, bodie: bodie, i: b.pos)
+            ZStack {
+                // Header
+                VStack(spacing: 0) {
+                    ForEach(swe.bodAng(swBodies: swBodies), id: \.id) { b in
+                        switch (b.bodAng) {
+                        case .Bodie(let bodie):
+                            ZStack(alignment: .topLeading) {
+                                VAstrologieTableau2Bodies(swe: $swe, bodie: bodie, i: b.pos)
+                            }
+                        case .Angle(let angle):
+                            ZStack(alignment: .topLeading) {
+                                VAstrologieTableau2Angles(swe: $swe, angle: angle, i: b.pos)
+                            }
                         }
-                    case .Angle(let angle):
+                    }
+                }
+                // Content
+                VStack(spacing: 0) {
+                    ForEach(swe.bodAng(swBodies: swBodies), id: \.id) { b in
                         ZStack(alignment: .topLeading) {
-                            VAstrologieTableau2Angles(swe: $swe, angle: angle, i: b.pos)
+                            ForEach(1...12, id: \.self)  { i in
+                                let bodAng = swe.bodAngAspectPos(swBodies: swBodies, bodAngPos: b.pos, swTransit1: false, swTransit2: false, y: i)
+                                switch(bodAng.bodAng2) {
+                                case .Bodie(let _):
+                                    VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1)
+                                case .Angle(let _):
+                                    Text("Angle")
+                                }
+                            }
                         }
                     }
                 }
