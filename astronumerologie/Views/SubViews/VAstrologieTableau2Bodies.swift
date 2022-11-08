@@ -14,18 +14,42 @@ struct VAstrologieTableau2Bodies: View {
     @Binding var swe: SweCore
     @State var bodie: SweCore.Bodies
     @State var i: Int
-    let fix = -150.0
-    let bodPos = CGFloat((300 / 2) * -1)
-    let cas = Double(300) / 16.0
-    let casDiv = 1.2
-    
-    //let yPos = bodPos + (cas / 2) + (cas * Double(i)) - fix
+
     var body: some View {
-        let xPos = bodPos + (cas / 2) + (cas * Double(i)) * casDiv - fix
+        let xPos = VAstrologieTableau2BodiesxPos(size: swe.size, i: i)
+        var yPos = VAstrologieTableau2BodiesyPos(i: i)
         VStack {
             SVGView(contentsOf: try! swe.swec.asset_bodie(i: bodie.rawValue))
                 .frame(width: 20.0, height: 20.0)
-        }.frame(maxWidth: .infinity, alignment: .leading).offset(x: xPos, y: 0)
+        }.frame(maxWidth: .infinity, alignment: .leading).offset(x: xPos, y: yPos)
+    }
+}
+
+func VAstrologieTableau2BodiesbodPos(size: Int) -> Double {
+    return (Double(size) / 2.0) * -1.0
+}
+
+func VAstrologieTableau2Bodiescas(size: Int) -> Double {
+    return Double(size) / 16.0
+}
+
+func VAstrologieTableau2BodiesxPos(size: Int, i: Int) -> Double {
+    let fix = 210.0
+    let bodPos = VAstrologieTableau2BodiesbodPos(size: size)
+    let cas = VAstrologieTableau2Bodiescas(size: size)
+    return bodPos  + (cas * Double(i)) + fix
+}
+
+func VAstrologieTableau2BodiesyPos(i: Int) -> Double {
+    switch (i) {
+    case 1:
+        return Double(i) * 2.0
+    case 2:
+        return Double(i) * 3.0
+    case 3:
+        return Double(i) * 5.0
+    default:
+        return Double(i) * 5.0
     }
 }
 
