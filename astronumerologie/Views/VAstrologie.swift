@@ -69,39 +69,26 @@ struct VAstrologie: View {
                     }
                 }
                 // Content
-                /*
-                ZStack(alignment: .topLeading) {
-                    ForEach(swe.bodAng(swBodies: swBodies), id: \.id) { b in
-                        ForEach(1...12, id: \.self)  { i in
+                let ba = swe.bodAng(swBodies: swBodies)
+                ForEach(ba, id: \.id) { b in
+                    ZStack(alignment: .topLeading) {
+                        ForEach(b.pos...ba.count - 2, id: \.self)  { i in
                             let bodAng = swe.bodAngAspectPos(swBodies: swBodies, bodAngPos: b.pos, swTransit1: false, swTransit2: false, y: i)
-                            switch (bodAng.bodAng2) {
-                            case .Bodie(let bodie):
-                                VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1, y: Double(i))
+                            switch(bodAng.bodAng2) {
+                            case .Bodie(let _):
+                                if (bodAng.pos1 >= ba.count - 2) {
+                                } else {
+                                    VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1, y: Double(i))
+                                }
                             case .Angle(let angle):
-                                VStack(spacing: 0) {
-                                    Text("Angle")
+                                if (bodAng.pos1 >= ba.count - 2) {
+                                } else {
+                                    VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1, y: Double(i))
                                 }
                             }
                         }
                     }
-                }*/
-                
-                //VStack(spacing: 0) {
-                let ba = swe.bodAng(swBodies: swBodies)
-                ForEach(ba, id: \.id) { b in
-                    ZStack(alignment: .topLeading) {
-                        ForEach(b.pos...12, id: \.self)  { i in
-                            let bodAng = swe.bodAngAspectPos(swBodies: swBodies, bodAngPos: b.pos, swTransit1: false, swTransit2: false, y: i)
-                            switch(bodAng.bodAng2) {
-                            case .Bodie(let _):
-                                VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1, y: Double(i))
-                            case .Angle(let _):
-                                VAstrologieTableau2AspectsBodies(swe: $swe, aspect: bodAng.aspect, i: bodAng.pos1, y: Double(i))
-                            }
-                        }
-                    }
                 }
-                //}
             }
         }
     }
