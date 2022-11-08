@@ -17,11 +17,11 @@ struct VAstrologieTableau2Bodies: View {
     let fix = -150.0
     let bodPos = CGFloat((300 / 2) * -1)
     let cas = Double(300) / 16.0
-    let casDiv = 1.1
+    let casDiv = 1.2
     
     //let yPos = bodPos + (cas / 2) + (cas * Double(i)) - fix
     var body: some View {
-        let xPos = bodPos + (cas / 2) + (cas * Double(i)) - fix
+        let xPos = bodPos + (cas / 2) + (cas * Double(i)) * casDiv - fix
         VStack {
             SVGView(contentsOf: try! swe.swec.asset_bodie(i: bodie.rawValue))
                 .frame(width: 20.0, height: 20.0)

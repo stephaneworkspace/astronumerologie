@@ -15,17 +15,10 @@ struct VAstrologieTableau2AspectsBodies: View {
     @State var aspect: SweCore.Aspects
     @State var i: Int
     @State var y: Double
-    let fix = -152.0
-    let bodPos = CGFloat((300 / 2) * -1)
-    let cas = Double(300) / 16.0
-    let casDivx = 1.00
-    let casDiv = 1.07
-
     
-    //let yPos = bodPos + (cas / 2) + (cas * Double(i)) - fix
     var body: some View {
-        let xPos = bodPos + (cas / 2) + (cas * Double(i) * casDivx) - fix
-        let yPos = bodPos + (cas * (y + 1) * casDiv)
+        let xPos = xPos(size: swe.size, i: i)
+        let yPos = yPos(size: swe.size, y: y)
         VStack {
             if (aspect.rawValue >= 0) {
                 SVGView(contentsOf: try! swe.swec.asset_aspect(i: aspect.rawValue))
@@ -34,6 +27,30 @@ struct VAstrologieTableau2AspectsBodies: View {
         }.frame(maxWidth: .infinity, alignment: .leading).offset(x: xPos, y: yPos)
 
     }
+}
+
+func bodPos(size: Int) -> Double {
+    return Double((Double(size) / 2.0) * -1.0)
+}
+
+func cas(size: Int) -> Double {
+    return Double(size) / 16.0
+}
+
+func xPos(size: Int, i: Int) -> Double {
+    let cas = cas(size: size)
+    let bodPos = bodPos(size: size)
+    let casDivx = 1.00
+    let fix = 160.0
+    return bodPos + (cas / 2.0) + (cas * Double(i) * casDivx) + fix
+}
+
+func yPos(size: Int, y: Double) -> Double {
+    let cas = cas(size: size)
+    let bodPos = bodPos(size: size)
+    let casDiv = 1.0
+    let fix = -0.0
+    return bodPos + (cas * (y + 1.0) * casDiv) - fix;
 }
 
 /* TODO later
