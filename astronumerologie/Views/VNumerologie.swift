@@ -33,12 +33,12 @@ struct VNumerologie: View {
                     HStack {
                         Text("\(text.age())")
                         Spacer()
-                        Text("\(String(age(dBornDate: bdNatal)))")
+                        Text("\(String(NumerologieCore.age(dBornDate: bdNatal)))")
                     }
                     HStack {
                         Text("\(text.lifePath())")
                         Spacer()
-                        Text("\(cheminDeVie(dBornDate: bdNatal))")
+                        Text("\(NumerologieCore.cheminDeVie(dBornDate: bdNatal))")
                     }
                 }
                 Spacer()
@@ -81,7 +81,7 @@ struct VNumerologie: View {
                                 .multilineTextAlignment(.center)
                                 .clipped()
                         Spacer()
-                        TextField("", text: .constant(cycleAdjacents(dBornDate: bdNatal, eCycle: .Formatif)))
+                        TextField("", text: .constant(NumerologieCore.cycleAdjacents(dBornDate: bdNatal, eCycle: .Formatif)))
                                 .disabled(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(.trailing)
@@ -102,7 +102,7 @@ struct VNumerologie: View {
                                 .multilineTextAlignment(.center)
                                 .clipped()
                         Spacer()
-                        TextField("", text: .constant(cycleAdjacents(dBornDate: bdNatal, eCycle: .Productif)))
+                        TextField("", text: .constant(NumerologieCore.cycleAdjacents(dBornDate: bdNatal, eCycle: .Productif)))
                                 .disabled(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(.trailing)
@@ -123,7 +123,7 @@ struct VNumerologie: View {
                                 .multilineTextAlignment(.center)
                                 .clipped()
                         Spacer()
-                        TextField("", text: .constant(cycleAdjacents(dBornDate: bdNatal, eCycle: .Moisson)))
+                        TextField("", text: .constant(NumerologieCore.cycleAdjacents(dBornDate: bdNatal, eCycle: .Moisson)))
                                 .disabled(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(.trailing)
@@ -159,7 +159,7 @@ struct VNumerologie: View {
                         .clipped()
                 VStack {
                     HStack {
-                        TextField("", text: .constant(text.cycleRealisation(iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .JplusM)))
+                        TextField("", text: .constant(text.cycleRealisation(iLivePath: NumerologieCore.cheminDeVieInt(dBornDate: bdNatal), eCycle: .JplusM)))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.leading)
@@ -171,14 +171,14 @@ struct VNumerologie: View {
                                 .multilineTextAlignment(.center)
                                 .clipped()
                         Spacer()
-                        TextField("", text: .constant(jPlusMInt(dBornDate: bdNatal)))
+                        TextField("", text: .constant(NumerologieCore.jPlusMInt(dBornDate: bdNatal)))
                                 .disabled(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(.trailing)
                                 .clipped()
                     }
                     HStack {
-                        TextField("", text: .constant(text.cycleRealisation(iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .JplusA)))
+                        TextField("", text: .constant(text.cycleRealisation(iLivePath: NumerologieCore.cheminDeVieInt(dBornDate: bdNatal), eCycle: .JplusA)))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.leading)
@@ -190,14 +190,14 @@ struct VNumerologie: View {
                                 .multilineTextAlignment(.center)
                                 .clipped()
                         Spacer()
-                        TextField("", text: .constant(jPlusAInt(dBornDate: bdNatal)))
+                        TextField("", text: .constant(NumerologieCore.jPlusAInt(dBornDate: bdNatal)))
                                 .disabled(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(.trailing)
                                 .clipped()
                     }
                     HStack {
-                        TextField("", text: .constant(text.cycleRealisation(iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .UnplusDeux)))
+                        TextField("", text: .constant(text.cycleRealisation(iLivePath: NumerologieCore.cheminDeVieInt(dBornDate: bdNatal), eCycle: .UnplusDeux)))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.leading)
@@ -209,14 +209,14 @@ struct VNumerologie: View {
                                 .multilineTextAlignment(.center)
                                 .clipped()
                         Spacer()
-                        TextField("", text: .constant(unPlusDeuxInt(dBornDate: bdNatal)))
+                        TextField("", text: .constant(NumerologieCore.unPlusDeuxInt(dBornDate: bdNatal)))
                                 .disabled(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(.trailing)
                                 .clipped()
                     }
                     HStack {
-                        TextField("", text: .constant(text.cycleRealisation(iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .MplusA)))
+                        TextField("", text: .constant(text.cycleRealisation(iLivePath: NumerologieCore.cheminDeVieInt(dBornDate: bdNatal), eCycle: .MplusA)))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.leading)
@@ -228,7 +228,7 @@ struct VNumerologie: View {
                                 .multilineTextAlignment(.center)
                                 .clipped()
                         Spacer()
-                        TextField("", text: .constant(mPlusAInt(dBornDate: bdNatal)))
+                        TextField("", text: .constant(NumerologieCore.mPlusAInt(dBornDate: bdNatal)))
                                 .disabled(true)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .multilineTextAlignment(.trailing)

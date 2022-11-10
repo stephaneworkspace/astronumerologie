@@ -38,9 +38,3 @@ var FORMATTERWITHOUTFLOAT: NumberFormatter = {
     formatter.allowsFloats = false
     return formatter
 }()
-
-// Numérologie
-
-enum ECycle {
-    case Formatif, Productif, Moisson
-}
