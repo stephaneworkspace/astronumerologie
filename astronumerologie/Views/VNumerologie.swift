@@ -4,6 +4,7 @@
 
 import Foundation
 import SwiftUI
+import SweBressaniDev
 import WebKit
 import PDFKit
 
@@ -15,6 +16,7 @@ struct VNumerologie: View {
     @Binding var bsLastName1: String
     @Binding var bsLastName2: String
     @Binding var bsLastName3: String
+    @State var numerologie: NumerologieCore
     @State var sL: L
 
     var body: some View {
@@ -24,7 +26,7 @@ struct VNumerologie: View {
                 //EDatePicker(bdNatal: $bdNatal, sL: sL)
                 VStack {
                     HStack {
-                        Text("\(LBorn(L: sL))")
+                        Text("\(numerologie.born())")
                         Spacer()
                         Text("\(String(load(dBornDate: bdNatal)))")
                     }
