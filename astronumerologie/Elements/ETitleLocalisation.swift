@@ -8,11 +8,11 @@ import SweBressaniDev
 
 struct ETitleLocalisation: View {
     @State var sL: L
-    @State var numerologie: NumerologieCore
+    @State var text: TextCore
 
     var body: some View {
         HStack {
-            Text("\(numerologie.localisation())")
+            Text("\(text.localisation())")
             Spacer()
         }
                 .font(FONTSYSTEM)

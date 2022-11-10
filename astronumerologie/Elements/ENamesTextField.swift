@@ -8,7 +8,7 @@ import SweBressaniDev
 
 struct ENamesTextField: View {
     @State var sL: L
-    @State var numerologie: NumerologieCore
+    @State var text: TextCore
     @State var ssFirstName: String
     @State var ssSecondName: String
     @State var ssThirdName: String
@@ -19,28 +19,28 @@ struct ENamesTextField: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(numerologie.firstName())")
+                Text("\(text.firstName())")
                         .font(FONTSYSTEM)
                         .clipped()
                 Spacer()
             }
-            TextField("\(numerologie.firstName())", text: $ssFirstName)
+            TextField("\(text.firstName())", text: $ssFirstName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-            TextField("\(numerologie.secondName())", text: $ssSecondName)
+            TextField("\(text.secondName())", text: $ssSecondName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-            TextField("\(numerologie.thirdName())", text: $ssThirdName)
+            TextField("\(text.thirdName())", text: $ssThirdName)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
             HStack {
-                Text("\(numerologie.lastName())")
+                Text("\(text.lastName())")
                         .font(FONTSYSTEM)
                         .clipped()
                 Spacer()
             }
-            TextField("\(numerologie.lastName())", text: $ssLastName1)
+            TextField("\(text.lastName())", text: $ssLastName1)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-            TextField("\(numerologie.lastNameAux())", text: $ssLastName2)
+            TextField("\(text.lastNameAux())", text: $ssLastName2)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-            TextField("\(numerologie.lastNameAux())", text: $ssLastName3)
+            TextField("\(text.lastNameAux())", text: $ssLastName3)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
         }
                 .font(FONTSYSTEM)

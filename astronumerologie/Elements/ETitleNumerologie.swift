@@ -8,14 +8,14 @@ import SweBressaniDev
 
 struct ETitleNumerologie: View {
     @State var sL: L
-    @State var numerologie: NumerologieCore
+    @State var text: TextCore
 
     var body: some View {
         HStack {
             Image(systemName: "plus")
                     .imageScale(IMAGESCALE)
                     .foregroundColor(FOREGROUNDCOLOR)
-            Text("\(numerologie.numerologie())")
+            Text("\(text.numerologie())")
                     .font(FONTSYSTEMTITLEMEDIUM)
                     .clipped()
             Spacer()

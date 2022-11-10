@@ -8,12 +8,12 @@ import SweBressaniDev
 
 struct EDatePicker: View {
     @Binding var bdNatal: Date
-    @State var numerologie: NumerologieCore
+    @State var text: TextCore
     @State var sL: L
 
     var body: some View {
         VStack {
-            DatePicker("\(numerologie.birthDate())",
+            DatePicker("\(text.birthDate())",
                     selection: $bdNatal,
                     displayedComponents: [.date, .hourAndMinute]
             )

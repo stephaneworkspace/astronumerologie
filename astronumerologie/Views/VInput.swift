@@ -18,15 +18,15 @@ struct VInput: View {
     @Binding var bdLng: Double
     @Binding var biTimeZone: Int
     @State var sL: L
-    @State var numerologie: NumerologieCore
+    @State var text: TextCore
 
     var body: some View {
         VStack {
-            ETitleData(sL: sL, numerologie: numerologie)
-            EDatePicker(bdNatal: $bdNatal, numerologie: numerologie, sL: sL)
+            ETitleData(sL: sL, text: text)
+            EDatePicker(bdNatal: $bdNatal, text: text, sL: sL)
             ENamesTextField(
                     sL: sL,
-                    numerologie: numerologie,
+                    text: text,
                     ssFirstName: bsFirstName,
                     ssSecondName: bsSecondName,
                     ssThirdName: bsThirdName,
@@ -34,8 +34,8 @@ struct VInput: View {
                     ssLastName2: bsLastName2,
                     ssLastName3: bsLastName3
             )
-            ETitleLocalisation(sL: sL, numerologie: numerologie)
-            ELocalisationTextField(bdLat: $bdLat, bdLng: $bdLng, biTimeZone: $biTimeZone, sL: sL, numerologie: numerologie)
+            ETitleLocalisation(sL: sL, text: text)
+            ELocalisationTextField(bdLat: $bdLat, bdLng: $bdLng, biTimeZone: $biTimeZone, sL: sL, text: text)
         }
     }
 }

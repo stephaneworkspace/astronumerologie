@@ -27,7 +27,7 @@ struct ContentView: View {
     @State private var sInputImageAstro: UIImage?
     @State var sImageAstro: Image?
     @State private var swe: SweCore = SweCore(pathEphe: try! Zip.quickUnzipFile(Bundle.main.url(forResource: "ephem", withExtension: "zip")!).absoluteString, size: 400)
-    @State private var numerologie: NumerologieCore = NumerologieCore(langue: .F)
+    @State private var text: TextCore = TextCore(langue: .F)
     @State private var swBodies: [Bool] = [
         true,
         true,
@@ -82,7 +82,7 @@ struct ContentView: View {
                         bdLng: $bdLng,
                         biTimeZone: $biTimeZone,
                         sL: sL,
-                        numerologie: numerologie)
+                        text: text)
                 }
                 .padding()
                 .tabItem {
@@ -101,7 +101,7 @@ struct ContentView: View {
                             bsLastName1: $ssLastName1,
                             bsLastName2: $ssLastName2,
                             bsLastName3: $ssLastName3,
-                            numerologie: numerologie,
+                            text: text,
                             sL: sL)
                 }
                 .padding()

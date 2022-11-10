@@ -12,18 +12,18 @@ struct ELocalisationTextField: View {
     @Binding var bdLng: Double
     @Binding var biTimeZone: Int
     @State var sL: L
-    @State var numerologie: NumerologieCore
+    @State var text: TextCore
     @FocusState private var fbLat: Bool
     @FocusState private var fbLng: Bool
 
     var body: some View {
         VStack {
             HStack {
-                Text("\(numerologie.latitude())")
+                Text("\(text.latitude())")
                         .font(FONTSYSTEM)
                         .clipped()
                 TextField(
-                    "\(numerologie.latitude())",
+                    "\(text.latitude())",
                         value: $bdLat,
                         formatter: FORMATTER
                 )
@@ -32,11 +32,11 @@ struct ELocalisationTextField: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .font(FONTSYSTEM)
                         .clipped()
-                Text("\(numerologie.longitude())")
+                Text("\(text.longitude())")
                         .font(FONTSYSTEM)
                         .clipped()
                 TextField(
-                    "\(numerologie.longitude())",
+                    "\(text.longitude())",
                         value: $bdLng,
                         formatter: FORMATTER
                 )
