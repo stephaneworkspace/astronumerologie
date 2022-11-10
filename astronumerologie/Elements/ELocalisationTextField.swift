@@ -5,23 +5,25 @@
 import Foundation
 import SwiftUI
 import CoreLocation
+import SweBressaniDev
 
 struct ELocalisationTextField: View {
     @Binding var bdLat: Double
     @Binding var bdLng: Double
     @Binding var biTimeZone: Int
     @State var sL: L
+    @State var numerologie: NumerologieCore
     @FocusState private var fbLat: Bool
     @FocusState private var fbLng: Bool
 
     var body: some View {
         VStack {
             HStack {
-                Text("\(LLatitude(L: sL))")
+                Text("\(numerologie.latitude())")
                         .font(FONTSYSTEM)
                         .clipped()
                 TextField(
-                        "\(LLatitude(L: sL))",
+                    "\(numerologie.latitude())",
                         value: $bdLat,
                         formatter: FORMATTER
                 )
@@ -30,11 +32,11 @@ struct ELocalisationTextField: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .font(FONTSYSTEM)
                         .clipped()
-                Text("\(LLongitude(L: sL))")
+                Text("\(numerologie.longitude())")
                         .font(FONTSYSTEM)
                         .clipped()
                 TextField(
-                        "\(LLongitude(L: sL))",
+                    "\(numerologie.longitude())",
                         value: $bdLng,
                         formatter: FORMATTER
                 )

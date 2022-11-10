@@ -4,13 +4,15 @@
 
 import Foundation
 import SwiftUI
+import SweBressaniDev
 
 struct ETitleLocalisation: View {
     @State var sL: L
+    @State var numerologie: NumerologieCore
 
     var body: some View {
         HStack {
-            Text("\(LLocalisation(L: sL))")
+            Text("\(numerologie.localisation())")
             Spacer()
         }
                 .font(FONTSYSTEM)

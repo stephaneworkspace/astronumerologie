@@ -22,7 +22,7 @@ struct VNumerologie: View {
     var body: some View {
         ScrollView {
             VStack {
-                ETitleNumerologie(sL: sL)
+                ETitleNumerologie(sL: sL, numerologie: numerologie)
                 //EDatePicker(bdNatal: $bdNatal, sL: sL)
                 VStack {
                     HStack {
@@ -31,12 +31,12 @@ struct VNumerologie: View {
                         Text("\(String(load(dBornDate: bdNatal)))")
                     }
                     HStack {
-                        Text("\(LAge(L: sL))")
+                        Text("\(numerologie.age())")
                         Spacer()
                         Text("\(String(age(dBornDate: bdNatal)))")
                     }
                     HStack {
-                        Text("\(LLifePath(L: sL))")
+                        Text("\(numerologie.lifePath())")
                         Spacer()
                         Text("\(cheminDeVie(dBornDate: bdNatal))")
                     }
@@ -48,19 +48,19 @@ struct VNumerologie: View {
                             .font(FONTSYSTEMTITLEMEDIUM)
                             .clipped()
                     HStack {
-                        TextField("", text: .constant("\(LCycle(L: sL))"))
+                        TextField("", text: .constant("\(numerologie.cycle())"))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.leading)
                                 .clipped()
                         Spacer()
-                        TextField("", text: .constant("\(LCalcul(L: sL))"))
+                        TextField("", text: .constant("\(numerologie.calcul())"))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.center)
                                 .clipped()
                         Spacer()
-                        TextField("", text: .constant("\(LNombre(L: sL))"))
+                        TextField("", text: .constant("\(numerologie.nombre())"))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.trailing)
@@ -134,7 +134,7 @@ struct VNumerologie: View {
                 }
             }
             VStack {
-                Text("\(LCycleRealisation(L: sL))").multilineTextAlignment(.center)
+                Text("\(numerologie.cycleRealisation())").multilineTextAlignment(.center)
                         .font(FONTSYSTEMTITLEMEDIUM)
                         .clipped()
                 HStack {
@@ -149,7 +149,7 @@ struct VNumerologie: View {
                             .multilineTextAlignment(.center)
                             .clipped()
                     Spacer()
-                    TextField("", text: .constant("\(LNombre(L: sL))"))
+                    TextField("", text: .constant("\(numerologie.nombre())"))
                             .disabled(true)
                             .textFieldStyle(.plain)
                             .multilineTextAlignment(.trailing)
@@ -159,7 +159,7 @@ struct VNumerologie: View {
                         .clipped()
                 VStack {
                     HStack {
-                        TextField("", text: .constant(LCycleRealisation(L: sL, iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .JplusM)))
+                        TextField("", text: .constant(numerologie.cycleRealisation(iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .JplusM)))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.leading)
@@ -178,7 +178,7 @@ struct VNumerologie: View {
                                 .clipped()
                     }
                     HStack {
-                        TextField("", text: .constant(LCycleRealisation(L: sL, iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .JplusA)))
+                        TextField("", text: .constant(numerologie.cycleRealisation(iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .JplusA)))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.leading)
@@ -197,7 +197,7 @@ struct VNumerologie: View {
                                 .clipped()
                     }
                     HStack {
-                        TextField("", text: .constant(LCycleRealisation(L: sL, iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .UnplusDeux)))
+                        TextField("", text: .constant(numerologie.cycleRealisation(iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .UnplusDeux)))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.leading)
@@ -216,7 +216,7 @@ struct VNumerologie: View {
                                 .clipped()
                     }
                     HStack {
-                        TextField("", text: .constant(LCycleRealisation(L: sL, iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .MplusA)))
+                        TextField("", text: .constant(numerologie.cycleRealisation(iLivePath: cheminDeVieInt(dBornDate: bdNatal), eCycle: .MplusA)))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.leading)
@@ -239,18 +239,18 @@ struct VNumerologie: View {
                         .clipped()
             }
             VStack {
-                Text("\(LCycleUniversels(L: sL))")
+                Text("\(numerologie.cycleUniversels())")
                         .multilineTextAlignment(.center)
                         .font(FONTSYSTEMTITLEMEDIUM)
                         .clipped()
                 HStack {
-                    TextField("", text: .constant("\(LAgeDe(L: sL))"))
+                    TextField("", text: .constant("\(numerologie.ageDe())"))
                             .disabled(true)
                             .textFieldStyle(.plain)
                             .multilineTextAlignment(.leading)
                             .clipped()
                     Spacer()
-                    TextField("", text: .constant("\(LNombre(L: sL))"))
+                    TextField("", text: .constant("\(numerologie.nombre())"))
                             .disabled(true)
                             .textFieldStyle(.plain)
                             .multilineTextAlignment(.trailing)
@@ -260,7 +260,7 @@ struct VNumerologie: View {
                         .clipped()
                 ForEach(1...9, id: \.self) { idx in
                     HStack {
-                        TextField("", text: .constant(LCycleUniversel(L: sL, iNombre: idx)))
+                        TextField("", text: .constant(numerologie.cycleUniversel(iNombre: idx)))
                                 .disabled(true)
                                 .textFieldStyle(.plain)
                                 .multilineTextAlignment(.leading)
@@ -277,7 +277,7 @@ struct VNumerologie: View {
                 }
             }
             Button(action: {
-                fPrint(sL: sL, dBornDate: bdNatal)
+                fPrint(sL: sL, numerologie: numerologie, dBornDate: bdNatal)
             }, label: {
 
                 VStack {
@@ -336,10 +336,10 @@ func fMd(sL: L, dBornDate: Date) {
 }*/
 
 
-func fPrint(sL: L, dBornDate: Date) {
+func fPrint(sL: L, numerologie: NumerologieCore, dBornDate: Date) {
     let printingView = UIHostingController(rootView: ContentView()).view
 
-    let html: String = printNumerologie(sL: sL, dBornDate: dBornDate)
+    let html: String = printNumerologie(numerologie: numerologie, sL: sL, dBornDate: dBornDate)
 
     let fmt = UIMarkupTextPrintFormatter(markupText: html)
     

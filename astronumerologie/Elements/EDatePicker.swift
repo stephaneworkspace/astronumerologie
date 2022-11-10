@@ -4,14 +4,16 @@
 
 import Foundation
 import SwiftUI
+import SweBressaniDev
 
 struct EDatePicker: View {
     @Binding var bdNatal: Date
+    @State var numerologie: NumerologieCore
     @State var sL: L
 
     var body: some View {
         VStack {
-            DatePicker("\(LBirthDate(L: sL))",
+            DatePicker("\(numerologie.birthDate())",
                     selection: $bdNatal,
                     displayedComponents: [.date, .hourAndMinute]
             )

@@ -81,7 +81,8 @@ struct ContentView: View {
                         bdLat: $bdLat,
                         bdLng: $bdLng,
                         biTimeZone: $biTimeZone,
-                        sL: sL)
+                        sL: sL,
+                        numerologie: numerologie)
                 }
                 .padding()
                 .tabItem {

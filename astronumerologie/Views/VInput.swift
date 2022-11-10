@@ -4,6 +4,7 @@
 
 import Foundation
 import SwiftUI
+import SweBressaniDev
 
 struct VInput: View {
     @Binding var bdNatal: Date
@@ -17,13 +18,15 @@ struct VInput: View {
     @Binding var bdLng: Double
     @Binding var biTimeZone: Int
     @State var sL: L
+    @State var numerologie: NumerologieCore
 
     var body: some View {
         VStack {
-            ETitleData(sL: sL)
-            EDatePicker(bdNatal: $bdNatal, sL: sL)
+            ETitleData(sL: sL, numerologie: numerologie)
+            EDatePicker(bdNatal: $bdNatal, numerologie: numerologie, sL: sL)
             ENamesTextField(
                     sL: sL,
+                    numerologie: numerologie,
                     ssFirstName: bsFirstName,
                     ssSecondName: bsSecondName,
                     ssThirdName: bsThirdName,
@@ -31,8 +34,8 @@ struct VInput: View {
                     ssLastName2: bsLastName2,
                     ssLastName3: bsLastName3
             )
-            ETitleLocalisation(sL: sL)
-            ELocalisationTextField(bdLat: $bdLat, bdLng: $bdLng, biTimeZone: $biTimeZone, sL: sL)
+            ETitleLocalisation(sL: sL, numerologie: numerologie)
+            ELocalisationTextField(bdLat: $bdLat, bdLng: $bdLng, biTimeZone: $biTimeZone, sL: sL, numerologie: numerologie)
         }
     }
 }
