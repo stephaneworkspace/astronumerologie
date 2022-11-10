@@ -18,7 +18,7 @@ func reduction(iNumber: Int) -> [Int] {
             let sTemp: String = String(iTemp)
             let index = sTemp.index(sTemp.startIndex, offsetBy: i)
             let cTemp: Character = sTemp[index]
-            iTemp2 = iTemp2 + cTemp.wholeNumberValue! ?? 0
+            iTemp2 = iTemp2 + cTemp.wholeNumberValue!
         }
         iTemp = iTemp2
     }
@@ -26,17 +26,6 @@ func reduction(iNumber: Int) -> [Int] {
 }
 
 func age(dBornDate: Date) -> Int {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "YYYY"
-    let iYear = Int(dateFormatter.string(from: dBornDate)) ?? 1980
-    dateFormatter.dateFormat = "MM"
-    let iMonth = Int(dateFormatter.string(from: dBornDate)) ?? 1
-    dateFormatter.dateFormat = "dd"
-    let iDay = Int(dateFormatter.string(from: dBornDate)) ?? 1
-    let dateFormater = DateFormatter()
-    dateFormater.dateFormat = "MM/dd/yyyy"
-    let sDate = String(iDay) + "." + String(iMonth) + "." + String(iYear)
-    let birthdayDate = dateFormater.date(from: sDate)
     let now = Date()
     let calendar: NSCalendar! = NSCalendar(calendarIdentifier: .gregorian)
     let calcAge = calendar.components(.year, from: dBornDate, to: now, options: [])
@@ -52,11 +41,7 @@ func cheminDeVie(dBornDate: Date) -> String {
     let iMonth = Int(dateFormatter.string(from: dBornDate)) ?? 1
     dateFormatter.dateFormat = "dd"
     let iDay = Int(dateFormatter.string(from: dBornDate)) ?? 1
-    dateFormatter.dateFormat = "hh"
-    let iHour = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    dateFormatter.dateFormat = "mm"
-    let iMin = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    var iTemp = iDay + iMonth + iYear
+    let iTemp = iDay + iMonth + iYear
     let aiTempReduction = reduction(iNumber: iTemp)
     var sTemp: String = ""
     for ai in aiTempReduction {
@@ -77,28 +62,18 @@ func cheminDeVieInt(dBornDate: Date) -> Int {
     let iMonth = Int(dateFormatter.string(from: dBornDate)) ?? 1
     dateFormatter.dateFormat = "dd"
     let iDay = Int(dateFormatter.string(from: dBornDate)) ?? 1
-    dateFormatter.dateFormat = "hh"
-    let iHour = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    dateFormatter.dateFormat = "mm"
-    let iMin = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    var iTemp = iDay + iMonth + iYear
+    let iTemp = iDay + iMonth + iYear
     let aiTempReduction = reduction(iNumber: iTemp)
-    return aiTempReduction.last! ?? 0
+    return aiTempReduction.last!
 }
 
 func jPlusMInt(dBornDate: Date) -> String {
     let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = "YYYY"
-    let iYear = Int(dateFormatter.string(from: dBornDate)) ?? 1980
     dateFormatter.dateFormat = "MM"
     let iMonth = Int(dateFormatter.string(from: dBornDate)) ?? 1
     dateFormatter.dateFormat = "dd"
     let iDay = Int(dateFormatter.string(from: dBornDate)) ?? 1
-    dateFormatter.dateFormat = "hh"
-    let iHour = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    dateFormatter.dateFormat = "mm"
-    let iMin = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    var iTemp = iDay + iMonth
+    let iTemp = iDay + iMonth
     let aiTempReduction = reduction(iNumber: iTemp)
     var sTemp: String = ""
     for ai in aiTempReduction {
@@ -115,15 +90,9 @@ func jPlusAInt(dBornDate: Date) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "YYYY"
     let iYear = Int(dateFormatter.string(from: dBornDate)) ?? 1980
-    dateFormatter.dateFormat = "MM"
-    let iMonth = Int(dateFormatter.string(from: dBornDate)) ?? 1
     dateFormatter.dateFormat = "dd"
     let iDay = Int(dateFormatter.string(from: dBornDate)) ?? 1
-    dateFormatter.dateFormat = "hh"
-    let iHour = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    dateFormatter.dateFormat = "mm"
-    let iMin = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    var iTemp = iDay + iYear
+    let iTemp = iDay + iYear
     let aiTempReduction = reduction(iNumber: iTemp)
     var sTemp: String = ""
     for ai in aiTempReduction {
@@ -145,10 +114,7 @@ func unPlusDeuxInt(dBornDate: Date) -> String {
     dateFormatter.dateFormat = "dd"
     let iDay = Int(dateFormatter.string(from: dBornDate)) ?? 1
     dateFormatter.dateFormat = "hh"
-    let iHour = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    dateFormatter.dateFormat = "mm"
-    let iMin = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    var iTemp = (iDay + iMonth) + (iDay + iYear)
+    let iTemp = (iDay + iMonth) + (iDay + iYear)
     let aiTempReduction = reduction(iNumber: iTemp)
     var sTemp: String = ""
     for ai in aiTempReduction {
@@ -167,13 +133,7 @@ func mPlusAInt(dBornDate: Date) -> String {
     let iYear = Int(dateFormatter.string(from: dBornDate)) ?? 1980
     dateFormatter.dateFormat = "MM"
     let iMonth = Int(dateFormatter.string(from: dBornDate)) ?? 1
-    dateFormatter.dateFormat = "dd"
-    let iDay = Int(dateFormatter.string(from: dBornDate)) ?? 1
-    dateFormatter.dateFormat = "hh"
-    let iHour = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    dateFormatter.dateFormat = "mm"
-    let iMin = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    var iTemp = iMonth + iYear
+    let iTemp = iMonth + iYear
     let aiTempReduction = reduction(iNumber: iTemp)
     var sTemp: String = ""
     for ai in aiTempReduction {
@@ -194,10 +154,6 @@ func cycleAdjacents(dBornDate: Date, eCycle: ECycle) -> String {
     let iMonth = Int(dateFormatter.string(from: dBornDate)) ?? 1
     dateFormatter.dateFormat = "dd"
     let iDay = Int(dateFormatter.string(from: dBornDate)) ?? 1
-    dateFormatter.dateFormat = "hh"
-    let iHour = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    dateFormatter.dateFormat = "mm"
-    let iMin = Int(dateFormatter.string(from: dBornDate)) ?? 0
     var iTemp = 0;
     switch eCycle {
     case .Formatif:

@@ -64,7 +64,7 @@ class Astrologie {
                                                                                 self.ephem)))
         */
         // self.astro.natal etc... // TODO et remove la func
-        var sweSvg = SweSvg(ephemPath: self.ephem)
+        let sweSvg = SweSvg(ephemPath: self.ephem)
         sweSvg.set(natal: natal, transit: natal, lat: lat, lng: lng, tz: tz, colorMode: colorScheme == .light ? .Light : .Dark) // TODO
         let svg = try! sweSvg.theme_astral()
         
@@ -186,7 +186,7 @@ class Astrologie {
             let createPdf = create_pdf_b64_from_png_b64(png)
             
             let base64String: String = String(cString: UnsafePointer<CChar>(createPdf.b_64))
-            let base64StringRes: String = String(cString: UnsafePointer<CChar>(createPdf.err))
+            let _: String = String(cString: UnsafePointer<CChar>(createPdf.err)) // TODO
             
             let pdfFileData = Data(base64Encoded: base64String)
             

@@ -43,13 +43,13 @@ struct ELocalisationTextField: View {
                         .focused($fbLng)
                         .keyboardType(.decimalPad)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
-                if CLLocationManager.authorizationStatus() == .restricted
-                           || CLLocationManager.authorizationStatus() == .denied {
+                let manager = CLLocationManager()
+                if manager.authorizationStatus == .restricted || manager.authorizationStatus == .denied {
 
                 } else {
                     Button(action: {
-                        if (CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
-                                CLLocationManager.authorizationStatus() == .authorizedAlways) {
+                        if (manager.authorizationStatus == .authorizedWhenInUse ||
+                            manager.authorizationStatus == .authorizedAlways) {
                             let locationManager = CLLocationManager()
                             locationManager.requestWhenInUseAuthorization()
                             var currentLoc: CLLocation!

@@ -279,10 +279,6 @@ func load(dBornDate: Date) -> String {
     let iMonth = Int(dateFormatter.string(from: dBornDate)) ?? 1
     dateFormatter.dateFormat = "dd"
     let iDay = Int(dateFormatter.string(from: dBornDate)) ?? 1
-    dateFormatter.dateFormat = "hh"
-    let iHour = Int(dateFormatter.string(from: dBornDate)) ?? 0
-    dateFormatter.dateFormat = "mm"
-    let iMin = Int(dateFormatter.string(from: dBornDate)) ?? 0
     return String(iDay) + "." + String(iMonth) + "." + String(iYear)
 }
 

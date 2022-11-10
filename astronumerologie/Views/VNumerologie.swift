@@ -337,7 +337,7 @@ func fMd(sL: L, dBornDate: Date) {
 
 
 func fPrint(sL: L, numerologie: NumerologieCore, dBornDate: Date) {
-    let printingView = UIHostingController(rootView: ContentView()).view
+    let _ = UIHostingController(rootView: ContentView()).view
 
     let html: String = printNumerologie(numerologie: numerologie, sL: sL, dBornDate: dBornDate)
 
