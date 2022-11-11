@@ -155,7 +155,7 @@ struct ContentView: View {
                 }
                 .tag(4)
                 VStack {
-                    VSelection(swe: $swe, swBodies: $swBodies)
+                    VSelection(bsSwe: $swe, baBodies: $swBodies)
                 }
                 .padding()
                 .tabItem {
