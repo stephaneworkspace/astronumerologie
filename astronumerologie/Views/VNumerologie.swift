@@ -28,7 +28,7 @@ struct VNumerologie: View {
                     HStack {
                         Text("\(text.born())")
                         Spacer()
-                        Text("\(String(load(dBornDate: bdNatal)))")
+                        Text("\(String(NumerologieCore.date(dBornDate: bdNatal)))")
                     }
                     HStack {
                         Text("\(text.age())")
