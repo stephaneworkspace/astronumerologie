@@ -16,16 +16,16 @@ struct VAstrologie: View {
     var body: some View {
         ScrollView {
             ZStack {
-                VAstrologieZodiac(swe: $swe)
+                VAstrologieZodiac(bsSwe: $swe)
                 ForEach(1...12, id: \.self)  { i in
-                    VAstrologieAssetSigns(swe: $swe, sign: i)
+                    VAstrologieAssetSigns(bsSwe: $swe, siSign: i)
                 }
                 ForEach(1...4, id: \.self) { i in
                     let angle = SweCore.Angles(rawValue: Int32(i))!
                     VAstrologieAssetAngles(swe: $swe, angle: angle)
                     VAstrologieAngles(swe: $swe, angle: angle)
                 }
-                VAstrologieHouses(swe: $swe)
+                VAstrologieHouses(bsSwe: $swe)
                 ForEach(1...12, id: \.self)  { i in
                     VAstrologieAssetHouses(swe: $swe, house: i)
                 }
