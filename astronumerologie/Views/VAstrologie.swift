@@ -27,15 +27,15 @@ struct VAstrologie: View {
                 }
                 VAstrologieHouses(bsSwe: $swe)
                 ForEach(1...12, id: \.self)  { i in
-                    VAstrologieAssetHouses(swe: $swe, house: i)
+                    VAstrologieAssetHouses(bsSwe: $swe, siHouse: i)
                 }
                 //
                 ForEach(Array(zip(swe.bodiesForLoop.indices, swe.bodiesForLoop)), id: \.1) { i, b in
                     if (swBodies[i]) {
                         VAstrologieBodies(swe: $swe, bodie: b, swTransit: false)
                         VAstrologieBodies(swe: $swe, bodie: b, swTransit: true)
-                        VAstrologieAssetBodies(swe: $swe, bodie: b, swTransit: false)
-                        VAstrologieAssetBodies(swe: $swe, bodie: b, swTransit: true)
+                        VAstrologieAssetBodies(bsSwe: $swe, sbBodie: b, sbTransit: false)
+                        VAstrologieAssetBodies(bsSwe: $swe, sbBodie: b, sbTransit: true)
                     }
                 }
             }
