@@ -10,38 +10,19 @@ import SweBressaniDev
 
 struct VAstrologie: View {
     @Environment(\.colorScheme) var colorScheme: ColorScheme
-    @Binding var swe: SweCore
-    @Binding var swBodies: [Bool]
+    @Binding var bsSwe: SweCore
+    @Binding var bbBodies: [Bool]
 
     var body: some View {
         ScrollView {
-            VAstrologieChart(bsSwe: $swe, baBodies: $swBodies)
-            VAstrologieTableau1(bsSwe: $swe, saBodies: swBodies)
-            // Tableau 2
-            VAstrologieTableau2(swe: $swe, swTransit1: false, swTransit2: false)
+            VAstrologieChart(bsSwe: $bsSwe, baBodies: $bbBodies)
+            VAstrologieTableau1(bsSwe: $bsSwe, saBodies: bbBodies)
+            VAstrologieTableau2(bsSwe: $bsSwe, sbTransit1: false, sbTransit2: false)
             VStack{}.frame(height: 16 * 6)
-            VAstrologieTableau2(swe: $swe, swTransit1: true, swTransit2: true)
+            VAstrologieTableau2(bsSwe: $bsSwe, sbTransit1: true, sbTransit2: true)
             VStack{}.frame(height: 16 * 6)
-            VAstrologieTableau2(swe: $swe, swTransit1: false, swTransit2: true)
+            VAstrologieTableau2(bsSwe: $bsSwe, sbTransit1: false, sbTransit2: true)
             VStack{}.frame(height: 16 * 6)
         }
     }
 }
-
-func countTableau2(bodiesForLoop: [SweCore.Bodies], swBodies: [Bool]) -> Int {
-    var j = 0
-    for (i, _) in bodiesForLoop.enumerated() {
-        if swBodies[i] {
-            j += 1
-        }
-    }
-    return j
-}
-
-/* // TODO
-struct VAstrologie_Previews: PreviewProvider {
-    static var previews: some View {
-        VAstrologie()
-    }
-}
-*/

@@ -11,10 +11,6 @@
 		552E877BDE64B0729FCB33CF /* langua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E817F683EDEEEEF725F1D /* langua.swift */; };
 		552E8A7B961A4B125977768E /* renderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8E916E7B42CDA5B02658 /* renderImage.swift */; };
 		552E8ED3D208BC59E1AF363A /* VNumerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8A32F70A98B91713FDFF /* VNumerologie.swift */; };
-		F4045AA0291A51090084827B /* VAstrologieTableau2Bodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4045A9F291A51090084827B /* VAstrologieTableau2Bodies.swift */; };
-		F4045AA2291A561A0084827B /* VAstrologieTableau2Angles.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4045AA1291A561A0084827B /* VAstrologieTableau2Angles.swift */; };
-		F4045AA4291A741D0084827B /* VAstrologieTableau2AspectsBodies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4045AA3291A741D0084827B /* VAstrologieTableau2AspectsBodies.swift */; };
-		F4045AA6291AA5F50084827B /* VAstrologieTableau2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4045AA5291AA5F50084827B /* VAstrologieTableau2.swift */; };
 		F426B43728E8528100FE1469 /* antools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F426B43528E8528100FE1469 /* antools.cpp */; };
 		F426B44028E8544C00FE1469 /* librantools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B43E28E8544B00FE1469 /* librantools.a */; };
 		F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437A23428D8A34200A6D196 /* print-numerologie.swift */; };
@@ -60,10 +56,6 @@
 		552E8210F8E408A317D34E42 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		552E8A32F70A98B91713FDFF /* VNumerologie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VNumerologie.swift; sourceTree = "<group>"; };
 		552E8E916E7B42CDA5B02658 /* renderImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = renderImage.swift; sourceTree = "<group>"; };
-		F4045A9F291A51090084827B /* VAstrologieTableau2Bodies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieTableau2Bodies.swift; sourceTree = "<group>"; };
-		F4045AA1291A561A0084827B /* VAstrologieTableau2Angles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieTableau2Angles.swift; sourceTree = "<group>"; };
-		F4045AA3291A741D0084827B /* VAstrologieTableau2AspectsBodies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieTableau2AspectsBodies.swift; sourceTree = "<group>"; };
-		F4045AA5291AA5F50084827B /* VAstrologieTableau2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologieTableau2.swift; sourceTree = "<group>"; };
 		F426B43428E8528000FE1469 /* astronumerologie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "astronumerologie-Bridging-Header.h"; sourceTree = "<group>"; };
 		F426B43528E8528100FE1469 /* antools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = antools.cpp; sourceTree = "<group>"; };
 		F426B43628E8528100FE1469 /* antools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = antools.hpp; sourceTree = "<group>"; };
@@ -122,7 +114,6 @@
 		552E836197E998B988955775 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F49927D02912A12C006AD339 /* SubViews */,
 				552E8A32F70A98B91713FDFF /* VNumerologie.swift */,
 				F49927C9291276D9006AD339 /* VAstrologie.swift */,
 				F48101C42917F15200E451EB /* VSelection.swift */,
@@ -175,17 +166,6 @@
 				F426B43E28E8544B00FE1469 /* librantools.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F49927D02912A12C006AD339 /* SubViews */ = {
-			isa = PBXGroup;
-			children = (
-				F4045A9F291A51090084827B /* VAstrologieTableau2Bodies.swift */,
-				F4045AA1291A561A0084827B /* VAstrologieTableau2Angles.swift */,
-				F4045AA3291A741D0084827B /* VAstrologieTableau2AspectsBodies.swift */,
-				F4045AA5291AA5F50084827B /* VAstrologieTableau2.swift */,
-			);
-			path = SubViews;
 			sourceTree = "<group>";
 		};
 		F4C42CF228C3C67300EA0BC6 = {
@@ -415,7 +395,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4045AA6291AA5F50084827B /* VAstrologieTableau2.swift in Sources */,
 				F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */,
 				F49927CA291276D9006AD339 /* VAstrologie.swift in Sources */,
 				F4C42D0128C3C67300EA0BC6 /* ContentView.swift in Sources */,
@@ -423,13 +402,10 @@
 				F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */,
 				552E809ACA7506CE4C063FA2 /* config.swift in Sources */,
 				552E877BDE64B0729FCB33CF /* langua.swift in Sources */,
-				F4045AA0291A51090084827B /* VAstrologieTableau2Bodies.swift in Sources */,
-				F4045AA2291A561A0084827B /* VAstrologieTableau2Angles.swift in Sources */,
 				F426B43728E8528100FE1469 /* antools.cpp in Sources */,
 				F4FAD30F28EDA061000349F4 /* Chart.swift in Sources */,
 				552E8ED3D208BC59E1AF363A /* VNumerologie.swift in Sources */,
 				F48101C52917F15200E451EB /* VSelection.swift in Sources */,
-				F4045AA4291A741D0084827B /* VAstrologieTableau2AspectsBodies.swift in Sources */,
 				552E8A7B961A4B125977768E /* renderImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
