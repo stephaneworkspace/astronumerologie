@@ -22,7 +22,7 @@ struct VNumerologie: View {
     var body: some View {
         ScrollView {
             VStack {
-                ETitleNumerologie(sL: sL, text: text)
+                VTitleNumerologie(stText: text)
                 //EDatePicker(bdNatal: $bdNatal, sL: sL)
                 VStack {
                     HStack {

@@ -15,7 +15,16 @@
       "location" : "https://github.com/stephaneworkspace/SweBressaniDev.git",
       "state" : {
         "branch" : "main",
-        "revision" : "38ef1e7c39659ef47a1ad93919860e7ee9bbd168"
+        "revision" : "933951a20e36b7b03db9f0db71f694097ffa9076"
+      }
+    },
+    {
+      "identity" : "tppdf",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/techprimate/TPPDF",
+      "state" : {
+        "revision" : "e4577f5ac161d35fd4ad41e401b639ef68b81315",
+        "version" : "2.3.5"
       }
     },
     {
