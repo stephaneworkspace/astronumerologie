@@ -15,30 +15,7 @@ struct VAstrologie: View {
 
     var body: some View {
         ScrollView {
-            ZStack {
-                VAstrologieZodiac(bsSwe: $swe)
-                ForEach(1...12, id: \.self)  { i in
-                    VAstrologieAssetSigns(bsSwe: $swe, siSign: i)
-                }
-                ForEach(1...4, id: \.self) { i in
-                    let angle = SweCore.Angles(rawValue: Int32(i))!
-                    VAstrologieAssetAngles(swe: $swe, angle: angle)
-                    VAstrologieAngles(swe: $swe, angle: angle)
-                }
-                VAstrologieHouses(bsSwe: $swe)
-                ForEach(1...12, id: \.self)  { i in
-                    VAstrologieAssetHouses(bsSwe: $swe, siHouse: i)
-                }
-                //
-                ForEach(Array(zip(swe.bodiesForLoop.indices, swe.bodiesForLoop)), id: \.1) { i, b in
-                    if (swBodies[i]) {
-                        VAstrologieBodies(swe: $swe, bodie: b, swTransit: false)
-                        VAstrologieBodies(swe: $swe, bodie: b, swTransit: true)
-                        VAstrologieAssetBodies(bsSwe: $swe, sbBodie: b, sbTransit: false)
-                        VAstrologieAssetBodies(bsSwe: $swe, sbBodie: b, sbTransit: true)
-                    }
-                }
-            }
+            VAstrologieChart(bsSwe: $swe, saBodies: $swBodies)
             // Tableau 1
             VStack(spacing: 0) {
                 ForEach(Array(zip(swe.bodiesForLoop.indices, swe.bodiesForLoop)), id: \.1) { i, b in
