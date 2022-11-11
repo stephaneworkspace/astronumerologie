@@ -15,19 +15,8 @@ struct VAstrologie: View {
 
     var body: some View {
         ScrollView {
-            VAstrologieChart(bsSwe: $swe, saBodies: $swBodies)
-            // Tableau 1
-            VStack(spacing: 0) {
-                ForEach(Array(zip(swe.bodiesForLoop.indices, swe.bodiesForLoop)), id: \.1) { i, b in
-                    if (swBodies[i]) {
-                        ZStack(alignment: .topLeading) {
-                            VAstrologieTableau1(swe: $swe, bodie: b)
-                            VAstrologieTableau1Signs(swe: $swe, bodie: b, swTransit: false)
-                            VAstrologieTableau1Signs(swe: $swe, bodie: b, swTransit: true)
-                        }
-                    }
-                }
-            }
+            VAstrologieChart(bsSwe: $swe, baBodies: $swBodies)
+            VAstrologieTableau1(bsSwe: $swe, saBodies: swBodies)
             // Tableau 2
             VAstrologieTableau2(swe: $swe, swTransit1: false, swTransit2: false)
             VStack{}.frame(height: 16 * 6)
