@@ -100,8 +100,7 @@ struct ContentView: View {
                             bsLastName1: $ssLastName1,
                             bsLastName2: $ssLastName2,
                             bsLastName3: $ssLastName3,
-                            text: stText,
-                            sL: sL)
+                            stText: stText)
                 }
                 .padding()
                 .tabItem {
