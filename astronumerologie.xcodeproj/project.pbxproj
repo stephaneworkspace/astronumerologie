@@ -7,19 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		552E809ACA7506CE4C063FA2 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8210F8E408A317D34E42 /* config.swift */; };
-		552E877BDE64B0729FCB33CF /* langua.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E817F683EDEEEEF725F1D /* langua.swift */; };
-		552E8A7B961A4B125977768E /* renderImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552E8E916E7B42CDA5B02658 /* renderImage.swift */; };
-		F426B43728E8528100FE1469 /* antools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F426B43528E8528100FE1469 /* antools.cpp */; };
-		F426B44028E8544C00FE1469 /* librantools.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F426B43E28E8544B00FE1469 /* librantools.a */; };
-		F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F437A23428D8A34200A6D196 /* print-numerologie.swift */; };
 		F46F21B72916DF1200211049 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = F46F21B62916DF1200211049 /* Zip */; };
 		F46F21BA2916DF2D00211049 /* SweBressaniDev in Frameworks */ = {isa = PBXBuildFile; productRef = F46F21B92916DF2D00211049 /* SweBressaniDev */; };
-		F46F21BD2916DF6200211049 /* SVGView in Frameworks */ = {isa = PBXBuildFile; productRef = F46F21BC2916DF6200211049 /* SVGView */; };
 		F484F7B928ECDBA60096F98D /* ephem.zip in Resources */ = {isa = PBXBuildFile; fileRef = F484F7B828ECDBA60096F98D /* ephem.zip */; };
-		F49927CA291276D9006AD339 /* VAstrologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49927C9291276D9006AD339 /* VAstrologie.swift */; };
-		F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A95CAF28E9EA2E0004B22F /* astrologie.swift */; };
-		F4A95CB328EA451B0004B22F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = F4A95CB228EA451B0004B22F /* .gitignore */; };
 		F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42CFE28C3C67300EA0BC6 /* astronumerologieApp.swift */; };
 		F4C42D0128C3C67300EA0BC6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D0028C3C67300EA0BC6 /* ContentView.swift */; };
 		F4C42D0328C3C67500EA0BC6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4C42D0228C3C67500EA0BC6 /* Assets.xcassets */; };
@@ -29,7 +19,6 @@
 		F4C42D1C28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */; };
 		F4DFA0812911BBB9004DE58F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DFA07F2911BBB9004DE58F /* InfoPlist.strings */; };
 		F4DFA0842911BC07004DE58F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4DFA0822911BC07004DE58F /* InfoPlist.strings */; };
-		F4FAD30F28EDA061000349F4 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAD30E28EDA061000349F4 /* Chart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,19 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		552E817F683EDEEEEF725F1D /* langua.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = langua.swift; sourceTree = "<group>"; };
-		552E8210F8E408A317D34E42 /* config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
-		552E8E916E7B42CDA5B02658 /* renderImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = renderImage.swift; sourceTree = "<group>"; };
-		F426B43428E8528000FE1469 /* astronumerologie-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "astronumerologie-Bridging-Header.h"; sourceTree = "<group>"; };
-		F426B43528E8528100FE1469 /* antools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = antools.cpp; sourceTree = "<group>"; };
-		F426B43628E8528100FE1469 /* antools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = antools.hpp; sourceTree = "<group>"; };
-		F426B43E28E8544B00FE1469 /* librantools.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librantools.a; path = astronumerologie/CodeBridge/lib/librantools.a; sourceTree = "<group>"; };
-		F437A23428D8A34200A6D196 /* print-numerologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "print-numerologie.swift"; sourceTree = "<group>"; };
 		F484F7B828ECDBA60096F98D /* ephem.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ephem.zip; sourceTree = "<group>"; };
-		F49927C9291276D9006AD339 /* VAstrologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VAstrologie.swift; sourceTree = "<group>"; };
-		F4A95CAF28E9EA2E0004B22F /* astrologie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astrologie.swift; sourceTree = "<group>"; };
 		F4A95CB128EA2B3B0004B22F /* astronumerologie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = astronumerologie.entitlements; sourceTree = "<group>"; };
-		F4A95CB228EA451B0004B22F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		F4C42CFB28C3C67300EA0BC6 /* astronumerologie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = astronumerologie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4C42CFE28C3C67300EA0BC6 /* astronumerologieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieApp.swift; sourceTree = "<group>"; };
 		F4C42D0028C3C67300EA0BC6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,7 +53,6 @@
 		F4C42D1B28C3C67500EA0BC6 /* astronumerologieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = astronumerologieUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F4DFA0802911BBB9004DE58F /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = InfoPlist.strings; sourceTree = "<group>"; };
 		F4DFA0832911BC07004DE58F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
-		F4FAD30E28EDA061000349F4 /* Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +62,6 @@
 			files = (
 				F46F21B72916DF1200211049 /* Zip in Frameworks */,
 				F46F21BA2916DF2D00211049 /* SweBressaniDev in Frameworks */,
-				F46F21BD2916DF6200211049 /* SVGView in Frameworks */,
-				F426B44028E8544C00FE1469 /* librantools.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,57 +82,9 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		552E836197E998B988955775 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				F49927C9291276D9006AD339 /* VAstrologie.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		552E8A8DCD70359939DE9CFC /* Conf */ = {
-			isa = PBXGroup;
-			children = (
-				552E8210F8E408A317D34E42 /* config.swift */,
-				552E817F683EDEEEEF725F1D /* langua.swift */,
-				552E8E916E7B42CDA5B02658 /* renderImage.swift */,
-			);
-			path = Conf;
-			sourceTree = "<group>";
-		};
-		552E8BA22D54DECD72627BE0 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				F437A23428D8A34200A6D196 /* print-numerologie.swift */,
-				F4A95CAF28E9EA2E0004B22F /* astrologie.swift */,
-				F4FAD30E28EDA061000349F4 /* Chart.swift */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		F426B43328E8525600FE1469 /* CodeBridge */ = {
-			isa = PBXGroup;
-			children = (
-				F426B43828E8537000FE1469 /* lib */,
-				F426B43528E8528100FE1469 /* antools.cpp */,
-				F426B43628E8528100FE1469 /* antools.hpp */,
-				F426B43428E8528000FE1469 /* astronumerologie-Bridging-Header.h */,
-				F4A95CB228EA451B0004B22F /* .gitignore */,
-			);
-			path = CodeBridge;
-			sourceTree = "<group>";
-		};
-		F426B43828E8537000FE1469 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
 		F426B43D28E8544B00FE1469 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F426B43E28E8544B00FE1469 /* librantools.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -190,14 +117,10 @@
 			children = (
 				F484F7B828ECDBA60096F98D /* ephem.zip */,
 				F4A95CB128EA2B3B0004B22F /* astronumerologie.entitlements */,
-				F426B43328E8525600FE1469 /* CodeBridge */,
 				F4C42CFE28C3C67300EA0BC6 /* astronumerologieApp.swift */,
 				F4C42D0028C3C67300EA0BC6 /* ContentView.swift */,
 				F4C42D0228C3C67500EA0BC6 /* Assets.xcassets */,
 				F4C42D0428C3C67500EA0BC6 /* Preview Content */,
-				552E836197E998B988955775 /* Views */,
-				552E8A8DCD70359939DE9CFC /* Conf */,
-				552E8BA22D54DECD72627BE0 /* Core */,
 			);
 			path = astronumerologie;
 			sourceTree = "<group>";
@@ -262,7 +185,6 @@
 			packageProductDependencies = (
 				F46F21B62916DF1200211049 /* Zip */,
 				F46F21B92916DF2D00211049 /* SweBressaniDev */,
-				F46F21BC2916DF6200211049 /* SVGView */,
 			);
 			productName = astronumerologie;
 			productReference = F4C42CFB28C3C67300EA0BC6 /* astronumerologie.app */;
@@ -362,7 +284,6 @@
 				F4C42D0628C3C67500EA0BC6 /* Preview Assets.xcassets in Resources */,
 				F4DFA0842911BC07004DE58F /* InfoPlist.strings in Resources */,
 				F484F7B928ECDBA60096F98D /* ephem.zip in Resources */,
-				F4A95CB328EA451B0004B22F /* .gitignore in Resources */,
 				F4C42D0328C3C67500EA0BC6 /* Assets.xcassets in Resources */,
 				F4DFA0812911BBB9004DE58F /* InfoPlist.strings in Resources */,
 			);
@@ -389,16 +310,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4A95CB028E9EA2E0004B22F /* astrologie.swift in Sources */,
-				F49927CA291276D9006AD339 /* VAstrologie.swift in Sources */,
 				F4C42D0128C3C67300EA0BC6 /* ContentView.swift in Sources */,
 				F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */,
-				F437A23528D8A34200A6D196 /* print-numerologie.swift in Sources */,
-				552E809ACA7506CE4C063FA2 /* config.swift in Sources */,
-				552E877BDE64B0729FCB33CF /* langua.swift in Sources */,
-				F426B43728E8528100FE1469 /* antools.cpp in Sources */,
-				F4FAD30F28EDA061000349F4 /* Chart.swift in Sources */,
-				552E8A7B961A4B125977768E /* renderImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,10 +509,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/astronumerologie/CodeBridge/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stephane.bressani.dev.astronumerologie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -608,7 +518,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "astronumerologie/CodeBridge/astronumerologie-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -641,10 +551,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/astronumerologie/CodeBridge/lib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = stephane.bressani.dev.astronumerologie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -653,7 +560,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "astronumerologie/CodeBridge/astronumerologie-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -813,11 +720,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F46F21B82916DF2D00211049 /* XCRemoteSwiftPackageReference "SweBressaniDev" */;
 			productName = SweBressaniDev;
-		};
-		F46F21BC2916DF6200211049 /* SVGView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F46F21BB2916DF6200211049 /* XCRemoteSwiftPackageReference "SVGView" */;
-			productName = SVGView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

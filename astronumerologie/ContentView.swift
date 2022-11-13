@@ -22,10 +22,6 @@ struct ContentView: View {
     @State private var bdLat: Double = 46.12
     @State private var bdLng: Double = 6.09
     @State private var biTimeZone: Int = 2
-    @State var sL: L = .F
-    @State var sAstro: Astrologie = Astrologie(natal: Date(),lat: 0, lng: 0, tz: 0)
-    @State private var sInputImageAstro: UIImage?
-    @State var sImageAstro: Image?
     @State private var swe: SweCore = SweCore(pathEphe: try! Zip.quickUnzipFile(Bundle.main.url(forResource: "ephem", withExtension: "zip")!).absoluteString, size: 400)
     @State private var stText: TextCore = TextCore(langue: .F)
     @State private var swBodies: [Bool] = [
@@ -49,23 +45,6 @@ struct ContentView: View {
         VStack {
             TabView(selection: $siSelected.onUpdate {
                 if siSelected == 3 {
-                    sAstro = Astrologie(natal: sdNatal, lat: bdLat, lng: bdLng, tz: biTimeZone)
-                    saveChart(chart: sAstro.chart())
-                    do {
-                        sleep (2)
-                    }
-                    let url = sAstro.create_png(natal: sdNatal, lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), colorScheme: colorScheme)
-                    sInputImageAstro = UIImage(contentsOfFile: url.path)
-                    guard let sInputImageAstro = sInputImageAstro else { return } // TODO return ?
-                    sImageAstro = Image(uiImage: sInputImageAstro)
-                } else if siSelected == 4 {
-                    /*
-                    var bodies: [SweCore.Bodies] = []
-                    for (i, b) in bodiesForLoop.enumerated() {
-                        if swBodies[i] {
-                            bodies.append(b)
-                        }
-                    }*/
                     self.swe.set(natal: sdNatal, transit: Date(), lat: bdLat, lng: bdLng, tz: Int32(biTimeZone), colorMode: colorScheme == .light ? .Light : .Dark)
                 }
             }) {
@@ -112,25 +91,7 @@ struct ContentView: View {
                 }
                 .tag(2)
                 VStack {
-                    Text("Astrologie")
-                    if sImageAstro != nil {
-                        sImageAstro?
-                            .resizable()
-                            .scaledToFit()
-                    } else {
-                    }
-                    Button(action: {
-                        print("Print button tapped!")
-                        //let versionPtr = UnsafeMutablePointer<Int8>.allocate(capacity: 255)
-                        //let res = String.init(cString: swe_version(versionPtr)) as String
-                        //free(versionPtr)
-                        //print(res)
-                        sAstro.print()
-                    }) {
-                        Image(systemName: "printer")
-                            .font(.largeTitle)
-                            .foregroundColor(.blue)
-                    }
+                    VAstrologie(bsSwe: $swe, bbBodies: $swBodies)
                 }
                 .padding()
                 .tabItem {
@@ -142,18 +103,6 @@ struct ContentView: View {
                 }
                 .tag(3)
                 VStack {
-                    VAstrologie(bsSwe: $swe, bbBodies: $swBodies)
-                }
-                .padding()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "plus")
-                        Text("Astrologie")
-                    }
-                    
-                }
-                .tag(4)
-                VStack {
                     VSelection(bsSwe: $swe, baBodies: $swBodies)
                 }
                 .padding()
@@ -164,7 +113,7 @@ struct ContentView: View {
                     }
                     
                 }
-                .tag(5)
+                .tag(4)
             }
         }.onAppear {
             var decode: Chart = Chart.init(
@@ -185,54 +134,25 @@ struct ContentView: View {
                     tHour: 12,
                     tMin: 0)
 
-            do {
-                let data: Data
-                let filename = "save.json"
-                // Check that the fileExists in the documents directory
-                let filemanager = FileManager.default
-                let localPath = getDocumentsDirectory().appendingPathComponent(filename)
+            
+            let data: Data
+            let filename = "save.json"
+            // Check that the fileExists in the documents directory
+            let filemanager = FileManager.default
+            let localPath = getDocumentsDirectory().appendingPathComponent(filename)
 
-                if filemanager.fileExists(atPath: localPath.path) {
-                    do {
-                        do {
-                            data = try Data(contentsOf: localPath)
-                        } catch {
-                            fatalError("Couldn't load save.json from documents directory:\n\(error)")
-                        }
-                    } catch {
-                        fatalError("Couldn't load \(filename) from documents directory:\n\(error)")
-                    }
-                    //
-                    do {
-                        let decoder = JSONDecoder()
-                        decode = try decoder.decode(Chart.self, from: data)
-                    } catch {
-                        fatalError("Couldn't parse \(filename) as Swe.Chart.self:\n\(error)")
-                    }
-                } else {
-                    /*
-                    // If the file doesn't exist in the documents directory load it from the bundle
-                    guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
-                            else {
-                        fatalError("Couldn't find \(filename) in main bundle.")
-                    }
-                    do {
-                        data = try Data(contentsOf: file)
-                    } catch {
-                        fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
-                    }*/
-                }
-
-
-            } catch {
+            if filemanager.fileExists(atPath: localPath.path) {
                 do {
-                    let path = Bundle.main.path(forResource: "data", ofType: "json")
-                    let jsonData = try! String(contentsOfFile: path!).data(using: .utf8)!
-                    decode = try JSONDecoder().decode(Chart.self, from: jsonData)
+                    data = try Data(contentsOf: localPath)
                 } catch {
-                    print("Unable to open chart file")
+                    fatalError("Couldn't load save.json from documents directory:\n\(error)")
                 }
-                print("Unable to open saved chart file")
+                do {
+                    let decoder = JSONDecoder()
+                    decode = try decoder.decode(Chart.self, from: data)
+                } catch {
+                    fatalError("Couldn't parse \(filename) as Swe.Chart.self:\n\(error)")
+                }
             }
 
             var dateN = DateComponents()
@@ -290,3 +210,79 @@ extension Binding {
         })
     }
 }
+
+struct Chart: Codable {
+    let nLat: Double
+    let nLng: Double
+    let nTimeZone: Int32
+    let nYear: Int32
+    let nMonth: Int32
+    let nDay: Int32
+    let nHour: Int32
+    let nMin: Int32
+    let tLat: Double
+    let tLng: Double
+    let tTimeZone: Int32
+    let tYear: Int32
+    let tMonth: Int32
+    let tDay: Int32
+    let tHour: Int32
+    let tMin: Int32
+}
+
+func saveChart(chart: Chart) {
+    do {
+        let encoded = try JSONEncoder().encode(chart)
+        let jsonString = String(data: encoded, encoding: .utf8)
+        let url = getDocumentsDirectory().appendingPathComponent("save.json")
+        try jsonString?.write(to: url, atomically: true, encoding: .utf8)
+    } catch {
+        print("Unable to open chart file")
+    }
+}
+
+// Read JSON directory
+func getDocumentsDirectory() -> URL {
+    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+    return paths[0]
+}
+
+func load<T: Decodable>(_ filename: String) -> T {
+    let data: Data
+
+    // Check that the fileExists in the documents directory
+    let filemanager = FileManager.default
+    let localPath = getDocumentsDirectory().appendingPathComponent(filename)
+
+    if filemanager.fileExists(atPath: localPath.path) {
+
+        do {
+            data = try Data(contentsOf: localPath)
+        } catch {
+            fatalError("Couldn't load \(filename) from documents directory:\n\(error)")
+        }
+
+    } else {
+        // If the file doesn't exist in the documents directory load it from the bundle
+        guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
+                else {
+            fatalError("Couldn't find \(filename) in main bundle.")
+        }
+
+        do {
+            data = try Data(contentsOf: file)
+        } catch {
+            fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+        }
+    }
+
+
+    do {
+        let decoder = JSONDecoder()
+        return try decoder.decode(T.self, from: data)
+    } catch {
+        fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+    }
+}
+
+
