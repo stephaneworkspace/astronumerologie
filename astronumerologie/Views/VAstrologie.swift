@@ -16,7 +16,7 @@ struct VAstrologie: View {
     var body: some View {
         ScrollView {
             VAstrologieChart(bsSwe: $bsSwe, baBodies: $bbBodies)
-            VAstrologieTableau1(bsSwe: $bsSwe, saBodies: bbBodies)
+            VAstrologieTableau1(bsSwe: $bsSwe)
             VAstrologieTableau2(bsSwe: $bsSwe, sbTransit1: false, sbTransit2: false)
             VStack{}.frame(height: 16 * 6)
             VAstrologieTableau2(bsSwe: $bsSwe, sbTransit1: true, sbTransit2: true)
@@ -26,7 +26,7 @@ struct VAstrologie: View {
             Button(action: {
                 let chartView = VStack {
                     VAstrologieChart(bsSwe: $bsSwe, baBodies: $bbBodies)
-                    VAstrologieTableau1(bsSwe: $bsSwe, saBodies: bbBodies)
+                    VAstrologieTableau1(bsSwe: $bsSwe)
                     VStack{}.frame(height: 16 * 6)
                 }
                 let tableauView = VStack {
