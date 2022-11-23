@@ -114,18 +114,6 @@ struct ContentView: View {
                     
                 }
                 .tag(4)
-                VStack {
-                    VDignitesAstrales()
-                }
-                .padding()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "sparkles")
-                        Text("Dignités astrales")
-                    }
-                    
-                }
-                .tag(5)
             }
         }.onAppear {
             var decode: Chart = Chart.init(
