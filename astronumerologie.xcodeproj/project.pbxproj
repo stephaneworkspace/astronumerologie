@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F42D0330292D179900460B8C /* VDignitesAstrales.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42D032F292D179900460B8C /* VDignitesAstrales.swift */; };
 		F46F21B72916DF1200211049 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = F46F21B62916DF1200211049 /* Zip */; };
 		F46F21BA2916DF2D00211049 /* SweBressaniDev in Frameworks */ = {isa = PBXBuildFile; productRef = F46F21B92916DF2D00211049 /* SweBressaniDev */; };
 		F484F7B928ECDBA60096F98D /* ephem.zip in Resources */ = {isa = PBXBuildFile; fileRef = F484F7B828ECDBA60096F98D /* ephem.zip */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F42D032F292D179900460B8C /* VDignitesAstrales.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VDignitesAstrales.swift; sourceTree = "<group>"; };
 		F484F7B828ECDBA60096F98D /* ephem.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = ephem.zip; sourceTree = "<group>"; };
 		F4A95CB128EA2B3B0004B22F /* astronumerologie.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = astronumerologie.entitlements; sourceTree = "<group>"; };
 		F4C42CFB28C3C67300EA0BC6 /* astronumerologie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = astronumerologie.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +123,7 @@
 				F4C42D0028C3C67300EA0BC6 /* ContentView.swift */,
 				F4C42D0228C3C67500EA0BC6 /* Assets.xcassets */,
 				F4C42D0428C3C67500EA0BC6 /* Preview Content */,
+				F42D032F292D179900460B8C /* VDignitesAstrales.swift */,
 			);
 			path = astronumerologie;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42D0330292D179900460B8C /* VDignitesAstrales.swift in Sources */,
 				F4C42D0128C3C67300EA0BC6 /* ContentView.swift in Sources */,
 				F4C42CFF28C3C67300EA0BC6 /* astronumerologieApp.swift in Sources */,
 			);
