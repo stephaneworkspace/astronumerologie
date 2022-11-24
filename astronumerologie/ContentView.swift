@@ -39,6 +39,7 @@ struct ContentView: View {
         false,
         false,
         false,
+        false
     ]
 
     var body: some View {
