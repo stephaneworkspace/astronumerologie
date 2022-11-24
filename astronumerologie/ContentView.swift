@@ -24,23 +24,7 @@ struct ContentView: View {
     @State private var biTimeZone: Int = 2
     @State private var swe: SweCore = SweCore(pathEphe: try! Zip.quickUnzipFile(Bundle.main.url(forResource: "ephem", withExtension: "zip")!).absoluteString, size: 400)
     @State private var stText: TextCore = TextCore(langue: .F)
-    @State private var swBodies: [Bool] = [
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        true,
-        false,
-        false,
-        false,
-        false
-    ]
+    @State private var swBodies: [Bool] = SweCore.bodieArrBoolForLoop()
 
     var body: some View {
         VStack {
