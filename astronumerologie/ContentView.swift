@@ -19,6 +19,8 @@ struct ContentView: View {
     @State var ssLastName1: String = "Bressani"
     @State var ssLastName2: String = "Pedroli"
     @State var ssLastName3: String = ""
+    @State var ssTel: String = ""
+    @State var ssMobile: String = ""
     @State private var bdLat: Double = 46.12
     @State private var bdLng: Double = 6.09
     @State private var biTimeZone: Int = 2
@@ -42,6 +44,8 @@ struct ContentView: View {
                         bsLastName1: $ssLastName1,
                         bsLastName2: $ssLastName2,
                         bsLastName3: $ssLastName3,
+                        bsTel: $ssTel,
+                        bsMobile: $ssMobile,
                         bdLat: $bdLat,
                         bdLng: $bdLng,
                         biTimeZone: $biTimeZone,
