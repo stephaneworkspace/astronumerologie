@@ -68,6 +68,8 @@ struct ContentView: View {
                             bsLastName1: $ssLastName1,
                             bsLastName2: $ssLastName2,
                             bsLastName3: $ssLastName3,
+                            bsTel: $ssTel,
+                            bsMobile: $ssMobile,
                             stText: stText)
                 }
                 .padding()
